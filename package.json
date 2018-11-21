@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "global-lint": "eslint --ext .js,.jsx ./configs ./webpack ./src",
     "start-dev": "node ./src/server/development.js"
   },
   "author": "",
@@ -30,6 +31,11 @@
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.19.0",
+    "stylelint": "^9.8.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.0.0",
+    "stylelint-scss": "^3.4.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "webpack": "^4.26.0",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3"

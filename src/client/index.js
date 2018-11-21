@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Signature from './components/Signature/Signature.jsx';
+import Signature from './components/Signature/Signature';
 
 import './stylesheets/index.scss';
 

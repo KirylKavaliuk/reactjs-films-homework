@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   name: 'client',
@@ -42,6 +43,15 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      files: 'src/**/*.scss',
+      failOnError: false,
+      quiet: false,
+      syntax: 'scss',
+    }),
   ],
   devtool: 'inline-source-map',
 }
