@@ -15,9 +15,9 @@ export default class Signature extends Component {
 }
 
 Signature.defaultProps = {
-  name: 'John Doe'
+  name: 'John Doe',
 };
 
 Signature.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
 };
