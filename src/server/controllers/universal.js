@@ -1,4 +1,6 @@
+const document = require('../views/document');
+
 module.exports = function(req, res) {
-    res.send('Hello world!');
-    res.end();
+  res.send(document());
+  res.end();
 }
