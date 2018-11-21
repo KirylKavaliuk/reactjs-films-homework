@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Signature from './components/Signature/Signature.jsx';
+
+import './stylesheets/index.scss';
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <Signature/>,
   document.getElementById('root')
 );
 

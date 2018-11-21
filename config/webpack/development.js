@@ -24,8 +24,23 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+    }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+        options: {
+          camelCase: true,
+          modules: true,
+          localIdentName: '[name]__[local]_[hash:base64:5]',
+        },
+      }, {
+        loader: 'sass-loader',
+      }],
     }]
-  },
+  }, 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
