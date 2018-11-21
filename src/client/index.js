@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Signature from './components/Signature/Signature.jsx';
+import Signature from './components/Signature/Signature';
 
 import './stylesheets/index.scss';
 
-ReactDOM.render(
-  <Signature/>,
-  document.getElementById('root')
-);
+const root = document.getElementById('root');
+
+const render = () => {
+  ReactDOM.render(
+  <Signature
+    name='Kovalyuk Kirill'
+  />, root);
+}
 
 if (module.hot && process.env.NODE_ENV !== 'production') {
-  module.hot.accept();
+  module.hot.accept(() => {
+    render();
+  });
 }
+
+render();

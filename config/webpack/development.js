@@ -8,11 +8,14 @@ module.exports = {
     client: [
       path.resolve(__dirname, '../../src/client/index.js'),
       'webpack-hot-middleware/client'
-  ]
+    ]
   },
   output: {
     path: path.resolve(__dirname, '../../build'),
     publicPath: '/',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [{
@@ -28,19 +31,20 @@ module.exports = {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: [{
-        loader: 'style-loader',
+        loader: 'style-loader'
       }, {
         loader: 'css-loader',
         options: {
           camelCase: true,
           modules: true,
           localIdentName: '[name]__[local]_[hash:base64:5]',
+
         },
       }, {
         loader: 'sass-loader',
       }],
     }]
-  }, 
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
