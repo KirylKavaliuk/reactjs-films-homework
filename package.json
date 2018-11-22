@@ -5,7 +5,9 @@
   "scripts": {
     "test": "jest",
     "global-lint": "eslint --ext .js,.jsx ./configs ./webpack ./src",
-    "start-dev": "node ./src/server/development.js"
+    "start-dev": "node ./src/server/development.js",
+    "build": "webpack --config ./config/webpack/production.js",
+    "start": "node ./src/server/production"
   },
   "author": "",
   "license": "ISC",
@@ -36,7 +38,9 @@
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3"
   }
