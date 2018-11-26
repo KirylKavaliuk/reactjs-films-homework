@@ -7,11 +7,19 @@
 
   .header {
     font-size: 24px;
-    font-weight: bold;
     margin-bottom: 20px;
+    font-weight: 800;
   }
 
   .name {
     font-size: 18px;
+    font-weight: 400;
+  }
+
+  .image {
+    width: 400px;
+    height: 400px;
+    background: url('../../../../src/assets/images/image.jpg');
+    background-size: cover;
   }
 }

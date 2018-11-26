@@ -10,10 +10,12 @@ const routes = require('./routes');
 const app = express();
 const compiler = webpack(config);
 
+app.use(express.static('src/assets'));
+app.use(express.static('build'));
+
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
 }));
-
 app.use(webpackHotMiddleware(compiler));
 
 app.use(routes);

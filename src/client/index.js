@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Signature from './components/Signature/Signature.jsx';
-
 import './stylesheets/index.scss';
+
+import Signature from './components/Signature/Signature.jsx';
 
 const root = document.getElementById('root');
 

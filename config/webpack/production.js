@@ -1,5 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   name: 'client',
@@ -15,7 +17,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
+    minimizer: [new UglifyJsPlugin()],
   },
   module: {
     rules: [{
@@ -25,18 +27,48 @@ module.exports = {
     }, {
       test: /\.scss$/,
       exclude: /node_modules/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
+          loader: 'css-loader',
+          options: {
+            camelCase: true,
+            modules: true,
+            minimize: true,
+            importLoaders: 2,
+            localIdentName: '[hash:base64:10]',
+          },
+        }, {
+          loader: 'sass-loader',
+          options: {
+            outputStyle: 'compressed',
+          },
+        }],
+      }),
+    }, {
+      test: /\.(woff(2)?|ttf|eot|svg)?$/,
       use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader',
+        loader: 'file-loader',
         options: {
-          camelCase: true,
-          modules: true,
-          localIdentName: '[hash:base64:12]',
-        },
-      }, {
-        loader: 'sass-loader',
-      }],
+          name: '[name].[ext]',
+          outputPath: '../../build/assets/fonts',
+        }
+      }]
+    }, {
+      test: /\.(jpg|png)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '../../build/assets/images',
+        }
+      }]
     }]
   },
+  plugins: [
+    new ExtractTextPlugin('../../build/css/styles.css'),
+    new webpack.DefinePlugin({
+      'NODE_ENV': 'production'
+    }),
+  ]
 }
