@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './stylesheets/index.scss';
 
-import Signature from './components/Signature/Signature.jsx';
+import Signature from './components/Signature/Signature';
 
 const root = document.getElementById('root');
 

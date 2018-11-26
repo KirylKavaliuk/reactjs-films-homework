@@ -9,7 +9,7 @@ module.exports = {
   name: 'client',
   mode: 'production',
   entry: {
-    client: path.resolve(__dirname, '../../src/client/index.js')
+    client: path.resolve(__dirname, '../../src/client/index.js'),
   },
   output: {
     path: path.resolve(__dirname, '../../build/js/'),
@@ -17,7 +17,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: alias,
+    alias,
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],
@@ -56,8 +56,8 @@ module.exports = {
           name: 'fonts/[name].[ext]',
           outputPath: '../../build/assets',
           publicPath: '/',
-        }
-      }]
+        },
+      }],
     }, {
       test: /\.(jpg|png)?$/,
       use: [{
@@ -66,16 +66,16 @@ module.exports = {
           name: 'images/[name].[ext]',
           outputPath: '../../build/assets',
           publicPath: '/',
-        }
-      }]
-    }]
+        },
+      }],
+    }],
   },
   plugins: [
     new CleanWebpackPlugin(['build'], {
       root: path.resolve(__dirname, '../../'),
-      verbose: true, 
-      dry: false
+      verbose: true,
+      dry: false,
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
-  ]
-}
+  ],
+};

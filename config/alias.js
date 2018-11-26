@@ -10,8 +10,7 @@ module.exports = {
   Styles: path.resolve(__dirname, '../../src/client/styles'),
   Controllers: path.resolve(__dirname, '../../src/server/controllers'),
   Views: path.resolve(__dirname, '../../src/server/views'),
-
 };
 
-//Constants
-//Models ? 
+// Constants
+// Models ?

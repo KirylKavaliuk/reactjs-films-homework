@@ -1,6 +1,8 @@
 const document = require('../views/document');
 
-module.exports = function(req, res) {
+function universal(req, res) {
   res.send(document());
   res.end();
 }
+
+module.exports = universal;

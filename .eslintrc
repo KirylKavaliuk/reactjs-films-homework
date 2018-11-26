@@ -6,6 +6,13 @@
   "plugins": [
     "react"
   ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack/development.js"
+      }
+    }
+  },
   "env": {
     "browser": true,
     "node": true

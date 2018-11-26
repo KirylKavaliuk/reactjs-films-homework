@@ -1,5 +1,4 @@
-module.exports = () => {
-  return `
+module.exports = () => `
   <!doctype html>
   <html>
     <head>
@@ -11,5 +10,4 @@ module.exports = () => {
       <script src="${process.env.NODE_ENV === 'production' ? '/js/client.js' : 'client.js'}"></script>
     </body>
   </html>
-`
-}
+`;

@@ -9,8 +9,8 @@ module.exports = {
   entry: {
     client: [
       path.resolve(__dirname, '../../src/client/index.js'),
-      'webpack-hot-middleware/client'
-    ]
+      'webpack-hot-middleware/client',
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../../build'),
@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: alias
+    alias,
   },
   module: {
     rules: [{
@@ -29,7 +29,7 @@ module.exports = {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: [{
-        loader: 'style-loader'
+        loader: 'style-loader',
       }, {
         loader: 'css-loader',
         options: {
@@ -47,9 +47,9 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts'
-        }
-      }]
+          outputPath: 'fonts',
+        },
+      }],
     }, {
       test: /\.(jpg|png)?$/,
       use: [{
@@ -57,9 +57,9 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: 'images',
-        }
-      }]
-    }]
+        },
+      }],
+    }],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -67,4 +67,4 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
   ],
   devtool: 'inline-source-map',
-}
+};

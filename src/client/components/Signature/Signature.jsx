@@ -8,7 +8,7 @@ export default class Signature extends Component {
     return (
       <div className={ styles.signature }>
         <header className={ styles.header }>Signature</header>
-
+        <p>123</p>
         <p className={ styles.name }>{ this.props.name }</p>
       </div>
     );

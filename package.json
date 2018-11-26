@@ -22,19 +22,27 @@
         "statements": 10
       }
     }
-  }, 
+  },
   "husky": {
     "hooks": {
-      "pre-push": "npm test && npm run lint && npm run stylelint"
+      "pre-push": "npm run lint && npm run stylelint"
     }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-jest": "^23.6.0",
+    "clean-webpack-plugin": "^1.0.0",
     "express": "^4.16.4",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.26.1",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -42,20 +50,20 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-module-resolver": "^3.1.1",
-    "clean-webpack-plugin": "^1.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
+    "husky": "^1.2.0",
     "node-sass": "^4.10.0",
     "react-test-renderer": "^16.6.3",
     "sass-loader": "^7.1.0",
@@ -64,11 +72,6 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.0",
-    "stylelint-webpack-plugin": "^0.10.5",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.26.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-cli": "^3.1.2"
   }
 }

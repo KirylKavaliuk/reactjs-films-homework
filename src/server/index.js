@@ -8,11 +8,12 @@ const config = require('../../config/webpack/development');
 const routes = require('./routes');
 
 const app = express();
+const port = 8080;
 const compiler = webpack(config);
 
-if(process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
   }));
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static('src/assets'));
@@ -23,11 +24,12 @@ if(process.env.NODE_ENV === 'development') {
 
 app.use(routes);
 
-app.listen(8080, (err) => {
+app.listen(port, (err) => {
   if (err) {
+    // eslint-disable-next-line
     console.log(err);
   } else {
-    console.log(`proxy is listening on port: 8080`);
+    // eslint-disable-next-line
+    console.log(`proxy is listening on port: ${port}`);
   }
 });
-
