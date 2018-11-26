@@ -10,13 +10,16 @@ const routes = require('./routes');
 const app = express();
 const compiler = webpack(config);
 
-app.use(express.static('src/assets'));
-app.use(express.static('build'));
-
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
-}));
-app.use(webpackHotMiddleware(compiler));
+if(process.env.NODE_ENV === 'development') {
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  }));
+  app.use(webpackHotMiddleware(compiler));
+  app.use(express.static('src/assets'));
+} else {
+  app.use(express.static('build'));
+  app.use(express.static('build/assets'));
+}
 
 app.use(routes);
 
@@ -27,3 +30,4 @@ app.listen(8080, (err) => {
     console.log(`proxy is listening on port: 8080`);
   }
 });
+

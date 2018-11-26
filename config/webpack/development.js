@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const alias = require('../alias');
 
 module.exports = {
   name: 'client',
@@ -16,13 +17,14 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: alias
   },
   module: {
     rules: [{
       test: /\.js(x)?$/,
       exclude: /node_modules/,
-      use: ['babel-loader', 'eslint-loader'],
+      use: ['babel-loader'],
     }, {
       test: /\.scss$/,
       exclude: /node_modules/,
@@ -45,7 +47,16 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts/'
+          outputPath: 'fonts'
+        }
+      }]
+    }, {
+      test: /\.(jpg|png)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
         }
       }]
     }]
@@ -54,13 +65,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
-    new StyleLintPlugin({
-      configFile: '.stylelintrc',
-      files: 'src/**/*.scss',
-      failOnError: false,
-      quiet: false,
-      syntax: 'scss',
-    }),
   ],
   devtool: 'inline-source-map',
 }

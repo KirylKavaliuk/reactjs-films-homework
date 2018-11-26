@@ -3,11 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest",
-    "global-lint": "eslint --ext .js,.jsx ./config ./src",
-    "start-dev": "cross-env NODE_ENV=development && node ./src/server/development.js",
+    "start": "cross-env NODE_ENV=development node ./src/server/index.js",
     "build": "webpack --config ./config/webpack/production.js",
-    "start": "cross-env NODE_ENV=production && node ./src/server/production"
+    "lint": "eslint --ext .js,.jsx ./config ./src",
+    "test": "jest",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "prod": "cross-env NODE_ENV=production node ./src/server/index.js"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js(x)?$": "./config/jest/transformer.js"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 10
+      }
+    }
+  }, 
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test && npm run lint && npm run stylelint"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -21,8 +40,11 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "clean-webpack-plugin": "^1.0.0",
     "cross-env": "^5.2.0",
@@ -35,6 +57,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "node-sass": "^4.10.0",
+    "react-test-renderer": "^16.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.19.0",
     "stylelint": "^9.8.0",
