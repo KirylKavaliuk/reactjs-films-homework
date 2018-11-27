@@ -3,6 +3,7 @@ node_js:
   - "lts/*"
 
 install:
+  - npm i
   - npm i eslint eslint-plugin-react babel-eslint eslint-config-airbnb-base jest babel-jest -g
 
 script:
