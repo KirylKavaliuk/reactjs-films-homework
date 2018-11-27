@@ -3,7 +3,7 @@ node_js:
   - "lts/*"
 
 install:
-  - npm i jest eslint -g
+  - npm i jest eslint eslint-plugin-react -g
 
 script:
   - npm run lint
