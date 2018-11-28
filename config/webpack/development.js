@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const alias = require('../alias');
+
+console.log(alias);
 
 module.exports = {
   name: 'client',
