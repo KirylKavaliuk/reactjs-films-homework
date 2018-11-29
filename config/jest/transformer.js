@@ -7,6 +7,7 @@ module.exports = babelJest.createTransformer({
     '@babel/preset-react',
   ],
   plugins: [
+    ['inline-react-svg'],
     ['module-resolver', {
       alias,
       extensions: ['.js', '.jsx'],

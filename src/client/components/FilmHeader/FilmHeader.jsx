@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 
 import styles from './FilmHeader.scss';
 
-const FilmHeader = ({ name, genres, duration }) => (
-  <div className={ styles.filmHeader }>
+const FilmHeader = ({ name, genres, duration }) => {
+  const absoluteDuration = Math.abs(duration);
+  const hours = Math.floor(absoluteDuration / 60);
+  const mitutes = (absoluteDuration % 60).toFixed();
+
+  return <div className={ styles.filmHeader }>
     <h2 className={ styles.name }>{ name }</h2>
     <p className={ styles.genres }>
       { genres.map((genre, index) => <span
@@ -14,11 +18,11 @@ const FilmHeader = ({ name, genres, duration }) => (
         >{ genre }</span>)
       }
       <span className={ styles.duration }>
-        {`${Math.floor(duration / 60)} h ${(duration % 60).toPrecision(2)} m`}
+        { hours ? `${hours} h` : null } { mitutes ? `${mitutes} m` : null }
       </span>
     </p>
-  </div>
-);
+  </div>;
+};
 
 FilmHeader.propTypes = {
   name: PropTypes.string.isRequired,
