@@ -4,8 +4,23 @@ import Button from '../Button';
 
 it('renders button shallow correctly', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<Button label='button'/>);
+  renderer.render(<Button
+    label='button'
+  />);
 
   const tree = renderer.getRenderOutput();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders button shallow correctly', () => {
+  const renderer = new ShallowRenderer();
+  renderer.render(<Button
+    label='button 2'
+    transparent
+  />);
+
+  const tree = renderer.getRenderOutput();
+
   expect(tree).toMatchSnapshot();
 });

@@ -17,3 +17,13 @@ it('renders movie details component field shallow correctly', () => {
   const tree = renderer.getRenderOutput();
   expect(tree).toMatchSnapshot();
 });
+
+
+it('renders movie details component field shallow correctly #1', () => {
+  const renderer = new ShallowRenderer();
+  renderer.render(<MovieDetails movie={ movie }/>);
+
+  const tree = renderer.getRenderOutput();
+
+  expect(tree).toMatchSnapshot();
+});

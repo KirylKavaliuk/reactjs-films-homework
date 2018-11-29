@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=development node ./src/server/index.js",
     "build": "webpack --config ./config/webpack/production.js",
     "lint": "eslint --ext .js,.jsx ./config ./src",
-    "test": "jest",
+    "test": "jest --coverage",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "prod": "cross-env NODE_ENV=production node ./src/server/index.js"
   },
@@ -19,7 +19,7 @@
         "branches": 100,
         "functions": 100,
         "lines": 100,
-        "statements": 10
+        "statements": 100
       }
     }
   },

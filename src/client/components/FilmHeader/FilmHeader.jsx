@@ -7,7 +7,7 @@ import styles from './FilmHeader.scss';
 const FilmHeader = ({ name, genres, duration }) => {
   const absoluteDuration = Math.abs(duration);
   const hours = Math.floor(absoluteDuration / 60);
-  const mitutes = (absoluteDuration % 60).toFixed();
+  const minutes = (absoluteDuration % 60).toFixed();
 
   return <div className={ styles.filmHeader }>
     <h2 className={ styles.name }>{ name }</h2>
@@ -18,7 +18,7 @@ const FilmHeader = ({ name, genres, duration }) => {
         >{ genre }</span>)
       }
       <span className={ styles.duration }>
-        { hours ? `${hours} h` : null } { mitutes ? `${mitutes} m` : null }
+        { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
       </span>
     </p>
   </div>;
