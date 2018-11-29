@@ -1,0 +1,29 @@
+.rating {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+  .stars {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+  }
+
+  .value-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+
+    .value {
+      font-size: 16px;
+      padding: 3px 6px;
+      box-sizing: border-box;
+      border: 1px solid #09ade3;
+      border-radius: 2px;
+    }
+  }
+}
