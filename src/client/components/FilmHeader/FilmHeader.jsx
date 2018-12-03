@@ -17,9 +17,9 @@ const FilmHeader = ({ name, genres, duration }) => {
           className={ styles.genre }
         >{ genre }</span>)
       }
-      <span className={ styles.duration }>
+      { !!duration && <span className={ styles.duration }>
         { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
-      </span>
+    </span> }
     </p>
   </div>;
 };
