@@ -15,7 +15,8 @@
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jasmine": true
   },
   "rules": {
     "no-unused-vars": 0

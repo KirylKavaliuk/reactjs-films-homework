@@ -1,0 +1,17 @@
+.button {
+  font-size: 16px;
+  background: #09ade3;
+  border: 1px solid #09ade3;
+  padding: 10px;
+  min-width: 130px;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.transparent {
+  background: none;
+  border: 1px solid #fff;
+}

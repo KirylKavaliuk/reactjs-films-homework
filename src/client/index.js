@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './stylesheets/index.scss';
-
-import Signature from './components/Signature/Signature';
+import App from 'Containers/App/App';
 
 const root = document.getElementById('root');
 
 const render = () => {
   ReactDOM.render(
-    <Signature
-      name='Kovalyuk Kirill'
-    />,
+    <App/>,
     root,
   );
 };

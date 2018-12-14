@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const alias = require('../alias');
 
 module.exports = {
@@ -42,12 +41,22 @@ module.exports = {
         loader: 'sass-loader',
       }],
     }, {
-      test: /\.(woff(2)?|ttf|eot|svg)?$/,
+      test: /fonts.*\.(woff(2)?|ttf|eot|svg)?$/,
       use: [{
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
           outputPath: 'fonts',
+        },
+      }],
+    }, {
+      test: /icons.*\.svg$/,
+      use: [{
+        loader: 'babel-loader',
+      }, {
+        loader: 'react-svg-loader',
+        options: {
+          jsx: true,
         },
       }],
     }, {
