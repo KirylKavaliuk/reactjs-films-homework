@@ -1,18 +1,18 @@
 .search {
-  height: 40px;
+  position: relative;
   width: 100%;
   max-width: 300px;
-  position: relative;
+  height: 40px;
 
   .search-field {
-    background: none;
-    border: 2px solid #fff;
-    height: 100%;
-    width: 100%;
-    font-size: 18px;
-    border-radius: 4px;
-    padding: 5px;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background: none;
+    font-size: 18px;
 
     &::-webkit-search-cancel-button {
       display: none;
@@ -29,26 +29,22 @@
 
   .search-button {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    padding: 5px;
+    top: 3px;
+    right: 5px;
     box-sizing: border-box;
-
-    svg {
-      width: 20px;
-      height: 20px;
-
-      path {
-        fill: #fff;
-      }
-    }
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border: none;
+    background: none;
+    fill: #fff;
 
     &:focus {
       outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

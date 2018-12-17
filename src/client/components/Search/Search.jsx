@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SearchIcon from 'icons/search.svg';
+import Icon from 'components/Icon/Icon';
 
 import styles from './Search.scss';
 
@@ -18,7 +18,7 @@ const Search = ({ value, onChange }) => (
       placeholder='Search...'
     />
     <button className={ styles.searchButton }>
-      <SearchIcon/>
+      <Icon name='search'/>
     </button>
   </form>
 );

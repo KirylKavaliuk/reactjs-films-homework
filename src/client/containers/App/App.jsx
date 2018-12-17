@@ -31,5 +31,8 @@ export default () => (
       <Rating value={ 3.5 }/>
       <Rating />
     </div>
+    <div className={ styles.element }>
+      <Search onChange={ () => '123' }/>
+    </div>
   </>
 );

@@ -2,16 +2,16 @@
 
 .rating {
   display: flex;
-  justify-content: space-between;
+  box-sizing: border-box;
   width: 250px;
   padding: 20px 0;
-  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .stars {
   display: flex;
-  justify-content: space-around;
   width: 200px;
+  justify-content: space-around;
 }
 
 .star {
@@ -35,9 +35,9 @@
 }
 
 .value {
-  font-size: 16px;
-  padding: 3px 6px;
   box-sizing: border-box;
+  padding: 3px 6px;
   border: 1px solid #09ade3;
   border-radius: 2px;
+  font-size: 16px;
 }
