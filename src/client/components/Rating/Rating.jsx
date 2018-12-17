@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Star from 'Components/Rating/Star/Star';
+import classNames from 'classnames';
+
+import Icon from 'components/Icon/Icon';
 
 import styles from './Rating.scss';
 
@@ -12,8 +14,10 @@ const Rating = ({ value }) => {
     <div className={ styles.rating }>
       <div className={ styles.stars }>
         { Array.from({ length: 5 }, (v, k) => (
-           <Star
+           <Icon
             key={ k }
+            name='star'
+            className={ styles.star }
             active={ k + 1 <= activeStars }
           />
         )) }

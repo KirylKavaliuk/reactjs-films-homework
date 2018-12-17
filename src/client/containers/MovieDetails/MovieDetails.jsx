@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from 'Components/Button/Button';
-import Rating from 'Components/Rating/Rating';
-import FilmHeader from 'Components/FilmHeader/FilmHeader';
-import Search from 'Components/Search/Search';
-
 import styles from './MovieDetails.scss';
 
 export default class MovieDetails extends Component {

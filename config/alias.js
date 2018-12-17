@@ -1,17 +1,18 @@
 const path = require('path');
 
 module.exports = {
-  Pages: path.resolve(__dirname, '../src/client/pages'),
-  Components: path.resolve(__dirname, '../src/client/components'),
-  Containers: path.resolve(__dirname, '../src/client/containers'),
-  Store: path.resolve(__dirname, '../src/client/store'),
-  Images: path.resolve(__dirname, '../src/assets/images'),
-  Fonts: path.resolve(__dirname, '../src/assets/fonts'),
-  Icons: path.resolve(__dirname, '../src/assets/icons'),
-  Actions: path.resolve(__dirname, '../src/client/store/actions'),
-  Styles: path.resolve(__dirname, '../src/client/stylesheets'),
-  Controllers: path.resolve(__dirname, '../src/server/controllers'),
-  Views: path.resolve(__dirname, '../src/server/views'),
+  pages: path.resolve(__dirname, '../src/client/pages'),
+  components: path.resolve(__dirname, '../src/client/components'),
+  containers: path.resolve(__dirname, '../src/client/containers'),
+  store: path.resolve(__dirname, '../src/client/store'),
+  images: path.resolve(__dirname, '../src/assets/images'),
+  fonts: path.resolve(__dirname, '../src/assets/fonts'),
+  icons: path.resolve(__dirname, '../src/assets/icons'),
+  actions: path.resolve(__dirname, '../src/client/store/actions'),
+  styles: path.resolve(__dirname, '../src/client/stylesheets'),
+  controllers: path.resolve(__dirname, '../src/server/controllers'),
+  views: path.resolve(__dirname, '../src/server/views'),
+  utils: path.resolve(__dirname, '../src/utils'),
 };
 
 // Constants

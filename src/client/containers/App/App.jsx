@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
-import MovieDetails from 'Containers/MovieDetails/MovieDetails';
+// import MovieDetails from 'containers/MovieDetails/MovieDetails';
 
-import 'Styles/index.scss';
+import Button from 'components/Button/Button';
+import Rating from 'components/Rating/Rating';
+import FilmHeader from 'components/FilmHeader/FilmHeader';
+import Search from 'components/Search/Search';
+
+import styles from './App.scss';
+import 'styles/index.scss';
 
 const movie = {
   name: 'The jungle book',
@@ -13,5 +19,17 @@ const movie = {
 };
 
 export default () => (
-  <MovieDetails movie={ movie }/>
+  <>
+    <div className={ styles.buttons }>
+      <Button label='Button button'/>
+      <Button
+        transparent
+        label='Button'
+      />
+    </div>
+    <div className={ styles.buttons }>
+      <Rating value={ 2.5 }/>
+      <Rating value={ 1.5 }/>
+    </div>
+  </>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SearchIcon from 'Icons/search.svg';
+import SearchIcon from 'icons/search.svg';
 
 import styles from './Search.scss';
 
