@@ -20,16 +20,16 @@ const movie = {
 
 export default () => (
   <>
-    <div className={ styles.buttons }>
+    <div className={ styles.element }>
       <Button label='Button button'/>
       <Button
         transparent
         label='Button'
       />
     </div>
-    <div className={ styles.buttons }>
-      <Rating value={ 2.5 }/>
-      <Rating value={ 1.5 }/>
+    <div className={ styles.element }>
+      <Rating value={ 3.5 }/>
+      <Rating />
     </div>
   </>
 );

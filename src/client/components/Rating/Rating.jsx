@@ -17,8 +17,10 @@ const Rating = ({ value }) => {
            <Icon
             key={ k }
             name='star'
-            className={ styles.star }
-            active={ k + 1 <= activeStars }
+            className={ classNames(
+              styles.star,
+              { [styles.active]: k + 1 <= activeStars },
+            ) }
           />
         )) }
       </div>
