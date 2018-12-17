@@ -9,19 +9,22 @@ const FilmHeader = ({ name, genres, duration }) => {
   const hours = Math.floor(absoluteDuration / 60);
   const minutes = (absoluteDuration % 60).toFixed();
 
-  return <div className={ styles.filmHeader }>
-    <h2 className={ styles.name }>{ name }</h2>
-    <p className={ styles.genres }>
-      { genres.map((genre, index) => <span
-          key={ index }
-          className={ styles.genre }
-        >{ genre }</span>)
-      }
-      { !!duration && <span className={ styles.duration }>
-        { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
-    </span> }
-    </p>
-  </div>;
+  return (
+    <div className={ styles.filmHeader }>
+      <h2 className={ styles.name }>{ name }</h2>
+      <p className={ styles.genres }>
+        { genres.map((genre, index) => (
+          <span
+            key={ index }
+            className={ styles.genre }
+          >{ genre }</span>
+        )) }
+        { !!duration && <span className={ styles.duration }>
+          { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
+      </span> }
+      </p>
+    </div>
+  );
 };
 
 FilmHeader.propTypes = {
