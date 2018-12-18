@@ -6,6 +6,7 @@ import Button from 'components/Button/Button';
 import Rating from 'components/Rating/Rating';
 import FilmHeader from 'components/FilmHeader/FilmHeader';
 import Search from 'components/Search/Search';
+import Description from 'components/Description/Description';
 
 import styles from './App.scss';
 import 'styles/index.scss';
@@ -45,6 +46,10 @@ export default () => (
         genres={ ['Documentation', 'Adventure'] }
         duration={ movie.duration + 100 }
       />
+    </div>
+    <div className={ styles.element }>
+      <Description text={ movie.description }/>
+      <Description text={ movie.description }/>
     </div>
   </>
 );

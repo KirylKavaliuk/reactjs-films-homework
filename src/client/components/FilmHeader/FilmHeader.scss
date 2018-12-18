@@ -4,6 +4,10 @@
   box-sizing: border-box;
   padding: 10px;
   align-items: flex-start;
+
+  &:hover {
+    cursor: default;
+  }
 }
 
 .name {

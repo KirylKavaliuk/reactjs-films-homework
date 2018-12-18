@@ -1,10 +1,16 @@
+@import 'styles/palette';
+
 .description {
-  top: 0;
-  width: 300px;
-  max-height: 184px;
-  background: rgba($color: #000, $alpha: 0.7);
-  padding: 15px;
+  overflow: auto;
   box-sizing: border-box;
+  width: 300px;
+  max-height: 185px;
+  padding: 15px;
+  color: $white;
+  background: rgba(0, 0, 0, 0.6);
   line-height: 2;
-  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
