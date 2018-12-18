@@ -8,8 +8,9 @@
 
 .button {
   min-width: 130px;
-  padding: 10px;
+  padding: 7px;
   transition: all 0.45s ease;
+  color: inherit;
   border: 1px solid $light_blue;
   border-radius: 3px;
   background: $light_blue;
@@ -31,4 +32,8 @@
   &:hover {
     @include setHover();
   }
+}
+
+.active {
+  @include setHover();
 }

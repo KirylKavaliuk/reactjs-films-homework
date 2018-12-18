@@ -1,11 +1,14 @@
 @import 'styles/palette';
 
 .description {
+  position: absolute;
+  top: -215px;
+  right: 0;
   overflow: auto;
   box-sizing: border-box;
   width: 300px;
-  max-height: 185px;
-  padding: 15px;
+  max-height: 180px;
+  padding: 13px;
   color: $white;
   background: rgba(0, 0, 0, 0.6);
   line-height: 2;

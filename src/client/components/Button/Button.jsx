@@ -5,11 +5,17 @@ import classNames from 'classnames';
 
 import styles from './Button.scss';
 
-const Button = ({ label, onClick, transparent }) => (
+const Button = ({
+  label,
+  onClick,
+  transparent,
+  active,
+}) => (
   <button
     className={ classNames(
       styles.button,
       { [styles.transparent]: transparent },
+      { [styles.active]: active },
     ) }
     onClick={ onClick }
   >
@@ -19,6 +25,7 @@ const Button = ({ label, onClick, transparent }) => (
 
 Button.defaultProps = {
   transparent: false,
+  active: false,
   onClick: null,
 };
 
@@ -26,6 +33,7 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   transparent: PropTypes.bool,
+  active: PropTypes.bool,
 };
 
 export default Button;

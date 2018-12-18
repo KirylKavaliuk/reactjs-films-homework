@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
   padding: 10px;
   align-items: flex-start;
+  grid-area: film-header;
+  align-self: end;
 
   &:hover {
     cursor: default;
@@ -33,8 +37,24 @@
 }
 
 .duration {
+  font-size: 18px;
+
   &::before {
     padding-right: 20px;
     content: '|';
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .name {
+    font-size: 35px;
+  }
+
+  .genre {
+    font-size: 13px;
+  }
+
+  .duration {
+    font-size: 13px !important;
   }
 }

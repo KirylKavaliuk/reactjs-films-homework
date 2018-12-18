@@ -3,6 +3,9 @@
   width: 100%;
   max-width: 300px;
   height: 40px;
+  grid-area: search;
+  align-self: center;
+  justify-self: end;
 
   .search-field {
     box-sizing: border-box;

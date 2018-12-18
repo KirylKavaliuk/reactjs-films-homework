@@ -20,8 +20,9 @@ const FilmHeader = ({ name, genres, duration }) => {
           >{ genre }</span>
         )) }
         { !!duration && <span className={ styles.duration }>
-          { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
-      </span> }
+            { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
+          </span>
+        }
       </p>
     </div>
   );
