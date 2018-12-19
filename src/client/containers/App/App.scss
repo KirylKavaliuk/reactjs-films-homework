@@ -5,3 +5,10 @@
   padding: 20px;
   justify-content: space-around;
 }
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

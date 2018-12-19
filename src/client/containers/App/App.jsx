@@ -55,6 +55,7 @@ class App extends Component {
           <MovieItem
             key={ index }
             movie={ _movie }
+            genres={ this.props.genres }
           />
           )) }
         </div>
