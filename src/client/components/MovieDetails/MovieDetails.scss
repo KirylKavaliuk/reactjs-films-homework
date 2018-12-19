@@ -3,7 +3,7 @@
 .movie-details {
   display: grid;
   width: 100%;
-  min-height: 80vh;
+  min-height: 70vh;
   background: url('images/details-background.jpg') no-repeat center center;
   background-size: cover;
   box-shadow:
@@ -36,7 +36,45 @@
 
 @media only screen and (max-width: 1000px) {
   .movie-details {
-    grid-template-columns: 20px minmax(150px, 70%) minmax(150px, 30%) 20px;
+    min-height: 80vh;
+    grid-template-columns: 20px minmax(150px, 60%) minmax(150px, 40%) 20px;
     grid-template-rows: 80px auto 80px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .movie-details {
+    grid-template-columns: 10px auto 10px;
+    grid-template-rows: 0 80px auto 60px 60px;
+    grid-template-areas:
+      ". . ."
+      ". search ."
+      ". film-header ."
+      ". rating ."
+      ". buttons .";
+  }
+
+  .buttons-more {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .movie-details {
+    min-height: 90vh;
+    grid-template-rows: 0 80px auto 60px 110px;
+  }
+
+  .buttons-more {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    justify-content: space-around;
   }
 }
