@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 
 import request from 'utils/request';
+
+import actionsMovies from 'actions/movies';
+import actionsGenres from 'actions/genres';
 
 import styles from './App.scss';
 import 'styles/index.scss';
@@ -22,10 +26,15 @@ request.get('db/movie/popular')
   });
 */
 
-export default class App extends Component {
+class App extends Component {
   state = {
     search: '',
   };
+
+  componentDidMount() {
+    this.props.addMovies();
+    this.props.addGenres();
+  }
 
   changeSearchHandler = (event) => {
     this.setState({ search: event.target.value });
@@ -43,3 +52,18 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  addMovies: () => dispatch(actionsMovies.addMovies()),
+  addGenres: () => dispatch(actionsGenres.addGenres()),
+});
+
+const mapStateToProps = state => ({
+  movies: state.movies,
+  genres: state.genres,
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
