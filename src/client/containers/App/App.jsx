@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { hot } from 'react-hot-loader';
 
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 
@@ -63,7 +64,7 @@ const mapStateToProps = state => ({
   genres: state.genres,
 });
 
-export default connect(
+export default hot(module)(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(App);
+)(App));
