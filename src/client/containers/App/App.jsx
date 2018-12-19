@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import MovieDetails from 'components/MovieDetails/MovieDetails';
+import MovieItem from 'components/MovieItem/MovieItem';
 
 import request from 'utils/request';
 
@@ -49,6 +50,14 @@ class App extends Component {
           changeSearch={ this.changeSearchHandler }
           searchValue={ this.state.search }
         />
+        <div className={ styles.list }>
+          { this.props.movies.map((_movie, index) => (
+          <MovieItem
+            key={ index }
+            movie={ _movie }
+          />
+          )) }
+        </div>
       </div>
     );
   }

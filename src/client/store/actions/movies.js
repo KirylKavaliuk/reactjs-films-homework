@@ -6,7 +6,7 @@ export default {
       page: 1,
     })
       .then((response) => {
-        dispatch({ type: 'ADD_MOVIES', payload: response.results.slice(0, 5) });
+        dispatch({ type: 'ADD_MOVIES', payload: response.results });
       });
   },
 };
