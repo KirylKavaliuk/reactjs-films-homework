@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import styles from './Button.scss';
 
 const Button = ({
+  className,
   label,
   onClick,
   transparent,
@@ -14,6 +15,7 @@ const Button = ({
   <button
     className={ classNames(
       styles.button,
+      className,
       { [styles.transparent]: transparent },
       { [styles.active]: active },
     ) }

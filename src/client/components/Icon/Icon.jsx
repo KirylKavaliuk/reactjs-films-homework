@@ -4,10 +4,14 @@ import withConditionalRendering from 'utils/withConditionalRendering';
 
 import Star from 'icons/star.svg';
 import Search from 'icons/search.svg';
+import Play from 'icons/play.svg';
+import Cancel from 'icons/cancel.svg';
 
 const icons = {
   star: Star,
   search: Search,
+  play: Play,
+  cancel: Cancel,
 };
 
 const Icon = ({ name, className }) => {

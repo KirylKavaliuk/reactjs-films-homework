@@ -4,6 +4,7 @@
   display: grid;
   width: 100%;
   min-height: 70vh;
+  color: $white;
   background: url('images/details-background.jpg') no-repeat center center;
   background-size: cover;
   box-shadow:
@@ -15,7 +16,6 @@
     ". logo search ."
     ". film-header . ."
     ". rating buttons .";
-  color: $white;
 }
 
 .logo {
