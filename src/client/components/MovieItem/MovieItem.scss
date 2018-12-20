@@ -72,6 +72,10 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
+.info-visible ~ .more {
+  opacity: 0;
+}
+
 .cancel-icon {
   position: absolute;
   top: 120px;
@@ -80,6 +84,7 @@
   height: 15px;
   transition: all 0.45s ease;
   fill: $white;
+  z-index: 2;
 
   &:hover {
     cursor: pointer;

@@ -35,7 +35,7 @@ class MovieItem extends Component {
           src={ `db/${this.props.movie.poster_path}` }
         />
 
-        <div className={ styles.more }>
+        { !this.state.descriptionOpen && <div className={ styles.more }>
           <div className={ styles.playButton }>
             <Icon
               className={ styles.playButtonIcon }
@@ -50,6 +50,7 @@ class MovieItem extends Component {
             onClick={ this.toggleDescriptionHandler }
           />
         </div>
+        }
 
         <div className={
           classNames(

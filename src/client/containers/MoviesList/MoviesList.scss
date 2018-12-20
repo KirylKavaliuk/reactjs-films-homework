@@ -1,0 +1,78 @@
+@import 'styles/palette';
+
+.movies-list-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.movies-list {
+  padding: 40px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px grey solid;
+}
+
+.controls {
+  display: flex;
+}
+
+.menu-links {
+  display: flex;
+  color: $light_blue;
+  align-items: center;
+}
+
+.menu-link {
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+.active-link {
+  border-bottom: 2px $light_blue solid;
+}
+
+.types-view {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  height: 25px;
+}
+
+.type-view {
+  width: 25px;
+  height: 25px;
+}
+
+.menu-select {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  color: $light_blue;
+  background: url('images/arrow-down.png') center right no-repeat;
+}
+
+.menu-select-link {
+  background: $light_blue;
+  color: $white;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+.menu-select-link:hover {
+  cursor: pointer;
+}
