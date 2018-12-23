@@ -41,6 +41,16 @@ class App extends Component {
   render() {
     return (
       <div className={ styles.app }>
+        <Select
+          defaultValue='Genre'
+          isLinks={ true }
+          list={ this.props.genres }
+          element={ item => ({
+            value: item.id,
+            label: item.name,
+            link: `/genre/${item.id}`,
+          }) }
+        />
 
         <MovieDetails
           movie={ movie }
@@ -62,18 +72,10 @@ class App extends Component {
           movies={ this.props.movies }
           genres={ this.props.genres }
         />
-
-        <Select
-          genres={ this.props.genres }
-        />
       </div>
     );
   }
 }
-
-/*
-
-*/
 
 const mapDispatchToProps = dispatch => ({
   addMovies: () => dispatch(actionsMovies.addMovies()),

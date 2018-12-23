@@ -51,28 +51,3 @@
   width: 25px;
   height: 25px;
 }
-
-.menu-select {
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding: 10px;
-  box-sizing: border-box;
-  appearance: none;
-  -webkit-appearance: none;
-  position: relative;
-  color: $light_blue;
-  background: url('images/arrow-down.png') center right no-repeat;
-}
-
-.menu-select-link {
-  background: $light_blue;
-  color: $white;
-  padding: 10px;
-  box-sizing: border-box;
-  width: 200px;
-}
-
-.menu-select-link:hover {
-  cursor: pointer;
-}

@@ -6,7 +6,7 @@ export default {
       page: 1,
     })
       .then((response) => {
-        dispatch({ type: 'ADD_GENRES', payload: response.genres });
+        dispatch({ type: 'ADD_GENRES', payload: [...response.genres, { id: 999, name: 'Very very long name with abs tspt twp trsten trstre' }] });
       });
   },
 };

@@ -13,14 +13,10 @@ export default class MoviesList extends Component {
     gridView: false,
   };
 
-  genreChangeHandler = (event) => {
-    const { value } = this.select; // set location
-  }
-
   render() {
     return (
       <div className={ styles.moviesListWrapper }>
-        <div onChaneg={ this.genreChangeHandler } className={ styles.moviesList }>
+        <div onChange={ this.genreChangeHandler } className={ styles.moviesList }>
           <menu className={ styles.menu}>
             <div className={ styles.controls }>
               <ul className={ styles.menuLinks }>
