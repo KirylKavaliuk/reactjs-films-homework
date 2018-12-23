@@ -12,16 +12,16 @@
   width: 100%;
   max-width: 1200px;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: $lighter_grey;
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px grey solid;
+  border-bottom: 1px $light_grey solid;
 }
 
-.controls {
+.list-controls {
   display: flex;
 }
 
@@ -32,22 +32,38 @@
 }
 
 .menu-link {
-  padding: 20px 10px;
+  padding: 8px 10px;
   box-sizing: border-box;
+
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
 .active-link {
   border-bottom: 2px $light_blue solid;
+  border-top: 2px $lighter_grey solid;
+  box-sizing: border-box;
 }
 
 .types-view {
   display: flex;
   justify-content: space-between;
-  width: 60px;
+  width: 55px;
   height: 25px;
 }
 
 .type-view {
+  transition: all 0.45s ease;
   width: 25px;
   height: 25px;
+  fill: $light_grey;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-type-view {
+  fill: $light_blue;
 }

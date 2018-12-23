@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
+import Select from 'components/Select/Select';
 import Icon from 'components/Icon/Icon';
 
 import styles from './MoviesList.scss';
 
 export default class MoviesList extends Component {
   state = {
-    gridView: false,
+    gridView: true,
   };
+
+  setView = (isGrid) => {
+    this.setState({ gridView: isGrid });
+  }
 
   render() {
     return (
       <div className={ styles.moviesListWrapper }>
         <div onChange={ this.genreChangeHandler } className={ styles.moviesList }>
           <menu className={ styles.menu}>
-            <div className={ styles.controls }>
+            <div className={ styles.listControls }>
               <ul className={ styles.menuLinks }>
                 <Link
                   to='/trading'
@@ -44,14 +49,36 @@ export default class MoviesList extends Component {
                   <li>Coming soon</li>
                 </Link>
               </ul>
+              <Select
+                defaultValue='Genre'
+                isLinks={ true }
+                list={ this.props.genres }
+                element={ item => ({
+                  value: item.id,
+                  label: item.name,
+                  link: `/genre/${item.id}`,
+                }) }
+              />
             </div>
             <div className={ styles.typesView }>
-            <div className={ styles.typeView }>
-              <Icon name='star'/>
-            </div>
-            <div className={ styles.typeView }>
-              <Icon name='star'/>
-            </div>
+              <div
+                className={ classNames(
+                  styles.typeView,
+                  { [styles.activeTypeView]: this.state.gridView },
+                ) }
+                onClick={ () => this.setView(true) }
+              >
+                <Icon name='grid-view'/>
+              </div>
+              <div
+                className={ classNames(
+                  styles.typeView,
+                  { [styles.activeTypeView]: !this.state.gridView },
+                ) }
+                onClick={ () => this.setView(false) }
+              >
+                <Icon name='list-view'/>
+              </div>
           </div>
           </menu>
         </div>

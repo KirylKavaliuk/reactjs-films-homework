@@ -41,33 +41,6 @@ class App extends Component {
   render() {
     return (
       <div className={ styles.app }>
-        <Select
-          defaultValue='Genre'
-          isLinks={ true }
-          list={ this.props.genres }
-          element={ item => ({
-            value: item.id,
-            label: item.name,
-            link: `/genre/${item.id}`,
-          }) }
-        />
-
-        <MovieDetails
-          movie={ movie }
-          changeSearch={ this.changeSearchHandler }
-          searchValue={ this.state.search }
-        />
-
-        <div className={ styles.list }>
-          { this.props.movies.map((_movie, index) => (
-          <MovieItem
-            key={ _movie.id }
-            movie={ _movie }
-            genres={ this.props.genres }
-          />
-          )) }
-        </div>
-
         <MoviesList
           movies={ this.props.movies }
           genres={ this.props.genres }
@@ -76,6 +49,24 @@ class App extends Component {
     );
   }
 }
+
+/*
+<MovieDetails
+  movie={ movie }
+  changeSearch={ this.changeSearchHandler }
+  searchValue={ this.state.search }
+/>
+
+<div className={ styles.list }>
+  { this.props.movies.map((_movie, index) => (
+  <MovieItem
+    key={ _movie.id }
+    movie={ _movie }
+    genres={ this.props.genres }
+  />
+  )) }
+</div>
+*/
 
 const mapDispatchToProps = dispatch => ({
   addMovies: () => dispatch(actionsMovies.addMovies()),
