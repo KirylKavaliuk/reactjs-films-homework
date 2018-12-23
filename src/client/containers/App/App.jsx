@@ -7,6 +7,7 @@ import MoviesList from 'containers/MoviesList/MoviesList';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import MovieItem from 'components/MovieItem/MovieItem';
 import Select from 'components/Select/Select';
+import Loading from 'components/Loading/Loading';
 
 import request from 'utils/request';
 
@@ -39,12 +40,11 @@ class App extends Component {
   }
 
   render() {
+    const { search } = this.state;
+
     return (
       <div className={ styles.app }>
-        <MoviesList
-          movies={ this.props.movies }
-          genres={ this.props.genres }
-        />
+        <Loading/>
       </div>
     );
   }
@@ -66,6 +66,11 @@ class App extends Component {
   />
   )) }
 </div>
+
+<MoviesList
+          movies={ this.props.movies }
+          genres={ this.props.genres }
+        />
 */
 
 const mapDispatchToProps = dispatch => ({

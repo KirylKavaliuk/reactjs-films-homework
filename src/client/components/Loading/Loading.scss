@@ -1,0 +1,53 @@
+@import 'styles/palette';
+@import 'styles/animations';
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  background: $light_blue;
+  border-radius: 30px;
+  margin: 5px;
+  animation: changeSizes 0.6s infinite ease alternate;
+}
+
+.icon:nth-child(1) .circle {
+  animation-delay: 0.2s;
+}
+
+.icon:nth-child(2) .circle {
+  animation-delay: 0.4s;
+}
+
+.icon:nth-child(3) .circle {
+  animation-delay: 0.6s;
+}
+
+.text {
+  padding: 10px 0 0;
+  box-sizing: border-box;
+  color: $grey;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
