@@ -8,6 +8,7 @@ import MovieDetails from 'components/MovieDetails/MovieDetails';
 import MovieItem from 'components/MovieItem/MovieItem';
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
+import Footer from 'components/Footer/Footer';
 
 import request from 'utils/request';
 
@@ -45,6 +46,8 @@ class App extends Component {
     return (
       <div className={ styles.app }>
         <Loading/>
+
+        <Footer/>
       </div>
     );
   }
