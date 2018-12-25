@@ -4,6 +4,7 @@ module.exports = {
   pages: path.resolve(__dirname, '../src/client/pages'),
   components: path.resolve(__dirname, '../src/client/components'),
   containers: path.resolve(__dirname, '../src/client/containers'),
+  contexts: path.resolve(__dirname, '../src/client/contexts'),
   store: path.resolve(__dirname, '../src/client/store'),
   images: path.resolve(__dirname, '../src/assets/images'),
   fonts: path.resolve(__dirname, '../src/assets/fonts'),
@@ -14,6 +15,3 @@ module.exports = {
   views: path.resolve(__dirname, '../src/server/views'),
   utils: path.resolve(__dirname, '../src/utils'),
 };
-
-// Constants
-// Models ?

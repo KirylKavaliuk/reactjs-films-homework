@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import withConditionalRendering from 'utils/withConditionalRendering';
+import { withDialogContext } from 'utils/dialog';
 
 import classNames from 'classnames';
 
@@ -36,7 +37,10 @@ class MovieItem extends Component {
         />
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
-          <div className={ styles.playButton }>
+          <div
+            className={ styles.playButton }
+            onClick={ () => this.props.openDialog() }
+          >
             <Icon
               className={ styles.playButtonIcon }
               name='play'
@@ -100,6 +104,7 @@ class MovieItem extends Component {
           <Button
             label='Watch Now'
             className={ styles.watchButton }
+            onClick={ () => this.props.openDialog() }
           />
         </div>
       </div>
@@ -117,46 +122,7 @@ MovieItem.propTypes = {
   genres: PropTypes.array,
 };
 
-
-/*
-const MovieItem = ({ movie, genres }) => {
-  const genres1 =
-  // const _genres = genres.find(genre => genre.id === genre_id);
-
-  ////*
-    { movie.genre_ids.map((genre_id, index) => (
-      <span
-        key={ index }
-        className={ styles.genre }
-      >
-      </span>
-    )) }
-
-  return (<div className={ styles.movieItem }>
-    <div className={ styles.image }>
-      <Image
-        src={ `db/${movie.poster_path}` }
-        className={ styles.poster }
-      />
-      <div className={ styles.onHover }>
-        <Icon name='star'/>
-        <Button label='View Now' />
-      </div>
-    </div>
-    <div className={ styles.info }>
-      <header className={ styles.title }>{movie.title}</header>
-      <p className={ styles.genres }>
-      { genres1.map((genre, index) => (
-        <span
-          key={ index }
-          className={ styles.genre }
-        >{ genre }</span>
-      ))}
-      </p>
-      <div className={ styles.rating }>{ (movie.vote_average / 2).toPrecision(2) }</div>
-    </div>
-  </div>);
-};
-
-*/
-export default withConditionalRendering(MovieItem, ['movie']);
+export default withConditionalRendering(
+  withDialogContext(MovieItem),
+  ['movie'],
+);

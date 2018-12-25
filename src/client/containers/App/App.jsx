@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
+import { Provider as DialogProvider } from 'utils/dialog';
+
 import MoviesList from 'containers/MoviesList/MoviesList';
 
 import MovieDetails from 'components/MovieDetails/MovieDetails';
@@ -9,6 +11,7 @@ import MovieItem from 'components/MovieItem/MovieItem';
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
+import Dialog from 'components/Dialog/Dialog';
 
 import request from 'utils/request';
 
@@ -29,9 +32,31 @@ const movie = {
 class App extends Component {
   state = {
     search: '',
+    dialog: {
+      open: false,
+      component: null,
+    },
   };
 
-  componentDidMount() {
+  openDialogHandler = (component) => {
+    this.setState({
+      dialog: {
+        open: true,
+        component,
+      },
+    });
+  }
+
+  closeDialogHandler = (event) => {
+    this.setState({
+      dialog: {
+        open: false,
+        component: null,
+      },
+    });
+  }
+
+  componentDidMount = () => {
     this.props.addMovies();
     this.props.addGenres();
   }
@@ -45,36 +70,41 @@ class App extends Component {
 
     return (
       <div className={ styles.app }>
-        <Loading/>
+        <DialogProvider value={{
+          openDialog: this.openDialogHandler,
+        }}>
+          <MovieDetails
+            movie={ movie }
+            changeSearch={ this.changeSearchHandler }
+            searchValue={ this.state.search }
+          />
+          <MoviesList
+            movies={ this.props.movies }
+            genres={ this.props.genres }
+          />
+
+          <div className={ styles.list }>
+            { this.props.movies.map((_movie, index) => (
+              <MovieItem
+                key={ _movie.id }
+                movie={ _movie }
+                genres={ this.props.genres }
+              />
+            )) }
+          </div>
+        </DialogProvider>
+
+        <Dialog
+          open={ this.state.dialog.open }
+          component={ this.state.dialog.component }
+          closeDialog={ this.closeDialogHandler }
+        />
 
         <Footer/>
       </div>
     );
   }
 }
-
-/*
-<MovieDetails
-  movie={ movie }
-  changeSearch={ this.changeSearchHandler }
-  searchValue={ this.state.search }
-/>
-
-<div className={ styles.list }>
-  { this.props.movies.map((_movie, index) => (
-  <MovieItem
-    key={ _movie.id }
-    movie={ _movie }
-    genres={ this.props.genres }
-  />
-  )) }
-</div>
-
-<MoviesList
-          movies={ this.props.movies }
-          genres={ this.props.genres }
-        />
-*/
 
 const mapDispatchToProps = dispatch => ({
   addMovies: () => dispatch(actionsMovies.addMovies()),

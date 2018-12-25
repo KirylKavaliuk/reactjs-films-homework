@@ -1,5 +1,6 @@
 @import './reset.scss';
 @import './fonts.scss';
+@import './palette.scss';
 
 * {
   font-family: 'Roboto';
@@ -10,6 +11,5 @@
 }
 
 body {
-  min-height: 200vh;
-  background: #909090;
+  background: $lighter_grey;
 }
