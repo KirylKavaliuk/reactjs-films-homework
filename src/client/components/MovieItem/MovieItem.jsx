@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import Image from 'components/Image/Image';
 import Icon from 'components/Icon/Icon';
 import Button from 'components/Button/Button';
+import Video from 'components/Video/Video';
 
 import styles from './MovieItem.scss';
 
@@ -39,7 +40,7 @@ class MovieItem extends Component {
         { !this.state.descriptionOpen && <div className={ styles.more }>
           <div
             className={ styles.playButton }
-            onClick={ () => this.props.openDialog() }
+            onClick={ () => this.props.openDialog(<Video src='https://www.youtube.com/embed/HpX1mDEw1gk'/>) }
           >
             <Icon
               className={ styles.playButtonIcon }
