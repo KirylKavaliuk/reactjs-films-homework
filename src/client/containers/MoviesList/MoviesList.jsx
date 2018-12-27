@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Select from 'components/Select/Select';
+import MovieItem from 'components/MovieItem/MovieItem';
 import Icon from 'components/Icon/Icon';
 
 import styles from './MoviesList.scss';
@@ -21,8 +22,8 @@ export default class MoviesList extends Component {
   render() {
     return (
       <div className={ styles.moviesListWrapper }>
-        <div onChange={ this.genreChangeHandler } className={ styles.moviesList }>
-          <menu className={ styles.menu}>
+        <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
+          <menu className={ styles.menu }>
             <div className={ styles.listControls }>
               <ul className={ styles.menuLinks }>
                 <Link
@@ -79,8 +80,22 @@ export default class MoviesList extends Component {
               >
                 <Icon name='list-view'/>
               </div>
-          </div>
+            </div>
           </menu>
+          <div className={
+            classNames(
+              { [styles.grid]: this.state.gridView },
+              { [styles.list]: !this.state.gridView },
+            )}>
+            { this.props.movies.map((_movie, index) => (
+              <MovieItem
+                key={ index }
+                movie={ _movie }
+                gridView={ this.state.gridView }
+                genres={ this.props.genres }
+              />
+            )) }
+          </div>
         </div>
       </div>
     );

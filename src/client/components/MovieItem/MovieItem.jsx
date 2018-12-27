@@ -10,6 +10,7 @@ import Image from 'components/Image/Image';
 import Icon from 'components/Icon/Icon';
 import Button from 'components/Button/Button';
 import Video from 'components/Video/Video';
+import Rating from 'components/Rating/Rating';
 
 import styles from './MovieItem.scss';
 
@@ -31,10 +32,15 @@ class MovieItem extends Component {
       .slice(0, 3);
 
     return (
-      <div className={ styles.movieItem }>
+      <div className={ classNames(
+        styles.movieItem,
+        { [styles.grid]: this.props.gridView },
+        { [styles.list]: !this.props.gridView },
+      ) }>
         <Image
           className={ styles.poster }
-          src={ `db/${this.props.movie.poster_path}` }
+          width={ 1280 }
+          src={ this.props.gridView ? `db/${this.props.movie.poster_path}` : `db/${this.props.movie.backdrop_path}` }
         />
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
@@ -89,7 +95,9 @@ class MovieItem extends Component {
               ))
             }</p>
             <div className={ styles.rating }>
-              { (this.props.movie.vote_average / 2).toPrecision(2) }
+          { this.props.gridView
+            ? (this.props.movie.vote_average / 2).toPrecision(2)
+            : <Rating value={ this.props.movie.vote_average / 2 }/> }
             </div>
           </header>
 

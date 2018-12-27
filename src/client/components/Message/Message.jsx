@@ -6,9 +6,12 @@ import classNames from 'classnames';
 import styles from './Message.scss';
 
 export default class Message extends Component {
-  componentWillReceiveProps = (newProps, newState) => {
+  timeout = null;
+
+  componentWillReceiveProps = (newProps) => {
     if (newProps.message.open) {
-      setTimeout(() => this.props.closeMessage(), 4000);
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => this.props.closeMessage(), 4000);
     }
   }
 

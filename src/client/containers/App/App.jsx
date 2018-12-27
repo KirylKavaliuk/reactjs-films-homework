@@ -104,16 +104,6 @@ class App extends Component {
               movies={ this.props.movies }
               genres={ this.props.genres }
             />
-
-            <div className={ styles.list }>
-              { this.props.movies.map((_movie, index) => (
-                <MovieItem
-                  key={ _movie.id }
-                  movie={ _movie }
-                  genres={ this.props.genres }
-                />
-              )) }
-            </div>
           </MessageProvider>
         </DialogProvider>
 

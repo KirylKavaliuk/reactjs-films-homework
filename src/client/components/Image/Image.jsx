@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import styles from './Image.scss';
 
-const Image = ({ src, className }) => {
+const Image = ({ src, width, className }) => {
   let transformSrc = src;
   const match = src.match(/\w+\//);
 
@@ -14,7 +14,7 @@ const Image = ({ src, className }) => {
 
     if (key === 'db/') {
       const rest = src.substring(src.indexOf(key) + key.length);
-      transformSrc = `https://image.tmdb.org/t/p/w500/${rest}`;
+      transformSrc = `https://image.tmdb.org/t/p/w${width}/${rest}`;
     }
   }
 
@@ -31,10 +31,14 @@ const Image = ({ src, className }) => {
 
 Image.defaultProps = {
   src: '',
+  width: 500,
+  className: '',
 };
 
 Image.propTypes = {
   src: PropTypes.string,
+  width: PropTypes.number,
+  className: PropTypes.string,
 };
 
 export default Image;
