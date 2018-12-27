@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { withMessageContext } from 'utils/message';
+
 import classNames from 'classnames';
 
 import styles from './Rating.scss';
@@ -14,6 +16,10 @@ class Rating extends Component {
     this.setState({ onHover: rating });
   }
 
+  sentRatingHandler(rating) {
+    this.props.openMessage(`Your rating (${rating}) has been sent. Thank you!`);
+  }
+
   render() {
     return (
       <div className={ styles.rating }>
@@ -23,8 +29,9 @@ class Rating extends Component {
           return (<div
             key={ k }
             className={ styles.star }
-            onMouseOut ={ () => this.onHoverHandler(-1) }
-            onMouseOver ={ () => this.onHoverHandler(k) }
+            onMouseOut={ () => this.onHoverHandler(-1) }
+            onMouseOver={ () => this.onHoverHandler(k) }
+            onClick={ () => this.sentRatingHandler(k + 1) }
           >
             <div
               className={
@@ -58,4 +65,4 @@ Rating.propTypes = {
   value: PropTypes.number,
 };
 
-export default Rating;
+export default withMessageContext(Rating);

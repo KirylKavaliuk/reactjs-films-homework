@@ -1,0 +1,25 @@
+@import 'styles/palette';
+
+.message {
+  position: fixed;
+  z-index: 101;
+  bottom: -200px;
+  left: 20px;
+  box-sizing: border-box;
+  width: 250px;
+  padding: 15px;
+  transition: all 0.45s ease;
+  color: $white;
+  border-radius: 3px;
+  background: $light_blue;
+  font-size: 14px;
+  line-height: 1.4;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.open {
+  bottom: 30px;
+}

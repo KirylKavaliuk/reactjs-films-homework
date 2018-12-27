@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import { Provider as DialogProvider } from 'utils/dialog';
+import { Provider as MessageProvider } from 'utils/message';
 
 import MoviesList from 'containers/MoviesList/MoviesList';
 
@@ -13,6 +14,7 @@ import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
 import Dialog from 'components/Dialog/Dialog';
 import Rating from 'components/Rating/Rating';
+import Message from 'components/Message/Message';
 
 import request from 'utils/request';
 
@@ -37,6 +39,10 @@ class App extends Component {
       open: false,
       component: null,
     },
+    message: {
+      open: false,
+      text: '',
+    },
   };
 
   openDialogHandler = (component) => {
@@ -48,11 +54,29 @@ class App extends Component {
     });
   }
 
-  closeDialogHandler = (event) => {
+  closeDialogHandler = () => {
     this.setState({
       dialog: {
         open: false,
         component: null,
+      },
+    });
+  }
+
+  openMessageHandler = (text) => {
+    this.setState({
+      message: {
+        open: true,
+        text,
+      },
+    });
+  }
+
+  closeMessageHandler = () => {
+    this.setState({
+      message: {
+        open: false,
+        message: '',
       },
     });
   }
@@ -67,38 +91,41 @@ class App extends Component {
   }
 
   render() {
-    const { search } = this.state;
-
     return (
       <div className={ styles.app }>
-        <DialogProvider value={{
-          openDialog: this.openDialogHandler,
-        }}>
-          <MovieDetails
-            movie={ movie }
-            changeSearch={ this.changeSearchHandler }
-            searchValue={ this.state.search }
-          />
-          <MoviesList
-            movies={ this.props.movies }
-            genres={ this.props.genres }
-          />
+        <DialogProvider value={{ openDialog: this.openDialogHandler }}>
+          <MessageProvider value={{ openMessage: this.openMessageHandler }}>
+            <MovieDetails
+              movie={ movie }
+              changeSearch={ this.changeSearchHandler }
+              searchValue={ this.state.search }
+            />
+            <MoviesList
+              movies={ this.props.movies }
+              genres={ this.props.genres }
+            />
 
-          <div className={ styles.list }>
-            { this.props.movies.map((_movie, index) => (
-              <MovieItem
-                key={ _movie.id }
-                movie={ _movie }
-                genres={ this.props.genres }
-              />
-            )) }
-          </div>
+            <div className={ styles.list }>
+              { this.props.movies.map((_movie, index) => (
+                <MovieItem
+                  key={ _movie.id }
+                  movie={ _movie }
+                  genres={ this.props.genres }
+                />
+              )) }
+            </div>
+          </MessageProvider>
         </DialogProvider>
 
         <Dialog
           open={ this.state.dialog.open }
           component={ this.state.dialog.component }
           closeDialog={ this.closeDialogHandler }
+        />
+
+        <Message
+          message={ this.state.message }
+          closeMessage={ this.closeMessageHandler }
         />
 
         <Footer/>
