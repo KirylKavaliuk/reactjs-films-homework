@@ -3,7 +3,7 @@
 .rating {
   display: flex;
   box-sizing: border-box;
-  width: 250px;
+  width: 240px;
   padding: 20px 0;
   justify-content: space-between;
   grid-area: rating;
@@ -19,24 +19,34 @@
 .star {
   width: 30px;
   height: 30px;
-  fill: $white;
+  background: $light_grey;
+  z-index: 2;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-.active {
-  fill: $light_blue;
+.value {
+  height: 100%;
+  background: $light_blue;
 }
 
-.value-wrap {
+.on-hover {
+  height: 100%;
+  width: 100%;
+  background: $light_blue;
+}
+
+.rating-number-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 50px;
 
   &:hover {
     cursor: default;
   }
 }
 
-.value {
+.rating-number {
   box-sizing: border-box;
   padding: 3px 6px;
   border: 1px solid #09ade3;

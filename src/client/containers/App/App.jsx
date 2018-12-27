@@ -12,6 +12,7 @@ import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
 import Dialog from 'components/Dialog/Dialog';
+import Rating from 'components/Rating/Rating';
 
 import request from 'utils/request';
 
@@ -25,7 +26,7 @@ const movie = {
   name: 'The jungle book',
   genres: ['Adventure', 'Drama', 'Family', 'Fantasy'],
   duration: 126,
-  rating: 3.4,
+  rating: 2.75,
   description: 'There are growing dangers in the wizarding world of 1926 New York.  Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding community to the Second Salemers, a fanatical faction of No-Majs (American for Muggles) bent on eradicating them.  And the powerful, dark wizard Gellert Grindelwald, after wreaking havoc in Europe, has slipped away…and is now nowhere to be found.',
 };
 
