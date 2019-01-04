@@ -42,7 +42,10 @@ class MovieDetails extends Component {
         <Rating value={ this.props.movie.rating }/>
 
         <div className={ styles.buttonsMore }>
-          { this.state.descriptionOpen && <Description text={ this.props.movie.description }/> }
+          <Description
+            open={ this.state.descriptionOpen }
+            text={ this.props.movie.description }
+          />
           <Button label='Watch Now'/>
           <Button
             label='View Info'

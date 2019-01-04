@@ -34,11 +34,12 @@ const Icon = ({ name, className }) => {
 
 Icon.defaultProps = {
   className: '',
+  name: 'star',
 };
 
 Icon.propTypes = {
-  name: PropTypes.string,
   className: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default withConditionalRendering(Icon, ['name']);

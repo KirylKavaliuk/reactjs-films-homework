@@ -2,29 +2,29 @@
 
 .movies-list-wrapper {
   display: flex;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
 }
 
 .movies-list {
-  padding: 40px;
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;
   min-height: 100vh;
+  padding: 40px 40px 30px;
   background: $lighter_grey;
 }
 
 .menu {
   display: flex;
-  justify-content: space-between;
   border-bottom: 1px $light_grey solid;
+  justify-content: space-between;
 }
 
 .list-controls {
+  position: relative;
   display: flex;
   min-width: 500px;
-  position: relative;
 }
 
 .menu-links {
@@ -34,8 +34,8 @@
 }
 
 .menu-link {
-  padding: 8px 10px;
   box-sizing: border-box;
+  padding: 8px 10px;
 
   &:first-child {
     padding-left: 0;
@@ -43,22 +43,22 @@
 }
 
 .active-link {
-  border-bottom: 2px $light_blue solid;
-  border-top: 2px $lighter_grey solid;
   box-sizing: border-box;
+  border-top: 2px $lighter_grey solid;
+  border-bottom: 2px $light_blue solid;
 }
 
 .types-view {
   display: flex;
-  justify-content: space-between;
-  min-width: 55px;
   height: 25px;
+  justify-content: space-between;
 }
 
 .type-view {
-  transition: all 0.45s ease;
   width: 25px;
   height: 25px;
+  margin-left: 5px;
+  transition: all 0.45s ease;
   fill: $light_grey;
 
   &:hover {
@@ -71,15 +71,66 @@
 }
 
 .grid {
-  margin-top: 20px;
   display: grid;
+  margin-top: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-column-gap: 40px;
   grid-row-gap: 20px;
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, 1fr);
+}
+
+@media only screen and (max-width: 650px) {
+  .menu {
+    flex-wrap: wrap-reverse;
+  }
+
+  .types-view {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .movies-list {
+    padding: 20px;
+  }
+
+  .list-controls {
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .menu-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-link {
+    padding: 5px 10px;
+
+    &:first-child {
+      padding: 5px 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .movies-list {
+    padding: 10px;
+  }
+
+  .menu-links {
+    flex-wrap: wrap;
+  }
+
+  .menu-link {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
 }

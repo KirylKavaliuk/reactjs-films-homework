@@ -50,7 +50,12 @@ export default class Select extends Component {
 
   render() {
     return (
-      <div className={ styles.select } onMouseLeave={ this.closeHandler }>
+      <div className={
+        classNames(
+          styles.select,
+          { [this.props.className]: this.props.className },
+        )
+         } onMouseLeave={ this.closeHandler }>
         <div className={ styles.main } onClick={ this.openHandler }>
           <span className={ styles.value }>{ this.state.value }</span>
           <Icon name='arrow' className={ classNames(

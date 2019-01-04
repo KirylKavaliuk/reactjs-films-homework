@@ -9,12 +9,18 @@
   width: 300px;
   max-height: 180px;
   padding: 13px;
+  transition: opacity 0.45s ease;
+  opacity: 0;
   background: rgba(0, 0, 0, 0.75);
   line-height: 2;
 
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.open {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 450px) {

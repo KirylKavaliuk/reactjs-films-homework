@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  Route,
+  Link,
+  Switch,
+  BrowserRouter,
+} from 'react-router-dom';
 
 import App from 'containers/App/App';
 
@@ -13,7 +18,11 @@ const render = () => {
   ReactDOM.render(
     <Provider store={ configureStore() }>
       <BrowserRouter>
-      <App/>
+        <Switch>
+          <Route exact path='/' render={ route => <App route={ route } /> } />
+          <Route path='/:section' render={ route => <App route={ route } /> } />
+          <Route path='/:section1/:id' render={ route => <App route={ route } /> } />
+        </Switch>
       </BrowserRouter>
     </Provider>,
     root,

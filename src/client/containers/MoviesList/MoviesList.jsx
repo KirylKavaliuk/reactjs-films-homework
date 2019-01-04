@@ -51,6 +51,7 @@ export default class MoviesList extends Component {
                 </Link>
               </ul>
               <Select
+                className={ styles.genres }
                 defaultValue='Genre'
                 isLinks={ true }
                 list={ this.props.genres }
