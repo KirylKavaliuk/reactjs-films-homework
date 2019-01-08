@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
+import {
+  Route,
+  Switch,
+  withRouter,
+} from 'react-router-dom';
 
 import { Provider as DialogProvider } from 'utils/dialog';
 import { Provider as MessageProvider } from 'utils/message';
@@ -92,6 +97,20 @@ class App extends Component {
   render() {
     return (
       <div className={ styles.app }>
+        <Switch>
+          <Route exact path='/' render={ () => <div>1</div> }/>
+          <Route exact path='/trading' render={ () => <div>2</div> }/>
+          <Route path='/trading/:id' render={ () => <div>3</div> }/>
+          <Route exact path='/top-rated' render={ () => <div>4</div> }/>
+          <Route path='/top-rated/:id' render={ () => <div>5</div> }/>
+          <Route exact path='/coming-soon' render={ () => <div>6</div> }/>
+          <Route path='/coming-soon/:id' render={ () => <div>7</div> }/>
+          <Route exact path='/genre' render={ () => <div>8</div> }/>
+          <Route path='/genre/:id' render={ () => <div>69</div> }/>
+        </Switch>
+
+
+        { /*
         <DialogProvider value={{ openDialog: this.openDialogHandler }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails
@@ -106,6 +125,7 @@ class App extends Component {
             />
           </MessageProvider>
         </DialogProvider>
+        */ }
 
         <Dialog
           open={ this.state.dialog.open }
@@ -134,7 +154,6 @@ const mapStateToProps = state => ({
   genres: state.genres,
 });
 
-export default hot(module)(connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App));
+export default hot(module)(withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(App),
+));
