@@ -46,7 +46,7 @@ class MovieItem extends Component {
         { !this.state.descriptionOpen && <div className={ styles.more }>
           <div
             className={ styles.playButton }
-            onClick={ () => this.props.openDialog(<Video src='https://www.youtube.com/embed/HpX1mDEw1gk'/>) }
+            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
           >
             <Icon
               className={ styles.playButtonIcon }
@@ -113,7 +113,7 @@ class MovieItem extends Component {
           <Button
             label='Watch Now'
             className={ styles.watchButton }
-            onClick={ () => this.props.openDialog() }
+            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
           />
         </div>
       </div>

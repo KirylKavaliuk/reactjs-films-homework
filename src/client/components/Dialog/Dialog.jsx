@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Loading from 'components/Loading/Loading';
+
 import classNames from 'classnames';
 
 import styles from './Dialog.scss';
@@ -15,7 +17,10 @@ export default class Dialog extends Component {
         )}
         onClick={ this.props.closeDialog }
       >
-        { this.props.component || <div>dialog</div> }
+
+        <Loading className={ styles.loading }/>
+
+        { this.props.component }
       </div>
     );
   }

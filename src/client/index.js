@@ -18,11 +18,7 @@ const render = () => {
   ReactDOM.render(
     <Provider store={ configureStore() }>
       <BrowserRouter>
-        <Switch>
-          <Route exact path='/' render={ route => <App route={ route } /> } />
-          <Route path='/:section' render={ route => <App route={ route } /> } />
-          <Route path='/:section1/:id' render={ route => <App route={ route } /> } />
-        </Switch>
+        <App/>
       </BrowserRouter>
     </Provider>,
     root,

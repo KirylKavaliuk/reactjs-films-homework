@@ -19,6 +19,10 @@ export default class MoviesList extends Component {
     this.setState({ gridView: isGrid });
   }
 
+  isActiveLink = substring => (
+    this.context.router.route.location.pathname.includes(substring)
+  )
+
   render() {
     return (
       <div className={ styles.moviesListWrapper }>
@@ -28,7 +32,12 @@ export default class MoviesList extends Component {
               <ul className={ styles.menuLinks }>
                 <Link
                   to='/trading'
-                  className={ styles.menuLink }
+                  className={
+                    classNames(
+                      styles.menuLink,
+                      { [styles.activeLink]: this.isActiveLink('trading') },
+                    )
+                  }
                 >
                   <li>Trading</li>
                 </Link>
@@ -37,7 +46,7 @@ export default class MoviesList extends Component {
                   className={
                     classNames(
                       styles.menuLink,
-                      styles.activeLink,
+                      { [styles.activeLink]: this.isActiveLink('top-rated') },
                     )
                   }
                 >
@@ -45,13 +54,22 @@ export default class MoviesList extends Component {
                 </Link>
                 <Link
                   to='/coming-soon'
-                  className={ styles.menuLink }
+                  className={
+                    classNames(
+                      styles.menuLink,
+                      { [styles.activeLink]: this.isActiveLink('coming-soon') },
+                    )
+                  }
                 >
                   <li>Coming soon</li>
                 </Link>
               </ul>
               <Select
-                className={ styles.genres }
+                 className={
+                  classNames(
+                    { [styles.activeSelect]: this.isActiveLink('genre') },
+                  )
+                }
                 defaultValue='Genre'
                 isLinks={ true }
                 list={ this.props.genres }
@@ -102,6 +120,10 @@ export default class MoviesList extends Component {
     );
   }
 }
+
+MoviesList.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
 
 MoviesList.defaultProps = {
 

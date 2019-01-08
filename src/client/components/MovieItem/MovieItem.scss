@@ -233,6 +233,10 @@
   }
 }
 
+.genre {
+  transition: color 0.45s ease;
+}
+
 .genre:hover {
   cursor: pointer;
   color: $lighter_blue;
