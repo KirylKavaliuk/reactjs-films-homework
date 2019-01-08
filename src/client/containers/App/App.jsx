@@ -82,7 +82,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.props.addMovies();
     this.props.addGenres();
   }
 
@@ -103,6 +102,7 @@ class App extends Component {
             <MoviesList
               movies={ this.props.movies }
               genres={ this.props.genres }
+              addMovies={ this.props.addMovies }
             />
           </MessageProvider>
         </DialogProvider>

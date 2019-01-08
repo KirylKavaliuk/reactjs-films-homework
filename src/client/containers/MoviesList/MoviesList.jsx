@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
 
+import request from 'utils/request';
+
 import Select from 'components/Select/Select';
+import Loading from 'components/Loading/Loading';
 import MovieItem from 'components/MovieItem/MovieItem';
 import Icon from 'components/Icon/Icon';
+
 
 import styles from './MoviesList.scss';
 
 export default class MoviesList extends Component {
   state = {
     gridView: true,
+    loading: false,
   };
 
   setView = (isGrid) => {
@@ -22,6 +28,18 @@ export default class MoviesList extends Component {
   isActiveLink = substring => (
     this.context.router.route.location.pathname.includes(substring)
   )
+
+  enterEndOfList = () => {
+    this.setState({ loading: true });
+
+    setTimeout(() => {
+      this.props.addMovies();
+    }, 2000);
+  }
+
+  leaveEndoFList = () => {
+    this.setState({ loading: false });
+  }
 
   render() {
     return (
@@ -115,6 +133,11 @@ export default class MoviesList extends Component {
               />
             )) }
           </div>
+          { this.state.loading && <Loading/> }
+          <Waypoint
+            onEnter={ this.enterEndOfList }
+            onLeave={ this.leaveEndoFList }
+          />
         </div>
       </div>
     );
