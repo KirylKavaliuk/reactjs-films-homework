@@ -12,9 +12,9 @@ import Button from 'components/Button/Button';
 import Video from 'components/Video/Video';
 import Rating from 'components/Rating/Rating';
 
-import styles from './MovieItem.scss';
+import styles from './MovieListItem.scss';
 
-class MovieItem extends Component {
+class MovieListItem extends Component {
   state = {
     descriptionOpen: false,
   };
@@ -25,22 +25,12 @@ class MovieItem extends Component {
   }
 
   render() {
-    const genres = this.props.movie.genre_ids
-      .map(genreId => this.props.genres.find(genre => genre.id === genreId))
-      .filter(genre => genre)
-      .map(genre => genre.name)
-      .slice(0, 3);
-
     return (
-      <div className={ classNames(
-        styles.movieItem,
-        { [styles.grid]: this.props.gridView },
-        { [styles.list]: !this.props.gridView },
-      ) }>
+      <div className={ styles.movieItem }>
         <Image
           className={ styles.poster }
           width={ 1280 }
-          src={ this.props.gridView ? `db/${this.props.movie.poster_path}` : `db/${this.props.movie.backdrop_path}` }
+          src={ `db/${this.props.movie.backdrop_path}` }
         />
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
@@ -88,16 +78,14 @@ class MovieItem extends Component {
           }>
             <h1 className={ styles.title }>{ this.props.movie.title }</h1>
             <p className={ styles.genres }>{
-              genres.map(genre => (
+              this.props.movie.genres.slice(0, 3).map(genre => (
                 <span className={ styles.genre }>
-                  { genre }
+                  { genre.name }
                 </span>
               ))
             }</p>
             <div className={ styles.rating }>
-          { this.props.gridView
-            ? (this.props.movie.vote_average / 2).toPrecision(2)
-            : <Rating value={ this.props.movie.vote_average / 2 }/> }
+              <Rating value={ this.props.movie.vote_average / 2 }/>
             </div>
           </header>
 
@@ -121,17 +109,17 @@ class MovieItem extends Component {
   }
 }
 
-MovieItem.defaultProps = {
+MovieListItem.defaultProps = {
   movie: null,
   genres: [],
 };
 
-MovieItem.propTypes = {
+MovieListItem.propTypes = {
   movie: PropTypes.object,
   genres: PropTypes.array,
 };
 
 export default withConditionalRendering(
-  withDialogContext(MovieItem),
+  withDialogContext(MovieListItem),
   ['movie'],
 );

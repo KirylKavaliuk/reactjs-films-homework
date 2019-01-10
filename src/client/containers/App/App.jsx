@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import {
-  Route,
-  Switch,
-  withRouter,
-} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { Provider as DialogProvider } from 'utils/dialog';
 import { Provider as MessageProvider } from 'utils/message';
@@ -13,7 +9,6 @@ import { Provider as MessageProvider } from 'utils/message';
 import MoviesList from 'containers/MoviesList/MoviesList';
 
 import MovieDetails from 'components/MovieDetails/MovieDetails';
-import MovieItem from 'components/MovieItem/MovieItem';
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
@@ -26,16 +21,10 @@ import request from 'utils/request';
 import actionsMovies from 'actions/movies';
 import actionsGenres from 'actions/genres';
 
+import 'normalize.css';
 import styles from './App.scss';
 import 'styles/index.scss';
 
-const movie = {
-  name: 'The jungle book',
-  genres: ['Adventure', 'Drama', 'Family', 'Fantasy'],
-  duration: 126,
-  rating: 2.75,
-  description: 'There are growing dangers in the wizarding world of 1926 New York.  Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding community to the Second Salemers, a fanatical faction of No-Majs (American for Muggles) bent on eradicating them.  And the powerful, dark wizard Gellert Grindelwald, after wreaking havoc in Europe, has slipped away…and is now nowhere to be found.',
-};
 
 class App extends Component {
   state = {
@@ -95,26 +84,16 @@ class App extends Component {
   }
 
   render() {
+    const movie = this.props.movies.find(_movie => _movie.id === this.props.match.params.id)
+      || this.props.movies[0];
+
     return (
       <div className={ styles.app }>
-        <Switch>
-          <Route exact path='/' render={ () => <div>1</div> }/>
-          <Route exact path='/trading' render={ () => <div>2</div> }/>
-          <Route path='/trading/:id' render={ () => <div>3</div> }/>
-          <Route exact path='/top-rated' render={ () => <div>4</div> }/>
-          <Route path='/top-rated/:id' render={ () => <div>5</div> }/>
-          <Route exact path='/coming-soon' render={ () => <div>6</div> }/>
-          <Route path='/coming-soon/:id' render={ () => <div>7</div> }/>
-          <Route exact path='/genre' render={ () => <div>8</div> }/>
-          <Route path='/genre/:id' render={ () => <div>69</div> }/>
-        </Switch>
-
-
-        { /*
         <DialogProvider value={{ openDialog: this.openDialogHandler }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails
               movie={ movie }
+              genres={ this.props.genres }
               changeSearch={ this.changeSearchHandler }
               searchValue={ this.state.search }
             />
@@ -125,7 +104,6 @@ class App extends Component {
             />
           </MessageProvider>
         </DialogProvider>
-        */ }
 
         <Dialog
           open={ this.state.dialog.open }

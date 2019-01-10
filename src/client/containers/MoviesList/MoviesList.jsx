@@ -9,9 +9,9 @@ import request from 'utils/request';
 
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
-import MovieItem from 'components/MovieItem/MovieItem';
+import MovieGridItem from 'components/MovieGridItem/MovieGridItem';
+import MovieListItem from 'components/MovieListItem/MovieListItem';
 import Icon from 'components/Icon/Icon';
-
 
 import styles from './MoviesList.scss';
 
@@ -31,10 +31,7 @@ export default class MoviesList extends Component {
 
   enterEndOfList = () => {
     this.setState({ loading: true });
-
-    setTimeout(() => {
-      this.props.addMovies();
-    }, 2000);
+    this.props.addMovies();
   }
 
   leaveEndoFList = () => {
@@ -42,6 +39,8 @@ export default class MoviesList extends Component {
   }
 
   render() {
+    const ListItem = this.state.gridView ? MovieGridItem : MovieListItem;
+
     return (
       <div className={ styles.moviesListWrapper }>
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
@@ -125,12 +124,10 @@ export default class MoviesList extends Component {
               { [styles.list]: !this.state.gridView },
             )}>
             { this.props.movies.map((_movie, index) => (
-              <MovieItem
-                key={ index }
-                movie={ _movie }
-                gridView={ this.state.gridView }
-                genres={ this.props.genres }
-              />
+                <ListItem
+                  key={ index }
+                  movie={ _movie }
+                />
             )) }
           </div>
           { this.state.loading && <Loading/> }

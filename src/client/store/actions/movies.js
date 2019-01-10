@@ -11,12 +11,17 @@ const getNumberPage = (function () {
 }());
 
 export default {
-  addMovies: () => (dispatch) => {
-    request.get('db/movie/popular', {
+  addMovies: (type = 'popular') => (dispatch) => {
+    request.get(`db/movie/${type}`, {
       page: getNumberPage(),
     })
       .then((response) => {
-        dispatch({ type: 'ADD_MOVIES', payload: response.results });
+        const requests = response.results.map(movie => request.get(`db/movie/${movie.id}`));
+
+        Promise.all(requests)
+          .then((movies) => {
+            dispatch({ type: 'ADD_MOVIES', payload: movies });
+          });
       });
   },
 };

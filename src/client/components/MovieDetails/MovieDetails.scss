@@ -5,7 +5,8 @@
   width: 100%;
   min-height: 70vh;
   color: $white;
-  background: url('images/details-background.jpg') no-repeat center center;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   box-shadow:
     inset 0 -150px 150px rgba(0, 0, 0, 0.8),
