@@ -46,40 +46,10 @@ export default class MoviesList extends Component {
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
           <menu className={ styles.menu }>
             <div className={ styles.listControls }>
-              <ul className={ styles.menuLinks }>
-                <Link
-                  to='/trading'
-                  className={
-                    classNames(
-                      styles.menuLink,
-                      { [styles.activeLink]: this.isActiveLink('trading') },
-                    )
-                  }
-                >
-                  <li>Trading</li>
-                </Link>
-                <Link
-                  to='/top-rated'
-                  className={
-                    classNames(
-                      styles.menuLink,
-                      { [styles.activeLink]: this.isActiveLink('top-rated') },
-                    )
-                  }
-                >
-                  <li>Top Rated</li>
-                </Link>
-                <Link
-                  to='/coming-soon'
-                  className={
-                    classNames(
-                      styles.menuLink,
-                      { [styles.activeLink]: this.isActiveLink('coming-soon') },
-                    )
-                  }
-                >
-                  <li>Coming soon</li>
-                </Link>
+              <ul className={ styles.sections }>
+                  <li className={ styles.section }>Trading</li>
+                  <li className={ styles.section }>Top Rated</li>
+                  <li className={ styles.section }>Coming soon</li>
               </ul>
               <Select
                  className={

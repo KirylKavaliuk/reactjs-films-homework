@@ -25,7 +25,6 @@ import 'normalize.css';
 import styles from './App.scss';
 import 'styles/index.scss';
 
-
 class App extends Component {
   state = {
     search: '',
