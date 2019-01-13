@@ -17,9 +17,6 @@ export default class Dialog extends Component {
         )}
         onClick={ this.props.closeDialog }
       >
-
-        <Loading className={ styles.loading }/>
-
         { this.props.component }
       </div>
     );
