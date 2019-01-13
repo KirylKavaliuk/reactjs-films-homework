@@ -41,7 +41,11 @@ export default class Select extends Component {
       >{ elem.label }</li>;
 
       if (elem.link) {
-        return <Link key={ index } to={ elem.link }>{ Item }</Link>;
+        return <Link
+          className={ styles.itemLink }
+          key={ index }
+          to={ elem.link }
+        >{ Item }</Link>;
       }
 
       return Item;

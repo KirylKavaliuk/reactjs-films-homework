@@ -28,8 +28,8 @@ class Rating extends Component {
             className={ classNames(
               styles.star,
               { [styles.active]: k < Math.round(this.props.value) && this.state.onHover === -1 },
-              { [styles.onHover]: this.state.onHover >= k }
-            )  }
+              { [styles.onHover]: this.state.onHover >= k },
+            ) }
             onMouseOut={ () => this.onHoverHandler(-1) }
             onMouseOver={ () => this.onHoverHandler(k) }
             onClick={ () => this.sentRatingHandler(k + 1) }

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { withDialogContext } from 'utils/dialog';
+
+import actionsMovieDetails from 'actions/movieDetails';
 
 import Button from 'components/Button/Button';
 import Rating from 'components/Rating/Rating';
@@ -9,8 +12,6 @@ import FilmHeader from 'components/FilmHeader/FilmHeader';
 import Search from 'components/Search/Search';
 import Description from 'components/Description/Description';
 import Video from 'components/Video/Video';
-
-import withConditionalRendering from 'utils/withConditionalRendering';
 
 import styles from './MovieDetails.scss';
 
@@ -34,6 +35,7 @@ class MovieDetails extends Component {
           className={ styles.logo }
         >Films</a>
 
+        { /*
         <Search
           onChange={ this.props.changeSearch }
           value={ this.props.searchValue }
@@ -41,9 +43,12 @@ class MovieDetails extends Component {
 
         <FilmHeader
           name={ this.props.movie.title }
-          genres={ this.props.movie.genres.map(genre => genre.name).slice(0, 3) }
+          genres={ this.props.movie.genres
+            ? this.props.movie.genres.map(genre => genre.name).slice(0, 3)
+            : [] }
           duration={ this.props.movie.runtime }
         />
+        */ }
 
         <Rating value={ this.props.movie.vote_average / 2 }/>
 
@@ -66,17 +71,26 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.defaultProps = {
-  movie: null,
+
 };
 
 MovieDetails.propTypes = {
-  movie: PropTypes.shape({
-    name: PropTypes.string,
-    genres: PropTypes.array,
-    duration: PropTypes.number,
-    rating: PropTypes.number,
-    description: PropTypes.string,
-  }),
+
 };
 
-export default withConditionalRendering(withDialogContext(MovieDetails), ['movie']);
+
+const mapDispatchToProps = dispatch => ({
+  setMovieDetails: () => dispatch(actionsMovieDetails.setMovie()),
+});
+
+const mapStateToProps = state => ({
+  movies: state.movies,
+  movie: state.movieDetails,
+});
+
+export default withDialogContext(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(MovieDetails),
+);

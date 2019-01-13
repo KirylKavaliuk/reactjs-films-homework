@@ -7,8 +7,8 @@ import { Provider as DialogProvider } from 'utils/dialog';
 import { Provider as MessageProvider } from 'utils/message';
 
 import MoviesList from 'containers/MoviesList/MoviesList';
+import MovieDetails from 'containers/MovieDetails/MovieDetails';
 
-import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
@@ -18,7 +18,6 @@ import Message from 'components/Message/Message';
 
 import request from 'utils/request';
 
-import actionsMovies from 'actions/movies';
 import actionsGenres from 'actions/genres';
 
 import 'normalize.css';
@@ -83,23 +82,20 @@ class App extends Component {
   }
 
   render() {
-    const movie = this.props.movies.find(_movie => _movie.id === this.props.match.params.id)
-      || this.props.movies[0];
+    const commonProps = {
+      match: this.props.match,
+      genres: this.props.genres,
+    };
 
     return (
       <div className={ styles.app }>
         <DialogProvider value={{ openDialog: this.openDialogHandler }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails
-              movie={ movie }
-              genres={ this.props.genres }
-              changeSearch={ this.changeSearchHandler }
-              searchValue={ this.state.search }
+              { ...commonProps }
             />
             <MoviesList
-              movies={ this.props.movies }
-              genres={ this.props.genres }
-              addMovies={ this.props.addMovies }
+              { ...commonProps }
             />
           </MessageProvider>
         </DialogProvider>
@@ -122,15 +118,16 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addMovies: () => dispatch(actionsMovies.addMovies()),
   addGenres: () => dispatch(actionsGenres.addGenres()),
 });
 
 const mapStateToProps = state => ({
-  movies: state.movies,
   genres: state.genres,
 });
 
 export default hot(module)(withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(App),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(App),
 ));

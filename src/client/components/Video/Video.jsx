@@ -17,11 +17,11 @@ export default class Video extends Component {
 
   componentWillMount() {
     request.get(`/db/movie/${this.props.id}/videos`)
-    .then(({ results }) => {
-      this.setState({
-        src: `http://www.youtube.com/embed/${results[0].key}`,
+      .then(({ results }) => {
+        this.setState({
+          src: `http://www.youtube.com/embed/${results[0].key}`,
+        });
       });
-    });
   }
 
   componentDidMount() {
@@ -38,11 +38,15 @@ export default class Video extends Component {
 
   render() {
     const { src } = this.state;
-    const children = src ? <iframe className={ styles.video} src={ src } allowFullScreen></iframe> : <Loading className={ styles.loading }/>;
-    
+    const children = src
+      ? <iframe className={ styles.video} src={ src } allowFullScreen></iframe>
+      : <Loading className={ styles.loading }/>;
+
     return (
       <div className={ styles.videoWrapper }>
-        { this.state.error ? <div className={ styles.error }>Error! Video is not found</div> : children }
+        { this.state.error
+          ? <div className={ styles.error }>Error! Video is not found</div>
+          : children }
       </div>
     );
   }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import actionsMovies from 'actions/movies';
 
 import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
@@ -15,7 +18,7 @@ import Icon from 'components/Icon/Icon';
 
 import styles from './MoviesList.scss';
 
-export default class MoviesList extends Component {
+class MoviesList extends Component {
   state = {
     gridView: true,
     loading: false,
@@ -25,13 +28,9 @@ export default class MoviesList extends Component {
     this.setState({ gridView: isGrid });
   }
 
-  isActiveLink = substring => (
-    this.context.router.route.location.pathname.includes(substring)
-  )
-
   enterEndOfList = () => {
     this.setState({ loading: true });
-    this.props.addMovies();
+    this.props.loadMovies();
   }
 
   leaveEndoFList = () => {
@@ -47,16 +46,11 @@ export default class MoviesList extends Component {
           <menu className={ styles.menu }>
             <div className={ styles.listControls }>
               <ul className={ styles.sections }>
-                  <li className={ styles.section }>Trading</li>
-                  <li className={ styles.section }>Top Rated</li>
-                  <li className={ styles.section }>Coming soon</li>
+                <li className={ styles.section }>Trading</li>
+                <li className={ styles.section }>Top Rated</li>
+                <li className={ styles.section }>Coming soon</li>
               </ul>
               <Select
-                 className={
-                  classNames(
-                    { [styles.activeSelect]: this.isActiveLink('genre') },
-                  )
-                }
                 defaultValue='Genre'
                 isLinks={ true }
                 list={ this.props.genres }
@@ -111,10 +105,6 @@ export default class MoviesList extends Component {
   }
 }
 
-MoviesList.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
-
 MoviesList.defaultProps = {
 
 };
@@ -122,3 +112,16 @@ MoviesList.defaultProps = {
 MoviesList.propTypes = {
 
 };
+
+const mapDispatchToProps = dispatch => ({
+  loadMovies: () => dispatch(actionsMovies.addMovies()),
+});
+
+const mapStateToProps = state => ({
+  movies: state.movies,
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MoviesList);

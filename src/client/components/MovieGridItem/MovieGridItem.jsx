@@ -78,8 +78,8 @@ class MovieGridItem extends Component {
           }>
             <h1 className={ styles.title }>{ this.props.movie.title }</h1>
             <p className={ styles.genres }>{
-              this.props.movie.genres.slice(0, 3).map(genre => (
-                <span className={ styles.genre }>
+              this.props.movie.genres.slice(0, 3).map((genre, index) => (
+                <span key={ index } className={ styles.genre }>
                   { genre.name }
                 </span>
               ))
