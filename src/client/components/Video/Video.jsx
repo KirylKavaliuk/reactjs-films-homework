@@ -11,6 +11,7 @@ export default class Video extends Component {
   state = {
     src: '',
     error: false,
+    loaded: false,
   }
 
   timer = null;
@@ -26,10 +27,14 @@ export default class Video extends Component {
 
   componentDidMount() {
     this.timer = setTimeout(() => {
-      if (!this.state.src) {
+      if (!this.state.loaded) {
         this.setState({ error: true });
       }
     }, 10000);
+  }
+
+  onLoadHandler = () => {
+    this.setState({ loaded: true });
   }
 
   componentWillUnmount() {
@@ -38,15 +43,18 @@ export default class Video extends Component {
 
   render() {
     const { src } = this.state;
-    const children = src
-      ? <iframe className={ styles.video} src={ src } allowFullScreen></iframe>
-      : <Loading className={ styles.loading }/>;
 
     return (
       <div className={ styles.videoWrapper }>
-        { this.state.error
-          ? <div className={ styles.error }>Error! Video is not found</div>
-          : children }
+        { !this.state.error
+        && <iframe
+            onLoad={ this.onLoadHandler }
+            className={ styles.video }
+            src={ src }
+            allowFullScreen
+          ></iframe> }
+        { !this.state.error && !this.state.loaded && <Loading className={ styles.loading }/> }
+        { this.state.error && <div className={ styles.error }>Error! Video is not loaded.</div> }
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import withConditionalRendering from 'utils/withConditionalRendering';
+import withConditionalRendering from 'utils/rendering';
 import { withDialogContext } from 'utils/dialog';
 
 import classNames from 'classnames';
@@ -119,7 +119,4 @@ MovieListItem.propTypes = {
   genres: PropTypes.array,
 };
 
-export default withConditionalRendering(
-  withDialogContext(MovieListItem),
-  ['movie'],
-);
+export default withDialogContext(MovieListItem);

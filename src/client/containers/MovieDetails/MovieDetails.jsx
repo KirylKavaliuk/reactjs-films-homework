@@ -20,6 +20,29 @@ class MovieDetails extends Component {
     descriptionOpen: false,
   };
 
+  setMovie = (props) => {
+    const id = +props.match.params.movieId;
+
+    const movie = props.movies.find(_movie => id === _movie.id);
+
+    if (id && id !== +this.props.movie.id) {
+      window.scroll(0, 0);
+    }
+
+    this.props.setMovieDetails(movie, {
+      movie: props.movies[0],
+      id,
+    });
+  }
+
+  componentDidMount = () => {
+    this.setMovie(this.props);
+  }
+
+  componentWillReceiveProps = (props) => {
+    this.setMovie(props);
+  }
+
   toggleDescriptionHandler = () => {
     this.setState({ descriptionOpen: !this.state.descriptionOpen });
   }
@@ -35,7 +58,6 @@ class MovieDetails extends Component {
           className={ styles.logo }
         >Films</a>
 
-        { /*
         <Search
           onChange={ this.props.changeSearch }
           value={ this.props.searchValue }
@@ -48,7 +70,6 @@ class MovieDetails extends Component {
             : [] }
           duration={ this.props.movie.runtime }
         />
-        */ }
 
         <Rating value={ this.props.movie.vote_average / 2 }/>
 
@@ -80,7 +101,9 @@ MovieDetails.propTypes = {
 
 
 const mapDispatchToProps = dispatch => ({
-  setMovieDetails: () => dispatch(actionsMovieDetails.setMovie()),
+  setMovieDetails: (movie, defaultValue) => {
+    dispatch(actionsMovieDetails.setMovie(movie, defaultValue));
+  },
 });
 
 const mapStateToProps = state => ({

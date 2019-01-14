@@ -93,6 +93,8 @@ class App extends Component {
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails
               { ...commonProps }
+              changeSearch={ this.changeSearchHandler }
+              searchValue={ this.state.search }
             />
             <MoviesList
               { ...commonProps }
@@ -102,9 +104,8 @@ class App extends Component {
 
         <Dialog
           open={ this.state.dialog.open }
-          component={ this.state.dialog.component }
           closeDialog={ this.closeDialogHandler }
-        />
+        >{ this.state.dialog.component }</Dialog>
 
         <Message
           message={ this.state.message }

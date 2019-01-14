@@ -44,16 +44,21 @@
   box-sizing: border-box;
   padding: 10px 0 25px;
   font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .play-button-icon {
   width: 70px;
   height: 70px;
   fill: $light_blue;
-}
 
-.play-button-icon:hover {
-  fill: $lighter_blue;
+  &:hover {
+    cursor: pointer;
+    fill: $lighter_blue;
+  }
 }
 
 .info {

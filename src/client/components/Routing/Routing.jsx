@@ -3,7 +3,10 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+
 import App from 'containers/App/App';
+
+import NotFound from 'components/NotFound/NotFound';
 
 const pathes = [{
   exact: true,
@@ -13,7 +16,7 @@ const pathes = [{
   value: '/popular',
 }, {
   exact: true,
-  value: '/top-rated',
+  value: '/top_rated',
 }, {
   exact: true,
   value: '/upcoming',
@@ -22,7 +25,7 @@ const pathes = [{
   value: '/popular/movie/:movieId',
 }, {
   exact: true,
-  value: '/top-rated/movie/:movieId',
+  value: '/top_rated/movie/:movieId',
 }, {
   exact: true,
   value: '/upcoming/movie/:movieId',
@@ -38,9 +41,10 @@ const Routing = () => (
         key ={ index }
         exact={ path.exact }
         path={ path.value }
-        component={ App }/>
+        component={ App }
+      />
     )) }
-    <Route render={ () => <div>not found</div> }/>
+    <Route component={ NotFound }/>
   </Switch>
 );
 

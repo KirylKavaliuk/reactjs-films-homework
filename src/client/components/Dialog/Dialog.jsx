@@ -17,7 +17,7 @@ export default class Dialog extends Component {
         )}
         onClick={ this.props.closeDialog }
       >
-        { this.props.component }
+        { this.props.children }
       </div>
     );
   }

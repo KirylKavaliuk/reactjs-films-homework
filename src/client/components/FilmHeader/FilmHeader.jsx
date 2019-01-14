@@ -1,5 +1,7 @@
 import React from 'react';
 
+import withConditionalRendering from 'utils/rendering';
+
 import PropTypes from 'prop-types';
 
 import styles from './FilmHeader.scss';
@@ -29,9 +31,7 @@ const FilmHeader = ({ name, genres, duration }) => {
 };
 
 FilmHeader.propTypes = {
-  name: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-  duration: PropTypes.number.isRequired,
+
 };
 
-export default FilmHeader;
+export default withConditionalRendering(FilmHeader, 'genres');

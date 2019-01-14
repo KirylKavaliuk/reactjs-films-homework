@@ -8,8 +8,6 @@ import actionsMovies from 'actions/movies';
 import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
 
-import request from 'utils/request';
-
 import Select from 'components/Select/Select';
 import Loading from 'components/Loading/Loading';
 import MovieGridItem from 'components/MovieGridItem/MovieGridItem';
@@ -25,7 +23,15 @@ class MoviesList extends Component {
   };
 
   setView = (isGrid) => {
-    this.setState({ gridView: isGrid });
+    this.setState({ gridView: isGrid }, () => {
+      const { url } = this.props.match;
+      const { history } = this.context.router;
+
+      history.push({
+        pathname: url,
+        search: `?view=${this.state.gridView ? 'grid' : 'list'}`,
+      });
+    });
   }
 
   enterEndOfList = () => {
@@ -33,9 +39,28 @@ class MoviesList extends Component {
     this.props.loadMovies();
   }
 
-  leaveEndoFList = () => {
+  leaveEndOfList = () => {
     this.setState({ loading: false });
   }
+
+  componentDidMount = () => {
+    this.props.removeMovies();
+  }
+
+  setActiveStyleForLinks(sectionNumber) {
+    const { url } = this.props.match;
+    const sections = ['popular', 'top_rated', 'upcoming'];
+
+    const index = sections.findIndex(_section => url.indexOf(_section) !== -1);
+
+    const defaultSection = url === '/' && sectionNumber === 0;
+
+    return classNames(
+      styles.section,
+      { [styles.activeLink]: index === sectionNumber || defaultSection },
+    );
+  }
+
 
   render() {
     const ListItem = this.state.gridView ? MovieGridItem : MovieListItem;
@@ -46,9 +71,9 @@ class MoviesList extends Component {
           <menu className={ styles.menu }>
             <div className={ styles.listControls }>
               <ul className={ styles.sections }>
-                <li className={ styles.section }>Trading</li>
-                <li className={ styles.section }>Top Rated</li>
-                <li className={ styles.section }>Coming soon</li>
+                <Link to='/popular'><li className={ this.setActiveStyleForLinks(0) }>Trading</li></Link>
+                <Link to='/top_rated'><li className={ this.setActiveStyleForLinks(1) }>Top Rated</li></Link>
+                <Link to='/upcoming'><li className={ this.setActiveStyleForLinks(2) }>Coming soon</li></Link>
               </ul>
               <Select
                 defaultValue='Genre'
@@ -97,7 +122,7 @@ class MoviesList extends Component {
           { this.state.loading && <Loading/> }
           <Waypoint
             onEnter={ this.enterEndOfList }
-            onLeave={ this.leaveEndoFList }
+            onLeave={ this.leaveEndOfList }
           />
         </div>
       </div>
@@ -113,8 +138,13 @@ MoviesList.propTypes = {
 
 };
 
+MoviesList.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
+
 const mapDispatchToProps = dispatch => ({
-  loadMovies: () => dispatch(actionsMovies.addMovies()),
+  loadMovies: type => dispatch(actionsMovies.add(type)),
+  removeMovies: () => dispatch(actionsMovies.remove()),
 });
 
 const mapStateToProps = state => ({

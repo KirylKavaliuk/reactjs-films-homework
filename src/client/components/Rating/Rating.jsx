@@ -38,7 +38,7 @@ class Rating extends Component {
           <div className={ styles.ratingNumber }>
             { this.state.onHover !== -1
               ? this.state.onHover + 1
-              : (this.props.value % 5).toPrecision(3) }
+              : (this.props.value ? this.props.value % 5 : 0).toPrecision(3) }
           </div>
         </div>
       </div>
