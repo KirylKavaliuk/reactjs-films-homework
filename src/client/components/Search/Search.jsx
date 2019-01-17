@@ -5,7 +5,7 @@ import Icon from 'components/Icon/Icon';
 
 import styles from './Search.scss';
 
-const Search = ({ value, onChange }) => (
+const Search = ({ value, onChange, onSearch }) => (
   <form
     name='search'
     className={ styles.search }
@@ -17,7 +17,10 @@ const Search = ({ value, onChange }) => (
       onChange={ onChange }
       placeholder='Search...'
     />
-    <button className={ styles.searchButton }>
+    <button
+      className={ styles.searchButton }
+      onClick={ onSearch }
+    >
       <Icon name='search'/>
     </button>
   </form>

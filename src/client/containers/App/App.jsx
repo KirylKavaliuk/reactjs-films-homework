@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import { withRouter } from 'react-router-dom';
@@ -81,6 +82,17 @@ class App extends Component {
     this.setState({ search: event.target.value });
   }
 
+  onSearchHandler = (event) => {
+    event.preventDefault();
+
+    const { history } = this.context.router;
+
+    history.push({
+      pathname: 'search',
+      search: `?query=${this.state.search}`,
+    });
+  }
+
   render() {
     const commonProps = {
       match: this.props.match,
@@ -95,6 +107,7 @@ class App extends Component {
               { ...commonProps }
               changeSearch={ this.changeSearchHandler }
               searchValue={ this.state.search }
+              onSearch={ this.onSearchHandler }
             />
             <MoviesList
               { ...commonProps }
@@ -117,6 +130,10 @@ class App extends Component {
     );
   }
 }
+
+App.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
 
 const mapDispatchToProps = dispatch => ({
   addGenres: () => dispatch(actionsGenres.addGenres()),

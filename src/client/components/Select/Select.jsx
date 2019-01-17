@@ -10,7 +10,6 @@ import styles from './Select.scss';
 
 export default class Select extends Component {
   state = {
-    value: this.props.defaultValue || 'Select...',
     open: false,
   };
 
@@ -23,13 +22,7 @@ export default class Select extends Component {
   }
 
   closeSelectHandler = (event) => {
-    const { innerText } = event.target;
-    const { value } = this.state;
-
-    this.setState({
-      open: false,
-      value: innerText || value,
-    });
+    this.setState({ open: false });
   }
 
   renderList = () => (
@@ -53,16 +46,20 @@ export default class Select extends Component {
   )
 
   render() {
+    const genre = this.props.list.find(item => (
+      item.id === +this.props.match.params.genreId
+    ));
+
     return (
       <div className={
         classNames(
           styles.select,
           { [this.props.className]: this.props.className },
-          { [styles.active]: this.props.active },
+          { [styles.active]: this.props.match.url.includes('/genre') },
         )
          } onMouseLeave={ this.closeHandler }>
         <div className={ styles.main } onClick={ this.openHandler }>
-          <span className={ styles.value }>{ this.state.value }</span>
+          <span className={ styles.value }>{ genre ? genre.name : 'Genre' }</span>
           <Icon name='arrow' className={ classNames(
             styles.arrow,
             { [styles.arrowOpen]: this.state.open },

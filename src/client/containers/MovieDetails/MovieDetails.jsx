@@ -60,6 +60,7 @@ class MovieDetails extends Component {
 
         <Search
           onChange={ this.props.changeSearch }
+          onSearch={ this.props.onSearch }
           value={ this.props.searchValue }
         />
 

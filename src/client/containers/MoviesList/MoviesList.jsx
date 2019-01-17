@@ -12,7 +12,7 @@ import MovieGridItem from 'components/MovieGridItem/MovieGridItem';
 import MovieListItem from 'components/MovieListItem/MovieListItem';
 import Loading from 'components/Loading/Loading';
 
-import Query from 'utils/url-query';
+import Query from 'utils/url';
 
 import styles from './MoviesList.scss';
 

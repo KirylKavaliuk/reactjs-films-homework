@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import Select from 'components/Select/Select';
 import Icon from 'components/Icon/Icon';
 
-
 import styles from './ListControls.scss';
 
 export default class ListControls extends Component {
@@ -34,7 +33,7 @@ export default class ListControls extends Component {
           </ul>
           <Select
             defaultValue='Genre'
-            active={ true }
+            match={ this.props.match }
             list={ this.props.genres }
             element={ item => ({
               value: item.id,

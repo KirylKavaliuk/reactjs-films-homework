@@ -86,7 +86,7 @@ class MovieGridItem extends Component {
               ))
             }</p>
             <div className={ styles.rating }>
-            { (this.props.movie.vote_average / 2).toPrecision(2) }
+            { (this.props.movie.vote_average).toPrecision(2) }
             </div>
           </header>
 

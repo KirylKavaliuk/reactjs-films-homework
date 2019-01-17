@@ -1,3 +1,5 @@
+//  change for simple object. add getSection func.
+
 export default class Query {
   constructor() {
     this.params = this.parseParams();
