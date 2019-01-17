@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Link from 'components/Link/Link';
 
 import classNames from 'classnames';
 
@@ -58,6 +58,7 @@ export default class Select extends Component {
         classNames(
           styles.select,
           { [this.props.className]: this.props.className },
+          { [styles.active]: this.props.active },
         )
          } onMouseLeave={ this.closeHandler }>
         <div className={ styles.main } onClick={ this.openHandler }>

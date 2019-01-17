@@ -1,0 +1,62 @@
+@import 'styles/palette';
+
+.menu {
+  display: flex;
+  border-bottom: 1px $LIGHT_GREY solid;
+  justify-content: space-between;
+}
+
+.list-controls {
+  position: relative;
+  display: flex;
+  min-width: 500px;
+}
+
+.sections {
+  display: flex;
+  color: $LIGHT_BLUE;
+  align-items: center;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.section {
+  box-sizing: border-box;
+  padding: 8px 10px;
+  margin: 0 5px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.active-link {
+  box-sizing: border-box;
+  border-top: 2px $LIGHTER_GREY solid;
+  border-bottom: 2px $LIGHT_BLUE solid;
+}
+
+.types-view {
+  display: flex;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.type-view {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  transition: all 0.45s ease;
+  fill: $LIGHT_GREY;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-type-view {
+  fill: $LIGHT_BLUE;
+}

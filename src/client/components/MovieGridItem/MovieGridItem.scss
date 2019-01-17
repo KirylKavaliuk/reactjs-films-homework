@@ -29,7 +29,7 @@
   height: 220px;
   transition: all 0.45s ease;
   opacity: 0;
-  color: $white;
+  color: $WHITE;
   border-radius: 3px 3px 0 0;
   background: rgba(0, 0, 0, 0.7);
   align-items: center;
@@ -53,11 +53,11 @@
 .play-button-icon {
   width: 70px;
   height: 70px;
-  fill: $light_blue;
+  fill: $LIGHT_BLUE;
 
   &:hover {
     cursor: pointer;
-    fill: $lighter_blue;
+    fill: $LIGHTER_BLUE;
   }
 }
 
@@ -69,12 +69,12 @@
   width: 100%;
   height: 300px;
   transition: all 0.45s ease;
-  background: $white;
+  background: $WHITE;
 }
 
 .info-visible {
   top: 0;
-  color: $white;
+  color: $WHITE;
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -86,7 +86,7 @@
   width: 15px;
   height: 15px;
   transition: all 0.45s ease;
-  fill: $white;
+  fill: $WHITE;
 
   &:hover {
     cursor: pointer;
@@ -100,6 +100,10 @@
 .header {
   position: relative;
   margin-top: 5px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .header-offset {
@@ -115,6 +119,7 @@
   white-space: nowrap;
   text-transform: uppercase;
   text-overflow: ellipsis;
+  text-decoration: none;
   font-size: 15px;
   font-weight: 900;
   margin: 0;
@@ -123,7 +128,7 @@
 .genres {
   box-sizing: border-box;
   padding: 0 0 0 20px;
-  color: $light_blue;
+  color: $LIGHT_BLUE;
   font-size: 11px;
 }
 
@@ -133,8 +138,8 @@
   right: 20px;
   box-sizing: border-box;
   padding: 3px 5px;
-  color: $light_blue;
-  border: 1px solid $light_blue;
+  color: $LIGHT_BLUE;
+  border: 1px solid $LIGHT_BLUE;
   border-radius: 2px;
   font-size: 13px;
 }
@@ -164,7 +169,7 @@
 
 .genre:hover {
   cursor: pointer;
-  color: $lighter_blue;
+  color: $LIGHTER_BLUE;
 }
 
 .genre::after {

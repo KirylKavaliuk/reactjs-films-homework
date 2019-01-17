@@ -13,22 +13,25 @@ const pathes = [{
   value: '/',
 }, {
   exact: true,
-  value: '/popular',
+  value: '/trading',
 }, {
   exact: true,
-  value: '/top_rated',
+  value: '/top-rated',
 }, {
   exact: true,
-  value: '/upcoming',
+  value: '/coming-soon',
 }, {
   exact: true,
-  value: '/popular/movie/:movieId',
+  value: '/search',
 }, {
   exact: true,
-  value: '/top_rated/movie/:movieId',
+  value: '/trading/movie/:movieId',
 }, {
   exact: true,
-  value: '/upcoming/movie/:movieId',
+  value: '/top-rated/movie/:movieId',
+}, {
+  exact: true,
+  value: '/coming-soon/movie/:movieId',
 }, {
   exact: true,
   value: '/genre/:genreId',

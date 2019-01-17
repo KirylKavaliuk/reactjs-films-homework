@@ -17,4 +17,8 @@ function withConditionalRenderingHOC(WrappedComponent, keyField) {
   };
 }
 
+function withAnimatedRenderingHOC(WrappedComponent, keyField) {
+  // CSS Group ...
+}
+
 export default withConditionalRenderingHOC;

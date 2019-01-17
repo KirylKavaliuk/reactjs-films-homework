@@ -4,26 +4,41 @@
   padding: 5px 10px;
   box-sizing: border-box;
   border-radius: 3px;
-  color: $light_blue;
+  color: $LIGHT_BLUE;
   position: relative;
   width: 200px;
   transition: all 0.45s ease;
 
   &:hover {
     cursor: pointer;
-    background: $white;
+    background: $WHITE;
   }
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  fill: $LIGHT_BLUE;
+  transition: transform 0.45s ease;
 }
 
 .main {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  transition: color 0.45s ease;
 
   &:hover {
-    color: $lighter_blue;
-    fill: $lighter_blue;
+    color: $LIGHTER_BLUE;
+    fill: $LIGHTER_BLUE;
+  }
+}
+
+.active:not(:hover) {
+  background: $LIGHTER_BLUE;
+  color: white;
+
+  .arrow {
+    fill: $WHITE;
   }
 }
 
@@ -34,13 +49,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 155px;
-}
-
-.arrow {
-  width: 25px;
-  height: 25px;
-  fill: $light_blue;
-  transition: transform 0.45s ease;
 }
 
 .item-link {
@@ -55,10 +63,11 @@
   transition: background 0.45s ease, color 0.45s ease;
   line-height: 1.4;
   text-decoration: none;
+  color: $LIGHTER_BLUE;
 
   &:hover {
     background: #f1f1f1;
-    color: $lighter_blue;
+    color: $LIGHTER_BLUE;
   }
 }
 
@@ -70,7 +79,7 @@
   position: absolute;
   width: 200px;
   box-sizing: border-box;
-  background: $white;
+  background: $WHITE;
   top: 30px;
   left: 0;
   height: 0;
@@ -90,4 +99,5 @@
   z-index: 200;
   box-sizing: border-box;
   height: 170px;
+  color: $LIGHTER_BLUE;
 }

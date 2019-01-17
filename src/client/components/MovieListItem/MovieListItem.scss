@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 400px;
   margin: 10px 0;
-  color: $white;
+  color: $WHITE;
 }
 
 .poster {
@@ -49,7 +49,7 @@
 }
 
 .genres {
-  color: $light_blue;
+  color: $LIGHT_BLUE;
   font-size: 18px;
 }
 
@@ -77,7 +77,7 @@
 
 .genre:hover {
   cursor: pointer;
-  color: $lighter_blue;
+  color: $LIGHTER_BLUE;
 }
 
 .genre::after {

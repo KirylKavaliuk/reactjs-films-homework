@@ -12,67 +12,7 @@
   max-width: 1200px;
   min-height: 100vh;
   padding: 40px 40px 30px;
-  background: $lighter_grey;
-}
-
-.menu {
-  display: flex;
-  border-bottom: 1px $light_grey solid;
-  justify-content: space-between;
-}
-
-.list-controls {
-  position: relative;
-  display: flex;
-  min-width: 500px;
-}
-
-.sections {
-  display: flex;
-  color: $light_blue;
-  align-items: center;
-  list-style: none;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.section {
-  box-sizing: border-box;
-  padding: 8px 10px;
-
-  &:first-child {
-    padding-left: 0;
-  }
-}
-
-.active-link {
-  box-sizing: border-box;
-  border-top: 2px $lighter_grey solid;
-  border-bottom: 2px $light_blue solid;
-}
-
-.types-view {
-  display: flex;
-  height: 25px;
-  justify-content: space-between;
-}
-
-.type-view {
-  width: 25px;
-  height: 25px;
-  margin-left: 5px;
-  transition: all 0.45s ease;
-  fill: $light_grey;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.active-type-view {
-  fill: $light_blue;
+  background: $LIGHTER_GREY;
 }
 
 .grid {

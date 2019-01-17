@@ -29,7 +29,7 @@
   margin: 5px;
   animation: changeSizes 0.6s infinite ease alternate;
   border-radius: 30px;
-  background: $light_blue;
+  background: $LIGHT_BLUE;
 }
 
 .icon:nth-child(1) .circle {
@@ -49,6 +49,6 @@
   padding: 10px 0 0;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: $grey;
+  color: $GREY;
   font-size: 18px;
 }

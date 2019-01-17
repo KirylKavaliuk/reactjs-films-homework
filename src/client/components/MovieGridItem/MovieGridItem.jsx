@@ -77,7 +77,7 @@ class MovieGridItem extends Component {
               { [styles.headerOffset]: this.state.descriptionOpen },
             )
           }>
-            <Link to={`/popular/movie/${this.props.movie.id}`}><h1 className={ styles.title }>{ this.props.movie.title }</h1></Link>
+            <Link to={`/trading/movie/${this.props.movie.id}`}><h1 className={ styles.title }>{ this.props.movie.title }</h1></Link>
             <p className={ styles.genres }>{
               this.props.movie.genres.slice(0, 3).map((genre, index) => (
                 <span key={ index } className={ styles.genre }>

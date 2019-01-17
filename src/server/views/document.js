@@ -8,6 +8,7 @@ module.exports = () => `
     </head>
     <body>
       <section id="root"></section>
+      <section id="dialog"></section>
       <script src="${process.env.NODE_ENV === 'production' ? '/js/client.js' : '/client.js'}"></script>
     </body>
   </html>

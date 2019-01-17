@@ -2,8 +2,8 @@
 
 @mixin setHover() {
   cursor: pointer;
-  border: 1px solid $lighter_blue;
-  background: $lighter_blue;
+  border: 1px solid $LIGHTER_BLUE;
+  background: $LIGHTER_BLUE;
 }
 
 .button {
@@ -11,9 +11,9 @@
   padding: 7px;
   transition: background 0.45s ease, border 0.45s ease;
   color: inherit;
-  border: 1px solid $light_blue;
+  border: 1px solid $LIGHT_BLUE;
   border-radius: 3px;
-  background: $light_blue;
+  background: $LIGHT_BLUE;
   font-size: 16px;
 
   &:focus {
@@ -26,7 +26,7 @@
 }
 
 .transparent {
-  border: 1px solid $white;
+  border: 1px solid $WHITE;
   background: none;
 
   &:hover {
