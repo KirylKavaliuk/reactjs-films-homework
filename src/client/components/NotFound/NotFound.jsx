@@ -8,10 +8,10 @@ import styles from './NotFound.scss';
 const NotFound = () => (
     <div className={ styles.notFound }>
       <div className={ styles.text }>
-        <h1 className={ styles.header }>Error 404.</h1>
-        <p className={ styles.description }>page is not found</p>
+        <h1 className={ styles.header }>Error.</h1>
+        <p className={ styles.description }>items is not found</p>
+        { /* go to main link */ }
       </div>
-      <Footer/>
     </div>
 );
 

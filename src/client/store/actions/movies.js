@@ -1,12 +1,12 @@
 import request from 'utils/request';
-import Query from 'utils/url';
+import { getParam } from 'utils/url';
 
 const getNumberPage = (function () {
   let page = 0;
 
-  return function (number) {
-    if (number !== undefined) {
-      page = number;
+  return function (clear = false) {
+    if (clear) {
+      page = -1;
     }
 
     page += 1;
@@ -33,13 +33,11 @@ const getItemsForGenre = (dispatch, match) => {
 };
 
 const getItemsForSearch = (dispatch) => {
-  const query = new Query();
-
-  const q = query.getParam('query');
+  const query = getParam('query');
 
   request.get('db/search/movie', {
     page: getNumberPage(),
-    query: q,
+    query,
     include_adult: false,
   })
     .then((response) => {
@@ -93,7 +91,7 @@ export default {
     }
   },
   remove: () => (dispatch) => {
-    getNumberPage(-1);
+    getNumberPage(true);
     dispatch({ type: 'REMOVE_MOVIES' });
   },
 };

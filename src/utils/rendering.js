@@ -8,17 +8,13 @@ function withConditionalRenderingHOC(WrappedComponent, keyField) {
 
       if (keyFieldValue instanceof Array && keyFieldValue.length) {
         return component;
-      } if (keyFieldValue !== undefined) {
+      } if (keyFieldValue !== undefined && keyFieldValue !== null) {
         return component;
       }
 
       return null;
     }
   };
-}
-
-function withAnimatedRenderingHOC(WrappedComponent, keyField) {
-  // CSS Group ...
 }
 
 export default withConditionalRenderingHOC;

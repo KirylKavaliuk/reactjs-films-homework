@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import withConditionalRendering from 'utils/rendering';
 import { withDialogContext } from 'utils/dialog';
@@ -12,6 +11,9 @@ import Icon from 'components/Icon/Icon';
 import Button from 'components/Button/Button';
 import Video from 'components/Video/Video';
 import Rating from 'components/Rating/Rating';
+import Link from 'components/Link/Link';
+
+import { getSection, Params } from 'utils/url';
 
 import styles from './MovieGridItem.scss';
 
@@ -25,6 +27,10 @@ class MovieGridItem extends Component {
     this.setState({ descriptionOpen: !descriptionOpen });
   }
 
+  shouldComponentUpdate = (nextProps, nextState) => (
+    nextState.descriptionOpen !== this.state.descriptionOpen
+  )
+
   render() {
     return (
       <div className={ styles.movieItem }>
@@ -35,16 +41,17 @@ class MovieGridItem extends Component {
         />
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
-          <div
-            className={ styles.playButton }
-            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
-          >
-            <Icon
-              className={ styles.playButtonIcon }
-              name='play'
-            />
-            <h3 className={ styles.playButtonHeader }>Play Now</h3>
-          </div>
+          <Link params={{ trailer: this.props.movie.id }}>
+            <div
+              className={ styles.playButton }
+            >
+              <Icon
+                className={ styles.playButtonIcon }
+                name='play'
+              />
+              <h3 className={ styles.playButtonHeader }>Play Now</h3>
+            </div>
+          </Link>
 
           <Button
             label='View Info'
@@ -77,12 +84,16 @@ class MovieGridItem extends Component {
               { [styles.headerOffset]: this.state.descriptionOpen },
             )
           }>
-            <Link to={`/trading/movie/${this.props.movie.id}`}><h1 className={ styles.title }>{ this.props.movie.title }</h1></Link>
+            <Link params={{ movie: this.props.movie.id }} clearParams={ ['query'] }>
+              <h1 title={ this.props.movie.title } className={ styles.title }>
+                { this.props.movie.title }
+              </h1>
+            </Link>
             <p className={ styles.genres }>{
               this.props.movie.genres.slice(0, 3).map((genre, index) => (
-                <span key={ index } className={ styles.genre }>
+                <Link className={ styles.genre } key={ index } to={ `/genre/${genre.id}` } clearParams={ ['query', 'movie'] }>
                   { genre.name }
-                </span>
+                </Link>
               ))
             }</p>
             <div className={ styles.rating }>
@@ -99,16 +110,19 @@ class MovieGridItem extends Component {
             { this.props.movie.overview }
           </p>
 
-          <Button
-            label='Watch Now'
-            className={ styles.watchButton }
-            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
-          />
+          <Link params={{ trailer: this.props.movie.id }}>
+            <Button
+              label='Watch Now'
+              className={ styles.watchButton }
+            />
+          </Link>
         </div>
       </div>
     );
   }
 }
+
+// //onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
 
 MovieGridItem.defaultProps = {
   movie: null,

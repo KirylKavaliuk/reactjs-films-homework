@@ -60,3 +60,54 @@
 .active-type-view {
   fill: $LIGHT_BLUE;
 }
+
+@media only screen and (max-width: 650px) {
+  .menu {
+    flex-wrap: wrap-reverse;
+  }
+
+  .types-view {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .movies-list {
+    padding: 20px;
+  }
+
+  .list-controls {
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .menu-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-link {
+    padding: 5px 10px;
+
+    &:first-child {
+      padding: 5px 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .movies-list {
+    padding: 10px;
+  }
+
+  .menu-links {
+    flex-wrap: wrap;
+  }
+
+  .menu-link {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+}

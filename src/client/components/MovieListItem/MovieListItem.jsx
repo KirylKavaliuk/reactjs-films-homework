@@ -15,15 +15,6 @@ import Rating from 'components/Rating/Rating';
 import styles from './MovieListItem.scss';
 
 class MovieListItem extends Component {
-  state = {
-    descriptionOpen: false,
-  };
-
-  toggleDescriptionHandler = () => {
-    const { descriptionOpen } = this.state;
-    this.setState({ descriptionOpen: !descriptionOpen });
-  }
-
   render() {
     return (
       <div className={ styles.movieItem }>
@@ -33,47 +24,15 @@ class MovieListItem extends Component {
           src={ `db/${this.props.movie.backdrop_path}` }
         />
 
-        { !this.state.descriptionOpen && <div className={ styles.more }>
-          <div
-            className={ styles.playButton }
-            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
-          >
-            <Icon
-              className={ styles.playButtonIcon }
-              name='play'
-            />
-            <h3 className={ styles.playButtonHeader }>Play Now</h3>
-          </div>
-
-          <Button
-            label='View Info'
-            transparent
-            onClick={ this.toggleDescriptionHandler }
-          />
-        </div>
-        }
-
         <div className={
           classNames(
             styles.info,
-            { [styles.infoVisible]: this.state.descriptionOpen },
           )}
         >
-          <div className={
-              classNames(
-                styles.cancelIcon,
-                { [styles.cancelIconVisible]: this.state.descriptionOpen },
-              )
-            }
-            onClick={ this.toggleDescriptionHandler }
-          >
-            <Icon name='cancel' />
-          </div>
 
           <header className={
             classNames(
               styles.header,
-              { [styles.headerOffset]: this.state.descriptionOpen },
             )
           }>
             <h1 className={ styles.title }>{ this.props.movie.title }</h1>
@@ -92,7 +51,6 @@ class MovieListItem extends Component {
           <p className={
             classNames(
               styles.descriptionText,
-              { [styles.descriptionTextVisible]: !this.state.descriptionOpen },
             )
           }>
             { this.props.movie.overview }

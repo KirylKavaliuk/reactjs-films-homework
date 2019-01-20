@@ -17,7 +17,9 @@ class Rating extends Component {
   }
 
   sentRatingHandler(rating) {
-    this.props.openMessage(`Your rating (${rating}) has been sent. Thank you!`);
+    if (this.props.value) {
+      this.props.openMessage(`Your rating (${rating}) has been sent. Thank you!`);
+    }
   }
 
   render() {
@@ -38,7 +40,7 @@ class Rating extends Component {
           <div className={ styles.ratingNumber }>
             { this.state.onHover !== -1
               ? this.state.onHover + 1
-              : (this.props.value * 2).toPrecision(3) }
+              : (this.props.value || 0).toPrecision(3) }
           </div>
         </div>
       </div>

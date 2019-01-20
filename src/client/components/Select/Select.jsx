@@ -6,11 +6,14 @@ import classNames from 'classnames';
 
 import Icon from 'components/Icon/Icon';
 
+import { getSection } from 'utils/url';
+
 import styles from './Select.scss';
 
 export default class Select extends Component {
   state = {
     open: false,
+    value: 'Genre',
   };
 
   openHandler = () => {
@@ -21,35 +24,14 @@ export default class Select extends Component {
     this.setState({ open: false });
   }
 
-  closeSelectHandler = (event) => {
-    this.setState({ open: false });
+  componentWillReceiveProps(props) {
+    const { genreId } = props.match.params;
+    const value = props.genres.find(_genre => _genre.id === +genreId);
+
+    this.setState({ value: value ? value.name : 'Genre' });
   }
 
-  renderList = () => (
-    this.props.list.map((item, index) => {
-      const elem = this.props.element(item);
-      const Item = <li
-        className={ styles.item }
-        onClick={ this.closeSelectHandler }
-      >{ elem.label }</li>;
-
-      if (elem.link) {
-        return <Link
-          className={ styles.itemLink }
-          key={ index }
-          to={ elem.link }
-        >{ Item }</Link>;
-      }
-
-      return Item;
-    })
-  )
-
   render() {
-    const genre = this.props.list.find(item => (
-      item.id === +this.props.match.params.genreId
-    ));
-
     return (
       <div className={
         classNames(
@@ -57,22 +39,30 @@ export default class Select extends Component {
           { [this.props.className]: this.props.className },
           { [styles.active]: this.props.match.url.includes('/genre') },
         )
-         } onMouseLeave={ this.closeHandler }>
+         }onMouseLeave={ this.closeHandler } >
         <div className={ styles.main } onClick={ this.openHandler }>
-          <span className={ styles.value }>{ genre ? genre.name : 'Genre' }</span>
+          <span className={ styles.value }>{ this.state.value }</span>
           <Icon name='arrow' className={ classNames(
             styles.arrow,
             { [styles.arrowOpen]: this.state.open },
           ) }/>
         </div>
-        <ul className={
+        <div className={
           classNames(
             styles.list,
             { [styles.listOpen]: this.state.open },
           )
         }>
-          { this.renderList() }
-        </ul>
+          { this.props.genres.map((genre, index) => (
+            <Link
+              key={ genre.id }
+              className={ styles.item }
+              onClick={ this.closeHandler }
+              to={ `/genre/${genre.id}` }
+              clearParams={ ['query', 'movie'] }
+            >{ genre.name }</Link>
+          )) }
+        </div>
       </div>
     );
   }

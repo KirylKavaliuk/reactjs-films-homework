@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+
+import withConditionalRendering from 'utils/rendering';
 
 import classNames from 'classnames';
 
 import styles from './Message.scss';
 
-export default class Message extends Component {
+class Message extends Component {
   timeout = null;
 
-  componentWillReceiveProps = (newProps) => {
-    if (newProps.message.open) {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => this.props.closeMessage(), 4000);
-    }
+  componentDidMount() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => this.props.closeMessage(), 4000);
   }
 
   render() {
-    const { text, open } = this.props.message;
+    const { text, open } = this.props;
 
     return (
       <div
@@ -43,3 +44,5 @@ Message.propTypes = {
   open: PropTypes.bool,
   text: PropTypes.string,
 };
+
+export default withConditionalRendering(Message, 'text');

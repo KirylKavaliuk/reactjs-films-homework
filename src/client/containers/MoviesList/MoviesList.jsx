@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { withDialogContext } from 'utils/dialog';
+
 import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
 
 import actionsMovies from 'actions/movies';
+import actionsMovieDetails from 'actions/movieDetails';
 
 import ListControls from 'components/ListControls/ListControls';
 import MovieGridItem from 'components/MovieGridItem/MovieGridItem';
 import MovieListItem from 'components/MovieListItem/MovieListItem';
 import Loading from 'components/Loading/Loading';
+import Video from 'components/Video/Video';
 
-import Query from 'utils/url';
+import { getParam } from 'utils/url';
 
 import styles from './MoviesList.scss';
 
@@ -20,23 +24,54 @@ class MoviesList extends Component {
   state = {
     gridView: true,
     loading: false,
+    trailer: null,
   };
 
-  componentWillReceiveProps(props) {
-    const query = new Query();
-
-    this.setState({ gridView: query.getParam('view') !== 'list' });
+  componentDidMount = () => {
+    this.props.removeMovies();
   }
 
-  setView = (isGrid) => {
-    this.setState({ gridView: isGrid }, () => {
-      const { url } = this.props.match;
-      const { history } = this.context.router;
+  componentWillReceiveProps(props) {
+    const trailer = getParam('trailer');
+    const movie = getParam('movie');
+    const gridView = getParam('view') !== 'list';
 
-      history.push({
-        pathname: url,
-        search: `?view=${this.state.gridView ? 'grid' : 'list'}`,
+    if (this.state.trailer !== trailer) {
+      this.setState({ trailer }, () => {
+        if (this.state.trailer) {
+          this.props.openDialog(<Video id={ +trailer }/>);
+        } else {
+          this.props.closeDialog();
+        }
       });
+    }
+
+    if (this.props.movie.id !== +movie) {
+      this.setDetailsMovie(props, movie);
+    }
+
+    if (this.state.gridView !== gridView) {
+      this.setState({ gridView });
+    }
+
+    if (this.props.match.params.genreId !== props.match.params.genreId) {
+      const { height } = document.getElementById('movie-details').getBoundingClientRect();
+
+      window.scrollTo(0, height);
+      this.props.removeMovies();
+    }
+  }
+
+  setDetailsMovie = (props, id) => {
+    const movie = props.movies.find(_movie => id === _movie.id);
+
+    if (id && id !== +this.props.movie.id) {
+      window.scroll(0, 0);
+    }
+
+    this.props.setMovieDetails(movie, {
+      movie: props.movies[0],
+      id,
     });
   }
 
@@ -49,15 +84,11 @@ class MoviesList extends Component {
     this.setState({ loading: false });
   }
 
-  componentDidMount = () => {
-    this.props.removeMovies();
-  }
-
   render() {
     const ListItem = this.state.gridView ? MovieGridItem : MovieListItem;
 
     return (
-      <div className={ styles.moviesListWrapper }>
+      <div id='movies-list' className={ styles.moviesListWrapper }>
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
           <ListControls
             { ...this.props }
@@ -102,13 +133,20 @@ MoviesList.contextTypes = {
 const mapDispatchToProps = dispatch => ({
   loadMovies: match => dispatch(actionsMovies.add(match)),
   removeMovies: () => dispatch(actionsMovies.remove()),
+  setMovieDetails: (movie, defaultValue) => {
+    dispatch(actionsMovieDetails.setMovie(movie, defaultValue));
+  },
 });
 
 const mapStateToProps = state => ({
   movies: state.movies,
+  movie: state.movieDetails,
+  genres: state.genres,
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(MoviesList);
+export default withDialogContext(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(MoviesList),
+);

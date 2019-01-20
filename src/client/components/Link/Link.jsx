@@ -1,27 +1,45 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import Query from 'utils/url';
+import classNames from 'classnames';
+
+import { Params, getSection } from 'utils/url';
 
 import styles from './Link.scss';
 
 export default class _Link extends Component {
-  render() {
-    const query = new Query();
-    query.removeParams('query');
+  state = {
+    to: '',
+  }
 
+  onHoverHandler = () => {
+    const section = this.props.to || getSection();
+    const search = new Params()
+      .add(this.props.params)
+      .remove(this.props.clearParams)
+      .toString();
+
+    this.setState({ to: `${section}${search}` });
+  }
+
+  render() {
     return (
       <Link
-        className={ styles.link }
-        to={{ pathname: this.props.to, search: query.toString() }}
-      >{ this.props.children }</Link>
+        onMouseEnter={ this.onHoverHandler }
+        onClick={ this.props.onClick }
+        to={ this.state.to }
+        className={ classNames(styles.link, this.props.className) }
+      >
+        { this.props.children }
+      </Link>
     );
   }
 }
 
 _Link.defaultProps = {
-  saveSearch: true,
+  params: {},
+  clearParams: [],
 };
 
 _Link.propTypes = {

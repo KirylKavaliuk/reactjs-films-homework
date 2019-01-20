@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import { withRouter } from 'react-router-dom';
@@ -16,8 +17,7 @@ import Footer from 'components/Footer/Footer';
 import Dialog from 'components/Dialog/Dialog';
 import Rating from 'components/Rating/Rating';
 import Message from 'components/Message/Message';
-
-import request from 'utils/request';
+import Routing from 'components/Routing/Routing';
 
 import actionsGenres from 'actions/genres';
 
@@ -25,16 +25,18 @@ import 'normalize.css';
 import styles from './App.scss';
 import 'styles/index.scss';
 
+const dialogPortal = document.getElementById('dialog');
+const messagePortal = document.getElementById('notification');
+
 class App extends Component {
   state = {
-    search: '',
     dialog: {
       open: false,
       component: null,
     },
     message: {
       open: false,
-      text: '',
+      text: null,
     },
   };
 
@@ -69,7 +71,7 @@ class App extends Component {
     this.setState({
       message: {
         open: false,
-        message: '',
+        text: null,
       },
     });
   }
@@ -78,70 +80,49 @@ class App extends Component {
     this.props.addGenres();
   }
 
-  changeSearchHandler = (event) => {
-    this.setState({ search: event.target.value });
-  }
-
-  onSearchHandler = (event) => {
-    event.preventDefault();
-
-    const { history } = this.context.router;
-
-    history.push({
-      pathname: 'search',
-      search: `?query=${this.state.search}`,
-    });
-  }
-
   render() {
-    const commonProps = {
-      match: this.props.match,
-      genres: this.props.genres,
-    };
-
     return (
       <div className={ styles.app }>
-        <DialogProvider value={{ openDialog: this.openDialogHandler }}>
+        <DialogProvider
+          value={{
+            openDialog: this.openDialogHandler,
+            closeDialog: this.closeDialogHandler,
+          }}
+        >
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
-            <MovieDetails
-              { ...commonProps }
-              changeSearch={ this.changeSearchHandler }
-              searchValue={ this.state.search }
-              onSearch={ this.onSearchHandler }
-            />
-            <MoviesList
-              { ...commonProps }
-            />
+            <MovieDetails/>
+            <Routing/>
           </MessageProvider>
         </DialogProvider>
 
-        <Dialog
-          open={ this.state.dialog.open }
-          closeDialog={ this.closeDialogHandler }
-        >{ this.state.dialog.component }</Dialog>
+        { ReactDOM.createPortal(
+          <Dialog
+            open={ this.state.dialog.open }
+          >
+            { this.state.dialog.component }
+          </Dialog>,
+          dialogPortal,
+        ) }
 
-        <Message
-          message={ this.state.message }
-          closeMessage={ this.closeMessageHandler }
-        />
-
+        { ReactDOM.createPortal(
+          <Message
+            open={ this.state.message.open }
+            text={ this.state.message.text }
+            closeMessage={ this.closeMessageHandler }
+          />,
+          messagePortal,
+        ) }
         <Footer/>
       </div>
     );
   }
 }
 
-App.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
-
 const mapDispatchToProps = dispatch => ({
   addGenres: () => dispatch(actionsGenres.addGenres()),
 });
 
-const mapStateToProps = state => ({
-  genres: state.genres,
-});
+const mapStateToProps = state => ({ });
 
 export default hot(module)(withRouter(
   connect(

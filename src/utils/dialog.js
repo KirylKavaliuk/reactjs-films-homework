@@ -6,9 +6,9 @@ function withDialogContextHOC(WrappedComponent) {
   return class extends Component {
     render() {
       return (<DialogContext.Consumer>
-        {({ openDialog }) => (
+        {({ ...props }) => (
           <WrappedComponent
-            openDialog={ openDialog }
+            { ... props }
             { ...this.props }
           />
         )}

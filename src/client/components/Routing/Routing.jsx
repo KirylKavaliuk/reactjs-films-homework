@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import App from 'containers/App/App';
+import MoviesList from 'containers/MoviesList/MoviesList';
 
 import NotFound from 'components/NotFound/NotFound';
 
@@ -25,26 +25,17 @@ const pathes = [{
   value: '/search',
 }, {
   exact: true,
-  value: '/trading/movie/:movieId',
-}, {
-  exact: true,
-  value: '/top-rated/movie/:movieId',
-}, {
-  exact: true,
-  value: '/coming-soon/movie/:movieId',
-}, {
-  exact: true,
   value: '/genre/:genreId',
 }];
 
-const Routing = () => (
+const Routing = props => (
   <Switch>
     { pathes.map((path, index) => (
       <Route
         key ={ index }
         exact={ path.exact }
         path={ path.value }
-        component={ App }
+        component={ MoviesList }
       />
     )) }
     <Route component={ NotFound }/>

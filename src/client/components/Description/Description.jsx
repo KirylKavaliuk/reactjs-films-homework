@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import withConditionalRendering from 'utils/rendering';
 
 import classNames from 'classnames';
 
@@ -26,4 +27,4 @@ Description.propTypes = {
   text: PropTypes.string,
 };
 
-export default Description;
+export default withConditionalRendering(Description, 'text');

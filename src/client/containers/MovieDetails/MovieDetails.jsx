@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 
 import { withDialogContext } from 'utils/dialog';
 
-import actionsMovieDetails from 'actions/movieDetails';
-
 import Button from 'components/Button/Button';
 import Rating from 'components/Rating/Rating';
 import FilmHeader from 'components/FilmHeader/FilmHeader';
 import Search from 'components/Search/Search';
 import Description from 'components/Description/Description';
 import Video from 'components/Video/Video';
+import Link from 'components/Link/Link';
 
 import styles from './MovieDetails.scss';
 
@@ -20,49 +19,25 @@ class MovieDetails extends Component {
     descriptionOpen: false,
   };
 
-  setMovie = (props) => {
-    const id = +props.match.params.movieId;
-
-    const movie = props.movies.find(_movie => id === _movie.id);
-
-    if (id && id !== +this.props.movie.id) {
-      window.scroll(0, 0);
-    }
-
-    this.props.setMovieDetails(movie, {
-      movie: props.movies[0],
-      id,
-    });
-  }
-
-  componentDidMount = () => {
-    this.setMovie(this.props);
-  }
-
-  componentWillReceiveProps = (props) => {
-    this.setMovie(props);
-  }
-
   toggleDescriptionHandler = () => {
     this.setState({ descriptionOpen: !this.state.descriptionOpen });
   }
 
+  shouldComponentUpdate = (props, state) => (
+    this.props.movie.id !== props.movie.id
+    || this.state.descriptionOpen !== state.descriptionOpen
+  )
+
   render() {
     return (
       <div
+        id='movie-details'
         className={ styles.movieDetails }
-        style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path})` }}
+        style={{ backgroundImage: this.props.movie.id ? `url(https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path})` : '' }}
       >
-        <a
-          href="#"
-          className={ styles.logo }
-        >Films</a>
+        <Link to='/' className={ styles.logo }>Films</Link>
 
-        <Search
-          onChange={ this.props.changeSearch }
-          onSearch={ this.props.onSearch }
-          value={ this.props.searchValue }
-        />
+        <Search/>
 
         <FilmHeader
           name={ this.props.movie.title }
@@ -79,7 +54,9 @@ class MovieDetails extends Component {
             open={ this.state.descriptionOpen }
             text={ this.props.movie.overview }
           />
-          <Button label='Watch Now' onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }/>
+          <Link params={{ trailer: this.props.movie.id }}>
+            <Button label='Watch Now'/>
+          </Link>
           <Button
             label='View Info'
             transparent={ true }
@@ -100,15 +77,9 @@ MovieDetails.propTypes = {
 
 };
 
-
-const mapDispatchToProps = dispatch => ({
-  setMovieDetails: (movie, defaultValue) => {
-    dispatch(actionsMovieDetails.setMovie(movie, defaultValue));
-  },
-});
+const mapDispatchToProps = dispatch => ({});
 
 const mapStateToProps = state => ({
-  movies: state.movies,
   movie: state.movieDetails,
 });
 

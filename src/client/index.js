@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import Routing from 'components/Routing/Routing';
+import App from 'containers/App/App';
 
 import configureStore from './store/configureStore';
 
@@ -13,7 +13,7 @@ const render = () => {
   ReactDOM.render(
     <Provider store={ configureStore() }>
       <BrowserRouter>
-        <Routing/>
+        <App/>
       </BrowserRouter>
     </Provider>,
     root,

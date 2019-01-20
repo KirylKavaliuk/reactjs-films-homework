@@ -1,3 +1,5 @@
+@import 'styles/palette';
+
 .search {
   position: relative;
   width: 100%;
@@ -6,29 +8,6 @@
   grid-area: search;
   align-self: center;
   justify-self: end;
-
-  .search-field {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    border: 2px solid #fff;
-    border-radius: 4px;
-    background: none;
-    font-size: 18px;
-
-    &::-webkit-search-cancel-button {
-      display: none;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &::placeholder {
-      color: #fff;
-    }
-  }
 
   .search-button {
     position: absolute;
@@ -48,6 +27,42 @@
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  .search-field {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background: none;
+    font-size: 18px;
+
+    &.searchNotValid {
+      border-color: $RED;
+      color: $RED;
+
+      & ~ .search-button {
+        fill: $RED;
+      }
+
+      &::placeholder {
+        color: $RED;
+      }
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #fff;
     }
   }
 }

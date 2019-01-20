@@ -6,9 +6,9 @@ function withMessageContextHOC(WrappedComponent) {
   return class extends Component {
     render() {
       return (<MessageContext.Consumer>
-        {({ openMessage }) => (
+        {({ ...props }) => (
           <WrappedComponent
-            openMessage={ openMessage }
+            { ...props }
             { ...this.props }
           />
         )}
