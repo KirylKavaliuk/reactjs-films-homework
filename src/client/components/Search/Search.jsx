@@ -51,13 +51,15 @@ export default class Search extends Component {
   }
 
   render() {
+    const inputClasses = classNames(
+      styles.searchField,
+      { [styles.searchNotValid]: !this.state.searchQueryValid },
+    );
+
     return (
       <form name='search' className={ styles.search }>
         <input
-          className={ classNames(
-            styles.searchField,
-            { [styles.searchNotValid]: !this.state.searchQueryValid },
-          )}
+          className={ inputClasses }
           type='search'
           value={ this.state.searchQuery }
           onChange={ this.onChangeHandler }

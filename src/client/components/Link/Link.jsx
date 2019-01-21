@@ -46,8 +46,11 @@ export default class _Link extends Component {
 _Link.defaultProps = {
   params: {},
   clearParams: [],
+  to: '',
 };
 
 _Link.propTypes = {
-
+  params: PropTypes.object,
+  clearParams: PropTypes.array,
+  to: PropTypes.string,
 };

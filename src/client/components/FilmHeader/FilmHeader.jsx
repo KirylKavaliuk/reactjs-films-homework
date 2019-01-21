@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import withConditionalRendering from 'utils/rendering';
-
-import PropTypes from 'prop-types';
 
 import styles from './FilmHeader.scss';
 
@@ -21,7 +20,7 @@ const FilmHeader = ({ name, genres, duration }) => {
             className={ styles.genre }
           >{ genre }</span>
         )) }
-        { !!duration && <span className={ styles.duration }>
+        { duration && <span className={ styles.duration }>
             { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
           </span>
         }
@@ -31,7 +30,15 @@ const FilmHeader = ({ name, genres, duration }) => {
 };
 
 FilmHeader.propTypes = {
+  name: PropTypes.string,
+  genres: PropTypes.array,
+  duration: PropTypes.number,
+};
 
+FilmHeader.defaultProps = {
+  name: '',
+  genres: [],
+  duration: 0,
 };
 
 export default withConditionalRendering(FilmHeader, 'genres');
