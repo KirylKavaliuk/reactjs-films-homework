@@ -37,16 +37,22 @@ const getItemsForSearch = (dispatch) => {
 
   request.get('db/search/movie', {
     page: getNumberPage(),
-    query,
+    query: decodeURI(query),
     include_adult: false,
   })
     .then((response) => {
-      const requests = response.results.map(movie => request.get(`db/movie/${movie.id}`));
+      const { results } = response;
 
-      Promise.all(requests)
-        .then((movies) => {
-          dispatch({ type: 'ADD_MOVIES', payload: movies });
-        });
+      if (results.length) {
+        const requests = results.map(movie => request.get(`db/movie/${movie.id}`));
+
+        Promise.all(requests)
+          .then((movies) => {
+            dispatch({ type: 'ADD_MOVIES', payload: movies });
+          });
+      } else {
+        dispatch({ type: 'SET_LOADED' });
+      }
     });
 };
 

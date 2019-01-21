@@ -35,9 +35,10 @@ class MovieGridItem extends Component {
     return (
       <div className={ styles.movieItem }>
         <Image
+          db
           className={ styles.poster }
           width={ 1280 }
-          src={ `db/${this.props.movie.poster_path}` }
+          src={ this.props.movie.poster_path }
         />
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
@@ -84,7 +85,7 @@ class MovieGridItem extends Component {
               { [styles.headerOffset]: this.state.descriptionOpen },
             )
           }>
-            <Link params={{ movie: this.props.movie.id }} clearParams={ ['query'] }>
+            <Link params={{ movie: this.props.movie.id }}>
               <h1 title={ this.props.movie.title } className={ styles.title }>
                 { this.props.movie.title }
               </h1>
@@ -97,7 +98,7 @@ class MovieGridItem extends Component {
               ))
             }</p>
             <div className={ styles.rating }>
-            { (this.props.movie.vote_average).toPrecision(2) }
+            { (this.props.movie.vote_average / 2).toPrecision(2) }
             </div>
           </header>
 

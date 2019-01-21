@@ -25,6 +25,7 @@ class MoviesList extends Component {
     gridView: true,
     loading: false,
     trailer: null,
+    query: null,
   };
 
   componentDidMount = () => {
@@ -35,6 +36,7 @@ class MoviesList extends Component {
     const trailer = getParam('trailer');
     const movie = getParam('movie');
     const gridView = getParam('view') !== 'list';
+    const query = getParam('query');
 
     if (this.state.trailer !== trailer) {
       this.setState({ trailer }, () => {
@@ -47,7 +49,7 @@ class MoviesList extends Component {
     }
 
     if (this.props.movie.id !== +movie) {
-      this.setDetailsMovie(props, movie);
+      this.setDetailsMovie(props, +movie);
     }
 
     if (this.state.gridView !== gridView) {
@@ -59,6 +61,13 @@ class MoviesList extends Component {
 
       window.scrollTo(0, height);
       this.props.removeMovies();
+    }
+
+    if (this.state.query !== query) {
+      this.setState({ query }, () => {
+        this.props.removeMovies();
+        this.props.loadMovies(this.props.match);
+      });
     }
   }
 
@@ -107,11 +116,14 @@ class MoviesList extends Component {
                 />
             )) }
           </div>
-          { this.state.loading && <Loading/> }
-          <Waypoint
+          { !this.props.listLoaded
+            ? this.state.loading && <Loading/>
+            : <div>movies have loaded!</div> }
+          { /* add not found message */ }
+          { !this.props.listLoaded && <Waypoint
             onEnter={ this.enterEndOfList }
             onLeave={ this.leaveEndOfList }
-          />
+          /> }
         </div>
       </div>
     );
@@ -139,9 +151,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  movies: state.movies,
+  movies: state.movies.list,
+  listLoaded: state.movies.loaded,
   movie: state.movieDetails,
   genres: state.genres,
+  store: state,
 });
 
 export default withDialogContext(

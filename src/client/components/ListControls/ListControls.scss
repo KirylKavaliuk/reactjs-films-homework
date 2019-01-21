@@ -82,12 +82,13 @@
     flex-wrap: wrap;
   }
 
-  .menu-links {
+  .sections {
     width: 100%;
     justify-content: space-between;
+    margin: 10px 0;
   }
 
-  .menu-link {
+  .section {
     padding: 5px 10px;
 
     &:first-child {

@@ -18,7 +18,7 @@ export default class Search extends Component {
   componentDidMount() {
     const query = getParam('query');
 
-    this.setState({ searchQuery: query || '' });
+    this.setState({ searchQuery: query ? decodeURI(query) : '' });
   }
 
   onChangeHandler = (event) => {

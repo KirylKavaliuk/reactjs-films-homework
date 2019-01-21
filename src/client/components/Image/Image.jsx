@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import withConditionalRendering from 'utils/rendering';
+
 import classNames from 'classnames';
 
 import styles from './Image.scss';
 
-const Image = ({ src, width, className }) => {
-  let transformSrc = src;
-  const match = src.match(/\w+\//);
+const Image = ({
+  db,
+  src,
+  width,
+  className,
+}) => {
+  let transformedSrc = src;
 
-  if (match) {
-    const key = match[0];
-
-    if (key === 'db/') {
-      const rest = src.substring(src.indexOf(key) + key.length);
-      transformSrc = `https://image.tmdb.org/t/p/w${width}/${rest}`;
-    }
+  if (db) {
+    transformedSrc = `https://image.tmdb.org/t/p/w${width}/${src}`;
   }
 
   return (
@@ -24,7 +25,7 @@ const Image = ({ src, width, className }) => {
         styles.image,
         className,
       ) }
-      src={ transformSrc }
+      src={ transformedSrc }
     />
   );
 };
@@ -41,4 +42,4 @@ Image.propTypes = {
   className: PropTypes.string,
 };
 
-export default Image;
+export default withConditionalRendering(Image, 'src');

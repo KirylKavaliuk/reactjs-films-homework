@@ -39,7 +39,7 @@
 
 @media only screen and (max-width: 1000px) {
   .movie-details {
-    min-height: 80vh;
+    min-height: 70vh;
     grid-template-columns: 20px minmax(150px, 60%) minmax(150px, 40%) 20px;
     grid-template-rows: 80px auto 80px;
   }
@@ -47,6 +47,7 @@
 
 @media only screen and (max-width: 750px) {
   .movie-details {
+    min-height: 80vh;
     grid-template-columns: 10px auto 10px;
     grid-template-rows: 0 80px auto 60px 60px;
     grid-template-areas:

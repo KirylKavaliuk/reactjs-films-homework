@@ -11,6 +11,7 @@ import Icon from 'components/Icon/Icon';
 import Button from 'components/Button/Button';
 import Video from 'components/Video/Video';
 import Rating from 'components/Rating/Rating';
+import Link from 'components/Link/Link';
 
 import styles from './MovieListItem.scss';
 
@@ -19,9 +20,10 @@ class MovieListItem extends Component {
     return (
       <div className={ styles.movieItem }>
         <Image
+          db
           className={ styles.poster }
           width={ 1280 }
-          src={ `db/${this.props.movie.backdrop_path}` }
+          src={ this.props.movie.backdrop_path }
         />
 
         <div className={
@@ -29,7 +31,6 @@ class MovieListItem extends Component {
             styles.info,
           )}
         >
-
           <header className={
             classNames(
               styles.header,
@@ -38,9 +39,9 @@ class MovieListItem extends Component {
             <h1 className={ styles.title }>{ this.props.movie.title }</h1>
             <p className={ styles.genres }>{
               this.props.movie.genres.slice(0, 3).map((genre, index) => (
-                <span key={ index } className={ styles.genre }>
+                <Link className={ styles.genre } key={ index } to={ `/genre/${genre.id}` } clearParams={ ['query', 'movie'] }>
                   { genre.name }
-                </span>
+                </Link>
               ))
             }</p>
             <div className={ styles.rating }>
@@ -56,11 +57,12 @@ class MovieListItem extends Component {
             { this.props.movie.overview }
           </p>
 
-          <Button
-            label='Watch Now'
-            className={ styles.watchButton }
-            onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
-          />
+          <Link params={{ trailer: this.props.movie.id }}>
+            <Button
+              label='Watch Now'
+              className={ styles.watchButton }
+            />
+          </Link>
         </div>
       </div>
     );

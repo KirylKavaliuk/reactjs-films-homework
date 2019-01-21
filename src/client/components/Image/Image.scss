@@ -1,3 +1,8 @@
+@import 'styles/palette';
+
 .image {
   width: 100%;
+  background: $LIGHT_GREY;
+  position: relative;
+  border: none;
 }

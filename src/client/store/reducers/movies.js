@@ -1,7 +1,16 @@
-export default (state = [], action) => {
+const defaultValue = { list: [], loaded: false };
+
+export default (state = defaultValue, action) => {
   switch (action.type) {
-    case 'ADD_MOVIES': return [...state, ...action.payload];
-    case 'REMOVE_MOVIES': return [];
+    case 'ADD_MOVIES': return {
+      list: [...state.list, ...action.payload],
+      loaded: false,
+    };
+    case 'SET_LOADED': return {
+      list: state.list.slice(),
+      loaded: true,
+    };
+    case 'REMOVE_MOVIES': return defaultValue;
     default: return state;
   }
 };

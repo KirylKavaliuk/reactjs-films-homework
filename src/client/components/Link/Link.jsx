@@ -13,6 +13,12 @@ export default class _Link extends Component {
     to: '',
   }
 
+  componentDidMount() {
+    const to = this.props.to || getSection();
+
+    this.setState({ to });
+  }
+
   onHoverHandler = () => {
     const section = this.props.to || getSection();
     const search = new Params()
