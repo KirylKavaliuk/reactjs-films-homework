@@ -17,24 +17,25 @@
 }
 
 .star {
+  z-index: 2;
   width: 35px;
   height: 30px;
-  z-index: 2;
+  transition: all 0.45s ease;
 
   &::before {
-    content: '★';
     display: flex;
+    width: 30px;
+    height: 30px;
+    content: '★';
+    font-size: 30px;
     align-items: center;
     justify-content: center;
-    height: 30px;
-    width: 30px;
-    font-size: 30px;
   }
 }
 
 .value {
-  height: 100%;
   width: 100%;
+  height: 100%;
   background: $LIGHT_BLUE;
 }
 
@@ -45,9 +46,9 @@
 
 .rating-number-wrap {
   display: flex;
+  min-width: 50px;
   justify-content: center;
   align-items: center;
-  min-width: 50px;
 
   &:hover {
     cursor: default;
@@ -57,7 +58,7 @@
 .rating-number {
   box-sizing: border-box;
   padding: 3px 6px;
-  border: 1px solid #09ade3;
+  border: 1px solid $LIGHTER_BLUE;
   border-radius: 2px;
   font-size: 16px;
 }

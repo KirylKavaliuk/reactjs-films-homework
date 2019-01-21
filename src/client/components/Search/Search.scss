@@ -20,6 +20,7 @@
     border: none;
     background: none;
     fill: #fff;
+    transition: right 0.45s ease;
 
     &:focus {
       outline: none;
@@ -39,10 +40,11 @@
     border-radius: 4px;
     background: none;
     font-size: 18px;
+    transition: all 0.45s ease;
 
     &.searchNotValid {
-      border-color: $RED;
       color: $RED;
+      border-color: $RED;
 
       & ~ .search-button {
         fill: $RED;
@@ -59,6 +61,7 @@
 
     &:focus {
       outline: none;
+      box-shadow: 0 0 15px 2px $WHITE;
     }
 
     &::placeholder {

@@ -3,9 +3,9 @@
 .not-found {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
 }
 
 .text {
@@ -14,12 +14,12 @@
 }
 
 .header {
+  color: $LIGHT_BLUE;
   font-size: 40px;
   font-weight: 700;
-  color: $LIGHT_BLUE;
 }
 
 .description {
-  font-size: 18px;
   color: $GREY;
+  font-size: 18px;
 }

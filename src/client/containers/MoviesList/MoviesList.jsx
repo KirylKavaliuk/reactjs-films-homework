@@ -25,6 +25,7 @@ class MoviesList extends Component {
     loading: false,
     trailer: null,
     query: null,
+    movie: null,
   };
 
   componentDidMount = () => {
