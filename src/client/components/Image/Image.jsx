@@ -13,6 +13,7 @@ const Image = ({
   width,
   className,
 }) => {
+  const imageClasses = classNames(styles.image, className);
   let transformedSrc = src;
 
   if (db) {
@@ -21,10 +22,7 @@ const Image = ({
 
   return (
     <img
-      className={ classNames(
-        styles.image,
-        className,
-      ) }
+      className={ imageClasses }
       src={ transformedSrc }
     />
   );

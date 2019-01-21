@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import withConditionalRendering from 'utils/rendering';
 import { withDialogContext } from 'utils/dialog';
 
 import classNames from 'classnames';
@@ -9,11 +8,7 @@ import classNames from 'classnames';
 import Image from 'components/Image/Image';
 import Icon from 'components/Icon/Icon';
 import Button from 'components/Button/Button';
-import Video from 'components/Video/Video';
-import Rating from 'components/Rating/Rating';
 import Link from 'components/Link/Link';
-
-import { getSection, Params } from 'utils/url';
 
 import styles from './MovieGridItem.scss';
 
@@ -43,9 +38,7 @@ class MovieGridItem extends Component {
 
         { !this.state.descriptionOpen && <div className={ styles.more }>
           <Link params={{ trailer: this.props.movie.id }}>
-            <div
-              className={ styles.playButton }
-            >
+            <div className={ styles.playButton }>
               <Icon
                 className={ styles.playButtonIcon }
                 name='play'
@@ -55,12 +48,11 @@ class MovieGridItem extends Component {
           </Link>
 
           <Button
-            label='View Info'
             transparent
+            label='View Info'
             onClick={ this.toggleDescriptionHandler }
           />
-        </div>
-        }
+        </div> }
 
         <div className={
           classNames(
@@ -90,15 +82,20 @@ class MovieGridItem extends Component {
                 { this.props.movie.title }
               </h1>
             </Link>
-            <p className={ styles.genres }>{
-              this.props.movie.genres.slice(0, 3).map((genre, index) => (
-                <Link className={ styles.genre } key={ index } to={ `/genre/${genre.id}` } clearParams={ ['query', 'movie'] }>
+            <p className={ styles.genres }>
+              { this.props.movie.genres.slice(0, 3).map((genre, index) => (
+                <Link
+                  className={ styles.genre }
+                  key={ index }
+                  to={ `/genre/${genre.id}` }
+                  clearParams={ ['query', 'movie'] }
+                >
                   { genre.name }
                 </Link>
-              ))
-            }</p>
+              )) }
+            </p>
             <div className={ styles.rating }>
-            { (this.props.movie.vote_average / 2).toPrecision(2) }
+              { (this.props.movie.vote_average / 2).toPrecision(2) }
             </div>
           </header>
 
@@ -123,16 +120,12 @@ class MovieGridItem extends Component {
   }
 }
 
-// //onClick={ () => this.props.openDialog(<Video id={ this.props.movie.id }/>) }
-
 MovieGridItem.defaultProps = {
   movie: null,
-  genres: [],
 };
 
 MovieGridItem.propTypes = {
   movie: PropTypes.object,
-  genres: PropTypes.array,
 };
 
 export default withDialogContext(MovieGridItem);

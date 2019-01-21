@@ -28,7 +28,7 @@ const pathes = [{
   value: '/genre/:genreId',
 }];
 
-const Routing = props => (
+const Routing = () => (
   <Switch>
     { pathes.map((path, index) => (
       <Route

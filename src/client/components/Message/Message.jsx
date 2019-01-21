@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import withConditionalRendering from 'utils/rendering';
@@ -14,6 +13,10 @@ class Message extends Component {
   componentDidMount() {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => this.props.closeMessage(), 4000);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
   }
 
   render() {

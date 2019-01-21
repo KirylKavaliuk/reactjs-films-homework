@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
@@ -8,14 +7,10 @@ import { withRouter } from 'react-router-dom';
 import { Provider as DialogProvider } from 'utils/dialog';
 import { Provider as MessageProvider } from 'utils/message';
 
-import MoviesList from 'containers/MoviesList/MoviesList';
 import MovieDetails from 'containers/MovieDetails/MovieDetails';
 
-import Select from 'components/Select/Select';
-import Loading from 'components/Loading/Loading';
 import Footer from 'components/Footer/Footer';
 import Dialog from 'components/Dialog/Dialog';
-import Rating from 'components/Rating/Rating';
 import Message from 'components/Message/Message';
 import Routing from 'components/Routing/Routing';
 
@@ -25,8 +20,8 @@ import 'normalize.css';
 import styles from './App.scss';
 import 'styles/index.scss';
 
-const dialogPortal = document.getElementById('dialog');
-const messagePortal = document.getElementById('notification');
+const dialogNode = document.getElementById('dialog');
+const messageNode = document.getElementById('notification');
 
 class App extends Component {
   state = {
@@ -101,7 +96,7 @@ class App extends Component {
           >
             { this.state.dialog.component }
           </Dialog>,
-          dialogPortal,
+          dialogNode,
         ) }
 
         { ReactDOM.createPortal(
@@ -110,7 +105,7 @@ class App extends Component {
             text={ this.state.message.text }
             closeMessage={ this.closeMessageHandler }
           />,
-          messagePortal,
+          messageNode,
         ) }
         <Footer/>
       </div>

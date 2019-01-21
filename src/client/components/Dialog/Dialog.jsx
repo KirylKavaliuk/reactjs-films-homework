@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import withConditionalRendering from 'utils/rendering';
-
-import Loading from 'components/Loading/Loading';
 
 import Link from 'components/Link/Link';
 
@@ -29,11 +26,13 @@ class Dialog extends Component {
 }
 
 Dialog.defaultProps = {
-
+  children: null,
+  open: false,
 };
 
 Dialog.propTypes = {
-
+  children: PropTypes.node,
+  open: PropTypes.bool,
 };
 
 

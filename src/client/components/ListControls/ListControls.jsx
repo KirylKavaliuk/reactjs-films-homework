@@ -31,9 +31,15 @@ export default class ListControls extends Component {
       <menu className={ styles.menu }>
         <div className={ styles.listControls }>
           <ul className={ styles.sections }>
-            <Link to='/trading' clearParams={['query', 'movie']}><li className={ this.setActiveStyleForLinks(0) }>Trading</li></Link>
-            <Link to='/top-rated' clearParams={['query', 'movie']}><li className={ this.setActiveStyleForLinks(1) }>Top Rated</li></Link>
-            <Link to='/coming-soon' clearParams={['query', 'movie']}><li className={ this.setActiveStyleForLinks(2) }>Coming soon</li></Link>
+            <Link to='/trading' clearParams={['query', 'movie']}>
+              <li className={ this.setActiveStyleForLinks(0) }>Trading</li>
+            </Link>
+            <Link to='/top-rated' clearParams={['query', 'movie']}>
+              <li className={ this.setActiveStyleForLinks(1) }>Top Rated</li>
+            </Link>
+            <Link to='/coming-soon' clearParams={['query', 'movie']}>
+              <li className={ this.setActiveStyleForLinks(2) }>Coming soon</li>
+            </Link>
           </ul>
           <Select
             match={ this.props.match }
@@ -68,9 +74,13 @@ export default class ListControls extends Component {
 }
 
 ListControls.defaultProps = {
-
+  match: {},
+  genres: [],
+  gridView: true,
 };
 
 ListControls.propTypes = {
-
+  match: PropTypes.object,
+  genres: PropTypes.array,
+  gridView: PropTypes.bool,
 };

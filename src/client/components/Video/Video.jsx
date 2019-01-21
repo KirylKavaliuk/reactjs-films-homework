@@ -30,7 +30,7 @@ export default class Video extends Component {
       if (!this.state.loaded) {
         this.setState({ error: true });
       }
-    }, 10000);
+    }, 7000);
   }
 
   onLoadHandler = () => {
@@ -42,19 +42,19 @@ export default class Video extends Component {
   }
 
   render() {
-    const { src } = this.state;
+    const { src, error, loaded } = this.state;
 
     return (
       <div className={ styles.videoWrapper }>
-        { !this.state.error
+        { !error
         && <iframe
             onLoad={ this.onLoadHandler }
             className={ styles.video }
             src={ src }
             allowFullScreen
           ></iframe> }
-        { !this.state.error && !this.state.loaded && <Loading className={ styles.loading }/> }
-        { this.state.error && <div className={ styles.error }>Error! Video is not loaded.</div> }
+        { !error && !loaded && <Loading className={ styles.loading }/> }
+        { error && <div className={ styles.error }>Error! Video is not loaded.</div> }
       </div>
     );
   }

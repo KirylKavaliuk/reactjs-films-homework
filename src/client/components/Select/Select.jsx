@@ -33,19 +33,26 @@ export default class Select extends Component {
 
   render() {
     return (
-      <div className={
-        classNames(
-          styles.select,
-          { [this.props.className]: this.props.className },
-          { [styles.active]: this.props.match.url.includes('/genre') },
-        )
-         }onMouseLeave={ this.closeHandler } >
+      <div
+        className={
+          classNames(
+            styles.select,
+            { [this.props.className]: this.props.className },
+            { [styles.active]: this.props.match.url.includes('/genre') },
+          )
+        }
+        onMouseLeave={ this.closeHandler }
+      >
         <div className={ styles.main } onClick={ this.openHandler }>
           <span className={ styles.value }>{ this.state.value }</span>
-          <Icon name='arrow' className={ classNames(
-            styles.arrow,
-            { [styles.arrowOpen]: this.state.open },
-          ) }/>
+          <Icon
+            name='arrow'
+            className={
+              classNames(
+                styles.arrow,
+                { [styles.arrowOpen]: this.state.open },
+              )
+            }/>
         </div>
         <div className={
           classNames(
@@ -53,7 +60,7 @@ export default class Select extends Component {
             { [styles.listOpen]: this.state.open },
           )
         }>
-          { this.props.genres.map((genre, index) => (
+          { this.props.genres.map(genre => (
             <Link
               key={ genre.id }
               className={ styles.item }
@@ -69,9 +76,11 @@ export default class Select extends Component {
 }
 
 Select.defaultProps = {
-
+  genres: [],
+  match: {},
 };
 
 Select.propTypes = {
-
+  genres: PropTypes.array,
+  match: PropTypes.object,
 };

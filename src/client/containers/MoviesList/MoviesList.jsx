@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import { withDialogContext } from 'utils/dialog';
 
@@ -95,20 +94,20 @@ class MoviesList extends Component {
 
   render() {
     const ListItem = this.state.gridView ? MovieGridItem : MovieListItem;
+    const viewClasses = classNames(
+      { [styles.grid]: this.state.gridView },
+      { [styles.list]: !this.state.gridView },
+    );
 
     return (
-      <div id='movies-list' className={ styles.moviesListWrapper }>
+      <div className={ styles.moviesListWrapper }>
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
           <ListControls
-            { ...this.props }
+            match={ this.props.match }
+            genres={ this.props.genres }
             gridView={ this.state.gridView }
-            setView={ this.setView }
           />
-          <div className={
-            classNames(
-              { [styles.grid]: this.state.gridView },
-              { [styles.list]: !this.state.gridView },
-            )}>
+          <div className={ viewClasses }>
             { this.props.movies.map((_movie, index) => (
                 <ListItem
                   key={ index }
@@ -129,18 +128,6 @@ class MoviesList extends Component {
     );
   }
 }
-
-MoviesList.defaultProps = {
-
-};
-
-MoviesList.propTypes = {
-
-};
-
-MoviesList.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
 
 const mapDispatchToProps = dispatch => ({
   loadMovies: match => dispatch(actionsMovies.add(match)),
