@@ -8,7 +8,9 @@ function withConditionalRenderingHOC(WrappedComponent, keyField) {
 
       if (keyFieldValue instanceof Array && keyFieldValue.length) {
         return component;
-      } if (keyFieldValue !== undefined && keyFieldValue !== null) {
+      }
+
+      if (keyFieldValue !== undefined && keyFieldValue !== null) {
         return component;
       }
 

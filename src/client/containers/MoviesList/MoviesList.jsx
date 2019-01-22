@@ -38,16 +38,6 @@ class MoviesList extends Component {
     const gridView = getParam('view') !== 'list';
     const query = getParam('query');
 
-    if (this.state.trailer !== trailer) {
-      this.setState({ trailer }, () => {
-        if (this.state.trailer) {
-          this.props.openDialog(<Video id={ +trailer }/>);
-        } else {
-          this.props.closeDialog();
-        }
-      });
-    }
-
     if (this.props.movie.id !== +movie) {
       this.setDetailsMovie(props, +movie);
     }
@@ -61,6 +51,16 @@ class MoviesList extends Component {
 
       window.scrollTo(0, height);
       this.props.removeMovies();
+    }
+
+    if (this.state.trailer !== trailer) {
+      this.setState({ trailer }, () => {
+        if (this.state.trailer) {
+          this.props.openDialog(<Video id={ +trailer }/>);
+        } else {
+          this.props.closeDialog();
+        }
+      });
     }
 
     if (this.state.query !== query) {
@@ -85,12 +85,26 @@ class MoviesList extends Component {
   }
 
   enterEndOfList = () => {
-    this.setState({ loading: true });
-    this.props.loadMovies(this.props.match);
+    if (!this.props.listLoaded) {
+      this.setState({ loading: true });
+      this.props.loadMovies(this.props.match);
+    }
   }
 
   leaveEndOfList = () => {
     this.setState({ loading: false });
+  }
+
+  loadingRender = () => {
+    if (this.props.listLoaded) {
+      if (this.props.movies.length) {
+        return <div className={ styles.loaded }>Movies are loaded</div>;
+      }
+
+      return <div className={ styles.notFound }>Movies are not found</div>;
+    }
+
+    return <Loading/>;
   }
 
   render() {
@@ -116,10 +130,7 @@ class MoviesList extends Component {
                 />
             )) }
           </div>
-          { !this.props.listLoaded
-            ? this.state.loading && <Loading/>
-            : <div>movies have loaded!</div> }
-          { /* add not found message */ }
+          { this.loadingRender() }
           { !this.props.listLoaded && <Waypoint
             onEnter={ this.enterEndOfList }
             onLeave={ this.leaveEndOfList }
