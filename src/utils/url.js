@@ -10,7 +10,12 @@ const parseParams = () => {
   }, {});
 };
 
-export const getSection = () => (document.location.pathname);
+export const getSection = (first = false) => {
+  const { pathname } = document.location;
+  const section = pathname.match(/\/[a-zA-Z0-9-]*(?=\/)?/);
+
+  return first ? section && section[0] : pathname;
+};
 
 export const getParam = (key) => {
   const params = parseParams();
