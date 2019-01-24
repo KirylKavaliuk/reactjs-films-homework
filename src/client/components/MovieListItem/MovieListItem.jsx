@@ -10,6 +10,12 @@ import Link from 'components/Link/Link';
 
 import styles from './MovieListItem.scss';
 
+const onClickGenreHandler = () => {
+  const { height } = document.getElementById('movie-details').getBoundingClientRect();
+
+  window.scrollTo(0, height);
+};
+
 const MovieListItem = ({ movie }) => (
   <div className={ styles.movieItem }>
     <Image
@@ -29,6 +35,7 @@ const MovieListItem = ({ movie }) => (
                 key={ index }
                 to={ `/genre/${genre.id}` }
                 clearParams={ ['query', 'movie'] }
+                onClick={ onClickGenreHandler }
               >
                 { genre.name }
               </Link>

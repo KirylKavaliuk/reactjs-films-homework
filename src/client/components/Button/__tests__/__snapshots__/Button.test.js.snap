@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders button shallow correctly 1`] = `
+<button
+  className="Button__button___1nbn1"
+  onClick={null}
+>
+  button
+</button>
+`;

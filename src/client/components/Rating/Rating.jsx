@@ -12,20 +12,23 @@ class Rating extends Component {
     onHover: -1,
   }
 
-  onHoverHandler(rating) {
+  onHoverHandler = (rating) => {
     this.setState({ onHover: rating });
   }
 
-  sentRatingHandler(rating) {
-    if (this.props.value) {
-      this.props.openMessage(`Your rating (${rating}) has been sent. Thank you!`);
+  sentRatingHandler = (rating) => {
+    const { value, openMessage } = this.props;
+
+    if (value) {
+      openMessage(`Your rating (${rating}) has been sent. Thank you!`);
     }
   }
 
   render() {
     return (
       <div className={ styles.rating }>
-        { Array.from({ length: 5 }, (v, k) => (<div
+        { Array.from({ length: 5 }, (v, k) => (
+          <div
             key={ k }
             className={ classNames(
               styles.star,

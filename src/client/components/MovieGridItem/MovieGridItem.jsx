@@ -26,6 +26,12 @@ class MovieGridItem extends Component {
     nextState.descriptionOpen !== this.state.descriptionOpen
   )
 
+  onClickGenreHandler = () => {
+    const { height } = document.getElementById('movie-details').getBoundingClientRect();
+
+    window.scrollTo(0, height);
+  }
+
   render() {
     return (
       <div className={ styles.movieItem }>
@@ -89,6 +95,7 @@ class MovieGridItem extends Component {
                   key={ index }
                   to={ `/genre/${genre.id}` }
                   clearParams={ ['query', 'movie'] }
+                  onClick={ this.onClickGenreHandler }
                 >
                   { genre.name }
                 </Link>

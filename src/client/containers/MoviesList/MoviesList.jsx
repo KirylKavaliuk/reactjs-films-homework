@@ -47,9 +47,6 @@ class MoviesList extends Component {
     }
 
     if (this.props.match.params.genreId !== props.match.params.genreId) {
-      const { height } = document.getElementById('movie-details').getBoundingClientRect();
-
-      window.scrollTo(0, height);
       this.props.removeMovies();
     }
 

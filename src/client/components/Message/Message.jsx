@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import withConditionalRendering from 'utils/rendering';
+import { withConditionalRendering } from 'utils/rendering';
 
 import classNames from 'classnames';
 

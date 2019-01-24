@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders description open shallow correctly 1`] = `
+<Description
+  open={true}
+  text="text"
+/>
+`;
