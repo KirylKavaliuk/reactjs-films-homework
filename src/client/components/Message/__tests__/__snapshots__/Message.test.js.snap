@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders message correctly 1`] = `null`;
+
+exports[`renders message with timers correctly 1`] = `
+<div
+  className="Message__message___GEGYp undefined"
+  onClick={[Function]}
+>
+  message
+</div>
+`;

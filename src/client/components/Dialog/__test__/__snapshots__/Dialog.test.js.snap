@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders dialog close correctly 1`] = `null`;
+
+exports[`renders dialog open correctly 1`] = `
+<a
+  className="Link__link___-IU0S Dialog__dialog___3Z4Fy Dialog__open___oVAzw"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div>
+    component for dialog
+  </div>
+</a>
+`;

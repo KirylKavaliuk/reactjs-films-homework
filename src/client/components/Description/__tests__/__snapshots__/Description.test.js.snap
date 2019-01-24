@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders description open shallow correctly 1`] = `
-<Description
-  open={true}
-  text="text"
-/>
+exports[`renders description close correctly 1`] = `null`;
+
+exports[`renders description open correctly 1`] = `
+<div
+  className="Description__description___1aDcr Description__open___3dk14"
+>
+  text
+</div>
 `;

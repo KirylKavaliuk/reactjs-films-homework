@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export function withConditionalRendering(WrappedComponent, keyField) {
+export default function withConditionalRendering(WrappedComponent, keyField) {
   return class extends Component {
     render() {
       const keyFieldValue = this.props[keyField];
@@ -15,14 +15,6 @@ export function withConditionalRendering(WrappedComponent, keyField) {
       }
 
       return null;
-    }
-  };
-}
-
-export function withAnimation(WrappedComponent) {
-  return class extends Component {
-    render() {
-      return <WrappedComponent { ...this.props }/>;
     }
   };
 }

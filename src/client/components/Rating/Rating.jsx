@@ -16,7 +16,7 @@ class Rating extends Component {
     this.setState({ onHover: rating });
   }
 
-  sentRatingHandler = (rating) => {
+  sendRatingHandler = (rating) => {
     const { value, openMessage } = this.props;
 
     if (value) {
@@ -24,21 +24,23 @@ class Rating extends Component {
     }
   }
 
+  renderStars = () => Array.from({ length: 5 }, (v, k) => (
+    <div
+      key={ k }
+      className={ classNames(
+        styles.star,
+        { [styles.active]: k < Math.round(this.props.value) && this.state.onHover === -1 },
+        { [styles.onHover]: this.state.onHover >= k },
+      ) }
+      onMouseOut={ () => this.onHoverHandler(-1) }
+      onMouseOver={ () => this.onHoverHandler(k) }
+      onClick={ () => this.sendRatingHandler(k + 1) }
+    />))
+
   render() {
     return (
       <div className={ styles.rating }>
-        { Array.from({ length: 5 }, (v, k) => (
-          <div
-            key={ k }
-            className={ classNames(
-              styles.star,
-              { [styles.active]: k < Math.round(this.props.value) && this.state.onHover === -1 },
-              { [styles.onHover]: this.state.onHover >= k },
-            ) }
-            onMouseOut={ () => this.onHoverHandler(-1) }
-            onMouseOver={ () => this.onHoverHandler(k) }
-            onClick={ () => this.sentRatingHandler(k + 1) }
-          />)) }
+        { this.renderStars() }
         <div className={ styles.ratingNumberWrap }>
           <div className={ styles.ratingNumber }>
             { this.state.onHover !== -1

@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders film header correctly 1`] = `
+<div
+  className="FilmHeader__film-header___1bjD8"
+>
+  <h2
+    className="FilmHeader__name___12D1E"
+  >
+    
+  </h2>
+  <p
+    className="FilmHeader__genres___2kuJ_"
+  >
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre1
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre2
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre3
+    </span>
+    0
+  </p>
+</div>
+`;
+
+exports[`renders film header correctly 2`] = `
+<div
+  className="FilmHeader__film-header___1bjD8"
+>
+  <h2
+    className="FilmHeader__name___12D1E"
+  >
+    
+  </h2>
+  <p
+    className="FilmHeader__genres___2kuJ_"
+  >
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre1
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre2
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre3
+    </span>
+    <span
+      className="FilmHeader__duration___1HHqc"
+    >
+      4 h
+       
+      10 m
+    </span>
+  </p>
+</div>
+`;
+
+exports[`renders film header correctly 3`] = `
+<div
+  className="FilmHeader__film-header___1bjD8"
+>
+  <h2
+    className="FilmHeader__name___12D1E"
+  >
+    
+  </h2>
+  <p
+    className="FilmHeader__genres___2kuJ_"
+  >
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre1
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre2
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre3
+    </span>
+    <span
+      className="FilmHeader__duration___1HHqc"
+    >
+      1 h
+       
+    </span>
+  </p>
+</div>
+`;
+
+exports[`renders film header correctly 4`] = `
+<div
+  className="FilmHeader__film-header___1bjD8"
+>
+  <h2
+    className="FilmHeader__name___12D1E"
+  >
+    
+  </h2>
+  <p
+    className="FilmHeader__genres___2kuJ_"
+  >
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre1
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre2
+    </span>
+    <span
+      className="FilmHeader__genre___2QZId"
+    >
+      genre3
+    </span>
+    <span
+      className="FilmHeader__duration___1HHqc"
+    >
+       
+      50 m
+    </span>
+  </p>
+</div>
+`;
+
+exports[`renders film header uncorrectly 1`] = `null`;

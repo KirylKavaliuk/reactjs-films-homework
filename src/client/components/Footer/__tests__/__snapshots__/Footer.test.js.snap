@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders footer shallow correctly 1`] = `
+<footer
+  className="Footer__footer___1WWdL"
+>
+  <h1
+    className="Footer__logo___3Vf4V"
+  >
+     FILMS 
+  </h1>
+  <span
+    className="Footer__copy___3S9MV"
+  >
+    Copyright © 
+    2019
+     Kovalyuk Kirill
+  </span>
+</footer>
+`;

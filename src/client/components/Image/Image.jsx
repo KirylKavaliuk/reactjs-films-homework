@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { withConditionalRendering } from 'utils/rendering';
+import withConditionalRendering from 'utils/rendering';
 
 import classNames from 'classnames';
 
@@ -29,12 +29,14 @@ const Image = ({
 };
 
 Image.defaultProps = {
+  db: false,
   src: '',
   width: 500,
   className: '',
 };
 
 Image.propTypes = {
+  db: PropTypes.bool,
   src: PropTypes.string,
   width: PropTypes.number,
   className: PropTypes.string,

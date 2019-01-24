@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders not found component correctly 1`] = `
+<div
+  className="NotFound__not-found___vgFr0"
+>
+  <div
+    className="NotFound__text___vJrW1"
+  >
+    <h1
+      className="NotFound__header___3ES7q"
+    >
+      Error.
+    </h1>
+    <p
+      className="NotFound__description___39rly"
+    >
+      items is not found
+    </p>
+    <_Link
+      className="NotFound__link___3l-Er"
+      clearParams={Array []}
+      params={Object {}}
+      to="/"
+    >
+      To tranding movies
+    </_Link>
+  </div>
+</div>
+`;

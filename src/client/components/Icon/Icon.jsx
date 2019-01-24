@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { withConditionalRendering } from 'utils/rendering';
+import withConditionalRendering from 'utils/rendering';
 
 import Star from 'icons/star.svg';
 import Search from 'icons/search.svg';
@@ -35,7 +35,6 @@ const Icon = ({ name, className }) => {
 
 Icon.defaultProps = {
   className: '',
-  name: 'star',
 };
 
 Icon.propTypes = {

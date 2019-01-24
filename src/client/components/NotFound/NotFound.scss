@@ -3,7 +3,7 @@
 .not-found {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 20vh;
   align-items: center;
   justify-content: space-between;
 }
@@ -22,4 +22,13 @@
 .description {
   color: $GREY;
   font-size: 18px;
+}
+
+.link {
+  color: $DARK_GREY;
+  font-size: 16px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: underline;
 }
