@@ -22,7 +22,7 @@ it('renders video with timers correctly', () => {
 it('renders video with timers uncorrectly', () => {
   const tree = renderer.create(
     <Video id={ 66666666666 }/>,
-  ); 
+  );
 
   jest.advanceTimersByTime(7777);
 

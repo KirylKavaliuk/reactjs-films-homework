@@ -7,7 +7,7 @@ it('renders rating correctly', () => {
     <Rating
       value={ 2.5 }
       openMessage={ () => {} }
-    />
+    />,
   );
 
   const rating = tree.toJSON();
@@ -27,9 +27,7 @@ it('renders rating correctly', () => {
 
 it('renders rating uncorrectly', () => {
   const tree = renderer.create(
-    <Rating
-      openMessage={ () => {} }
-    />
+    <Rating openMessage={ () => {} }/>,
   );
 
   const rating = tree.toJSON();

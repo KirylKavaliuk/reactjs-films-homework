@@ -7,10 +7,5 @@ test('test requests', async () => {
   data = await request.get('db/movie/popular', {
     page: 1,
   });
-
-
-
-  console.log(data.results.length);
 });
-
 */

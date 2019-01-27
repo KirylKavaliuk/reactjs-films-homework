@@ -12,9 +12,9 @@ it('renders movie grid item correctly', () => {
           poster_path: '/5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg',
           title: 'title',
           genres: [
-            {id: 1, name: 'genre1'},
-            {id: 2, name: 'genre2'},
-            {id: 3, name: 'genre3'},
+            { id: 1, name: 'genre1' },
+            { id: 2, name: 'genre2' },
+            { id: 3, name: 'genre3' },
           ],
           vote_average: 3.5,
           overview: 'overview',
@@ -37,8 +37,7 @@ it('renders movie grid item correctly', () => {
 it('renders movie grid item uncorrectly', () => {
   const tree = renderer.create(
     <MovieGridItem/>,
-
-    ).toJSON();
+  ).toJSON();
 
   expect(tree).toBeNull();
   expect(tree).toMatchSnapshot();

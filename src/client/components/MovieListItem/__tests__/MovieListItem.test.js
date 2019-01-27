@@ -12,9 +12,9 @@ it('renders movie list item correctly', () => {
           poster_path: '/5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg',
           title: 'title',
           genres: [
-            {id: 1, name: 'genre1'},
-            {id: 2, name: 'genre2'},
-            {id: 3, name: 'genre3'},
+            { id: 1, name: 'genre1' },
+            { id: 2, name: 'genre2' },
+            { id: 3, name: 'genre3' },
           ],
           vote_average: 3.5,
           overview: 'overview',
@@ -26,7 +26,6 @@ it('renders movie list item correctly', () => {
   const movieGridItem = tree.toJSON();
   expect(tree).not.toBeNull();
   expect(movieGridItem).toMatchSnapshot();
-
 });
 
 it('renders movie list item uncorrectly', () => {
