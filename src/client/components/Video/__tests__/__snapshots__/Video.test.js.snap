@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders video with timers correctly 1`] = `
+<div
+  className="Video__video-wrapper___2WJzy"
+>
+  <iframe
+    allowFullScreen={true}
+    className="Video__video___2sO_i"
+    onLoad={[Function]}
+    src=""
+  />
+  <div
+    className="Loading__loading___2_FrG Video__loading___1yK56"
+  >
+    <div
+      className="Loading__icons___1uA0Q"
+    >
+      <div
+        className="Loading__icon___2WVPJ"
+      >
+        <div
+          className="Loading__circle___14YyA"
+        />
+      </div>
+      <div
+        className="Loading__icon___2WVPJ"
+      >
+        <div
+          className="Loading__circle___14YyA"
+        />
+      </div>
+      <div
+        className="Loading__icon___2WVPJ"
+      >
+        <div
+          className="Loading__circle___14YyA"
+        />
+      </div>
+    </div>
+    <span
+      className="Loading__text___13r1Y"
+    >
+      Loading
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders video with timers uncorrectly 1`] = `
+<div
+  className="Video__video-wrapper___2WJzy"
+>
+  <div
+    className="Video__error___25AAU"
+  >
+    Error! Video is not loaded.
+  </div>
+</div>
+`;

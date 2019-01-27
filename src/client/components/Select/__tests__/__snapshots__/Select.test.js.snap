@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders select correctly 1`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      Genre
+    </span>
+    <svg
+      className="Select__arrow___kPPA1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+      />
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+    </svg>
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre1
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre2
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre3
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders select correctly 2`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      Genre
+    </span>
+    <svg
+      className="Select__arrow___kPPA1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+      />
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+    </svg>
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre1
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre2
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre3
+    </a>
+  </div>
+</div>
+`;
+
+exports[`renders select correctly 3`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      Genre
+    </span>
+    <svg
+      className="Select__arrow___kPPA1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+      />
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+    </svg>
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre1
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre2
+    </a>
+    <a
+      className="Link__link___-IU0S Select__item____FX41"
+      href="/genre/3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      genre3
+    </a>
+  </div>
+</div>
+`;

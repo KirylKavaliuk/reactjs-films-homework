@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { withDialogContext } from 'utils/dialog';
+import withConditionalRendering from 'utils/rendering';
 
 import classNames from 'classnames';
 
@@ -25,12 +26,6 @@ class MovieGridItem extends Component {
   shouldComponentUpdate = (nextProps, nextState) => (
     nextState.descriptionOpen !== this.state.descriptionOpen
   )
-
-  onClickGenreHandler = () => {
-    const { height } = document.getElementById('movie-details').getBoundingClientRect();
-
-    window.scrollTo(0, height);
-  }
 
   render() {
     return (
@@ -95,7 +90,6 @@ class MovieGridItem extends Component {
                   key={ index }
                   to={ `/genre/${genre.id}` }
                   clearParams={ ['query', 'movie'] }
-                  onClick={ this.onClickGenreHandler }
                 >
                   { genre.name }
                 </Link>
@@ -135,4 +129,4 @@ MovieGridItem.propTypes = {
   movie: PropTypes.object,
 };
 
-export default withDialogContext(MovieGridItem);
+export default withDialogContext(withConditionalRendering(MovieGridItem, 'movie'));

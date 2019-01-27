@@ -16,21 +16,19 @@ export default class Video extends Component {
 
   timer = null;
 
-  componentWillMount() {
-    request.get(`/db/movie/${this.props.id}/videos`)
-      .then(({ results }) => {
-        this.setState({
-          src: `http://www.youtube.com/embed/${results[0].key}`,
-        });
-      });
-  }
-
   componentDidMount() {
     this.timer = setTimeout(() => {
       if (!this.state.loaded) {
         this.setState({ error: true });
       }
     }, 7000);
+
+    request.get(`/db/movie/${this.props.id}/videos`)
+      .then(({ results }) => {
+        this.setState({
+          src: `http://www.youtube.com/embed/${results[0].key}`,
+        });
+      });
   }
 
   onLoadHandler = () => {

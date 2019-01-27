@@ -4,7 +4,7 @@ import FilmHeader from '../FilmHeader';
 
 it('renders film header correctly', () => {
   const tree = renderer.create(
-    <FilmHeader genres={['genre1', 'genre2', 'genre3']}/>,
+    <FilmHeader genres={ ['genre1', 'genre2', 'genre3'] }/>,
   ).toJSON();
 
   expect(tree).not.toBeNull();
@@ -14,7 +14,7 @@ it('renders film header correctly', () => {
 it('renders film header correctly', () => {
   const tree = renderer.create(
     <FilmHeader
-      genres={['genre1', 'genre2', 'genre3']}
+      genres={ ['genre1', 'genre2', 'genre3'] }
       duration={ 250 }
     />,
   ).toJSON();

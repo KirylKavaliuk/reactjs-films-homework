@@ -4,6 +4,8 @@ const transformUrl = (url) => {
   const key = url.match(/\w+\//)[0];
   const rest = url.substring(url.indexOf(key) + key.length);
 
+  console.log(key);
+
   switch (key) {
     case 'db/': return `https://api.themoviedb.org/3/${rest}`;
     default: return `http://localhost:8080${url}`;
@@ -33,6 +35,7 @@ const objToUrlParams = (obj) => {
 const json = response => response.json();
 
 function get(path, data) {
+  console.log(path);
   return fetch(transformUrl(path) + objToUrlParams(data), {
     method: 'GET',
     mode: 'cors',

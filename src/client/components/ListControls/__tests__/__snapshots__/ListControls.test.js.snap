@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders list controls correctly 1`] = `
+<menu
+  className="ListControls__menu___3hmgJ"
+>
+  <div
+    className="ListControls__list-controls___3Tclz"
+  >
+    <ul
+      className="ListControls__sections___38v7z"
+    >
+      <a
+        className="Link__link___-IU0S"
+        href="/trading"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <li
+          className="ListControls__section___1rlYr ListControls__active-link___L0qDL"
+        >
+          Trading
+        </li>
+      </a>
+      <a
+        className="Link__link___-IU0S"
+        href="/top-rated"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <li
+          className="ListControls__section___1rlYr"
+        >
+          Top Rated
+        </li>
+      </a>
+      <a
+        className="Link__link___-IU0S"
+        href="/coming-soon"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <li
+          className="ListControls__section___1rlYr"
+        >
+          Coming soon
+        </li>
+      </a>
+    </ul>
+    <div
+      className="Select__select___1ZlRu"
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="Select__main___3EP3d"
+        onClick={[Function]}
+      >
+        <span
+          className="Select__value___2xWIB"
+        >
+          Genre
+        </span>
+        <svg
+          className="Select__arrow___kPPA1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+          />
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div
+        className="Select__list___2Ii_p"
+      >
+        <a
+          className="Link__link___-IU0S Select__item____FX41"
+          href="/genre/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre1
+        </a>
+        <a
+          className="Link__link___-IU0S Select__item____FX41"
+          href="/genre/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre2
+        </a>
+        <a
+          className="Link__link___-IU0S Select__item____FX41"
+          href="/genre/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre3
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ListControls__types-view___tY9PL"
+  >
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="ListControls__type-view___26jLs ListControls__active-type-view___3Owd9"
+      >
+        <svg
+          className=""
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z"
+          />
+        </svg>
+      </div>
+    </a>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="ListControls__type-view___26jLs"
+      >
+        <svg
+          className=""
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M20 13H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm0-10H3c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h17c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"
+          />
+        </svg>
+      </div>
+    </a>
+  </div>
+</menu>
+`;

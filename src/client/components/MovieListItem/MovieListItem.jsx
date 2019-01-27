@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { withDialogContext } from 'utils/dialog';
+import withConditionalRendering from 'utils/rendering';
 
 import Image from 'components/Image/Image';
 import Button from 'components/Button/Button';
@@ -9,12 +10,6 @@ import Rating from 'components/Rating/Rating';
 import Link from 'components/Link/Link';
 
 import styles from './MovieListItem.scss';
-
-const onClickGenreHandler = () => {
-  const { height } = document.getElementById('movie-details').getBoundingClientRect();
-
-  window.scrollTo(0, height);
-};
 
 const MovieListItem = ({ movie }) => (
   <div className={ styles.movieItem }>
@@ -35,7 +30,6 @@ const MovieListItem = ({ movie }) => (
                 key={ index }
                 to={ `/genre/${genre.id}` }
                 clearParams={ ['query', 'movie'] }
-                onClick={ onClickGenreHandler }
               >
                 { genre.name }
               </Link>
@@ -68,4 +62,4 @@ MovieListItem.propTypes = {
   movie: PropTypes.object,
 };
 
-export default withDialogContext(MovieListItem);
+export default withDialogContext(withConditionalRendering(MovieListItem, 'movie'));
