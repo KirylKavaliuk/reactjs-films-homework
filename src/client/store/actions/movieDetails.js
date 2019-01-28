@@ -1,4 +1,4 @@
-import request from 'utils/request';
+import http from 'utils/http';
 
 export default {
   setMovie: (movieDetails, defaultValue) => (dispatch) => {
@@ -6,7 +6,7 @@ export default {
       dispatch({ type: 'SET_MOVIEDETAILS', payload: movieDetails }); // set found movie.
     } else if (defaultValue.id) {
       // if the movie is not found in loaded movies list then make request to db.
-      request.get(`db/movie/${defaultValue.id}`)
+      http.get(`db/movie/${defaultValue.id}`)
         .then((movie) => {
           dispatch({ type: 'SET_MOVIEDETAILS', payload: movie });
         })

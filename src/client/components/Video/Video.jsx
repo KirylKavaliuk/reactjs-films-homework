@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Loading from 'components/Loading/Loading';
 
-import request from 'utils/request';
+import http from 'utils/http';
 
 import styles from './Video.scss';
 
@@ -23,7 +23,7 @@ export default class Video extends Component {
       }
     }, 7000);
 
-    request.get(`/db/movie/${this.props.id}/videos`)
+    http.get(`/db/movie/${this.props.id}/videos`)
       .then(({ results }) => {
         this.setState({
           src: `http://www.youtube.com/embed/${results[0].key}`,

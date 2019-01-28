@@ -1,8 +1,8 @@
-import request from 'utils/request';
+import http from 'utils/http';
 
 export default {
   addGenres: () => (dispatch) => {
-    request.get('db/genre/movie/list')
+    http.get('db/genre/movie/list')
       .then(({ genres }) => {
         dispatch({ type: 'ADD_GENRES', payload: genres });
       });

@@ -1,4 +1,4 @@
-import request from 'utils/request';
+import http from 'utils/http';
 import { getParam, getSection } from 'utils/url';
 
 const getNumberPage = (function () {
@@ -16,7 +16,7 @@ const getNumberPage = (function () {
 }());
 
 const getMoviesDetails = (dispatch, movies) => {
-  const requests = movies.results.map(movie => request.get(`db/movie/${movie.id}`));
+  const requests = movies.results.map(movie => http.get(`db/movie/${movie.id}`));
 
   Promise.all(requests)
     .then((_movies) => {
@@ -29,7 +29,7 @@ const getMoviesDetails = (dispatch, movies) => {
 };
 
 const getItemsForGenre = (dispatch, genreId) => {
-  request.get('db/discover/movie', {
+  http.get('db/discover/movie', {
     page: getNumberPage(),
     with_genres: genreId,
   })
@@ -41,7 +41,7 @@ const getItemsForGenre = (dispatch, genreId) => {
 const getItemsForSearch = (dispatch) => {
   const query = getParam('query');
 
-  request.get('db/search/movie', {
+  http.get('db/search/movie', {
     page: getNumberPage(),
     query: decodeURI(query),
     include_adult: false,
@@ -59,7 +59,7 @@ const getItemsForSections = (dispatch, match) => {
     '/coming-soon': 'upcoming',
   };
 
-  request.get(`db/movie/${map[getSection(true)]}`, {
+  http.get(`db/movie/${map[getSection(true)]}`, {
     page: getNumberPage(),
   })
     .then((response) => {
