@@ -1,6 +1,5 @@
 import http from '../http';
 
-
 test('test requests', async () => {
   let response = null;
 
@@ -18,7 +17,7 @@ test('test requests', async () => {
   expect(response.id).not.toBeUndefined();
   expect(response.name).toBe('Kirill');
 
-  response = await http.get('/db/movie/297802/videos?trtrs=trstrs&twfpwfpwf=pwfpwfptrs');
+  response = await http.get('db/movie/297802/videos?trtrs=trstrs&twfpwfpwf=pwfpwfptrs');
 
   expect(response.id).not.toBeUndefined();
 

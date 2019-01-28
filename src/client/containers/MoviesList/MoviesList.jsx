@@ -15,7 +15,7 @@ import MovieListItem from 'components/MovieListItem/MovieListItem';
 import Loading from 'components/Loading/Loading';
 import Video from 'components/Video/Video';
 
-import { getParam } from 'utils/url';
+import { getParam, getSection } from 'utils/url';
 
 import styles from './MoviesList.scss';
 
@@ -63,7 +63,6 @@ class MoviesList extends Component {
     if (this.state.query !== query) {
       this.setState({ query }, () => {
         this.props.removeMovies();
-        this.props.loadMovies(this.props.match);
       });
     }
   }
@@ -84,7 +83,34 @@ class MoviesList extends Component {
   enterEndOfList = () => {
     if (!this.props.listLoaded) {
       this.setState({ loading: true });
-      this.props.loadMovies(this.props.match);
+
+      const section = getSection(true);
+
+      switch (section) {
+        case '/search': {
+          const query = getParam('query');
+          this.props.loadMoviesForSearch(query);
+        }
+          break;
+        case '/genre': {
+          const { genreId } = this.props.match.params;
+
+          this.props.loadMoviesForGenre(+genreId);
+        }
+          break;
+        default: {
+          const map = {
+            '/': 'popular',
+            '/trading': 'popular',
+            '/top-rated': 'top_rated',
+            '/coming-soon': 'upcoming',
+          };
+
+          const type = map[section];
+
+          this.props.loadMoviesForSections(type);
+        }
+      }
     }
   }
 
@@ -139,11 +165,13 @@ class MoviesList extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  loadMovies: match => dispatch(actionsMovies.add(match)),
+  loadMoviesForSections: type => dispatch(actionsMovies.addMoviesForSections(type)),
+  loadMoviesForGenre: genreId => dispatch(actionsMovies.addMoviesForGenre(genreId)),
+  loadMoviesForSearch: query => dispatch(actionsMovies.addMoviesForSearch(query)),
   removeMovies: () => dispatch(actionsMovies.remove()),
-  setMovieDetails: (movie, defaultValue) => {
-    dispatch(actionsMovieDetails.setMovie(movie, defaultValue));
-  },
+  setMovieDetails: (movie, defaultValue) => (
+    dispatch(actionsMovieDetails.setMovie(movie, defaultValue))
+  ),
 });
 
 const mapStateToProps = state => ({

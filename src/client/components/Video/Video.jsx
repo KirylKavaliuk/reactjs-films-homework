@@ -23,7 +23,7 @@ export default class Video extends Component {
       }
     }, 7000);
 
-    http.get(`/db/movie/${this.props.id}/videos`)
+    http.get(`db/movie/${this.props.id}/videos`)
       .then(({ results }) => {
         this.setState({
           src: `http://www.youtube.com/embed/${results[0].key}`,

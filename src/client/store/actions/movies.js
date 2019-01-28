@@ -15,71 +15,51 @@ const getNumberPage = (function () {
   };
 }());
 
-const getMoviesDetails = (dispatch, movies) => {
-  const requests = movies.results.map(movie => http.get(`db/movie/${movie.id}`));
-
-  Promise.all(requests)
-    .then((_movies) => {
-      if (!_movies.length) {
-        dispatch({ type: 'SET_LOADED' });
-      }
-
-      dispatch({ type: 'ADD_MOVIES', payload: _movies });
-    });
-};
-
-const getItemsForGenre = (dispatch, genreId) => {
-  http.get('db/discover/movie', {
-    page: getNumberPage(),
-    with_genres: genreId,
-  })
-    .then(async (response) => {
-      getMoviesDetails(dispatch, response);
-    });
-};
-
-const getItemsForSearch = (dispatch) => {
-  const query = getParam('query');
-
-  http.get('db/search/movie', {
-    page: getNumberPage(),
-    query: decodeURI(query),
-    include_adult: false,
-  })
-    .then((response) => {
-      getMoviesDetails(dispatch, response);
-    });
-};
-
-const getItemsForSections = (dispatch, match) => {
-  const map = {
-    '/': 'popular',
-    '/trading': 'popular',
-    '/top-rated': 'top_rated',
-    '/coming-soon': 'upcoming',
-  };
-
-  http.get(`db/movie/${map[getSection(true)]}`, {
-    page: getNumberPage(),
-  })
-    .then((response) => {
-      getMoviesDetails(dispatch, response);
-    });
+const getMoviesDetails = async (movies) => {
+  if (movies) {
+    return Promise.all(movies.map(movie => http.get(`db/movie/${movie.id}`)));
+  }
+  return [];
 };
 
 export default {
-  add: match => (dispatch) => {
-    const section = getSection(true);
+  addMoviesForSections: type => async (dispatch) => {
+    const { results: tempMovies } = await http.get(`db/movie/${type}`, {
+      page: getNumberPage(),
+    });
 
-    switch (section) {
-      case '/genre':
-        getItemsForGenre(dispatch, match.params.genreId);
-        break;
-      case '/search':
-        getItemsForSearch(dispatch);
-        break;
-      default: getItemsForSections(dispatch, match);
+    const movies = await getMoviesDetails(tempMovies);
+
+    dispatch({ type: 'ADD_MOVIES', payload: movies });
+  },
+  addMoviesForGenre: genreId => async (dispatch) => {
+    const { results: tempMovies } = await http.get('db/discover/movie', {
+      page: getNumberPage(),
+      with_genres: genreId,
+    });
+
+    const movies = await getMoviesDetails(tempMovies);
+
+    if (!movies.length) {
+      dispatch({ type: 'SET_LOADED' });
     }
+
+    dispatch({ type: 'ADD_MOVIES', payload: movies });
+  },
+  addMoviesForSearch: query => async (dispatch) => {
+    const { results: tempMovies } = await http.get('db/search/movie', {
+      page: getNumberPage(),
+      query: encodeURI(query),
+      include_adult: false,
+    });
+
+    const movies = await getMoviesDetails(tempMovies);
+
+    if (!movies.length) {
+      dispatch({ type: 'SET_LOADED' });
+    }
+
+    dispatch({ type: 'ADD_MOVIES', payload: movies });
   },
   remove: () => (dispatch) => {
     getNumberPage(true);

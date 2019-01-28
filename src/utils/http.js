@@ -11,8 +11,8 @@ const transformUrl = (url) => {
     return tepmUrl;
   }
 
-  if (/\/db\//.test(tepmUrl)) {
-    return `https://api.themoviedb.org/3/${tepmUrl.substring(4)}`;
+  if (/db\//.test(tepmUrl)) {
+    return `https://api.themoviedb.org/3/${tepmUrl.substring(3)}`;
   }
 
   return `http://localhost:8080${tepmUrl}`;
@@ -25,7 +25,7 @@ const objToUrlParams = (obj, path) => {
     paramsObj = obj;
   }
 
-  if (/\/db\//.test(path)) {
+  if (/db\//.test(path)) {
     paramsObj.language = 'en-US';
     paramsObj.api_key = '83a3bbabf007433f832172aaa0e90f51';
   }

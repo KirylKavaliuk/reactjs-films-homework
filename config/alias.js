@@ -4,6 +4,7 @@ module.exports = {
   pages: path.resolve(__dirname, '../src/client/pages'),
   components: path.resolve(__dirname, '../src/client/components'),
   containers: path.resolve(__dirname, '../src/client/containers'),
+  reducers: path.resolve(__dirname, '../src/client/store/reducers'),
   contexts: path.resolve(__dirname, '../src/client/contexts'),
   store: path.resolve(__dirname, '../src/client/store'),
   images: path.resolve(__dirname, '../src/assets/images'),
