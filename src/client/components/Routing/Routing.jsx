@@ -31,12 +31,7 @@ const pathes = [{
 const Routing = () => (
   <Switch>
     { pathes.map((path, index) => (
-      <Route
-        key ={ index }
-        exact={ path.exact }
-        path={ path.value }
-        component={ MoviesList }
-      />
+      <Route key ={ index } exact={ path.exact } path={ path.value } component={ MoviesList }/>
     )) }
     <Route component={ NotFound }/>
   </Switch>

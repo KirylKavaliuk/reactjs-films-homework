@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import MovieGridItem from '../MovieGridItem';
 
-it('renders movie grid item correctly', () => {
+it('<MovieGridItem/>', () => {
   const tree = renderer.create(
     <MemoryRouter>
       <MovieGridItem
@@ -34,10 +34,8 @@ it('renders movie grid item correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders movie grid item uncorrectly', () => {
-  const tree = renderer.create(
-    <MovieGridItem/>,
-  ).toJSON();
+it('<MovieGridItem/>', () => {
+  const tree = renderer.create(<MovieGridItem/>).toJSON();
 
   expect(tree).toBeNull();
   expect(tree).toMatchSnapshot();

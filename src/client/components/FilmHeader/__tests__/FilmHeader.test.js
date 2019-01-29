@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import FilmHeader from '../FilmHeader';
 
-it('renders film header correctly', () => {
+it('<FilmHeader/>', () => {
   const tree = renderer.create(
     <FilmHeader genres={ ['genre1', 'genre2', 'genre3'] }/>,
   ).toJSON();
@@ -11,7 +11,7 @@ it('renders film header correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders film header correctly', () => {
+it('<FilmHeader/>', () => {
   const tree = renderer.create(
     <FilmHeader
       genres={ ['genre1', 'genre2', 'genre3'] }
@@ -23,7 +23,7 @@ it('renders film header correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders film header correctly', () => {
+it('<FilmHeader/>', () => {
   const tree = renderer.create(
     <FilmHeader
       genres={['genre1', 'genre2', 'genre3']}
@@ -35,7 +35,7 @@ it('renders film header correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders film header correctly', () => {
+it('<FilmHeader/>', () => {
   const tree = renderer.create(
     <FilmHeader
       genres={['genre1', 'genre2', 'genre3']}
@@ -47,7 +47,7 @@ it('renders film header correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders film header uncorrectly', () => {
+it('<FilmHeader/>', () => {
   const tree = renderer.create(<FilmHeader/>).toJSON();
 
   expect(tree).toBeNull();

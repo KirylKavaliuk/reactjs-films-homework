@@ -12,7 +12,7 @@ test('addMoviesForSections', async () => {
   const actions = store.getActions();
   expect(actions[0].type).toBe('ADD_MOVIES');
   expect(actions[0].payload.length).toBe(0);
-});
+}, 1500);
 
 test('addMoviesForGenre', async () => {
   const store = mockStore();
@@ -29,7 +29,7 @@ test('addMoviesForGenre', async () => {
 
   expect(actions[2].type).toBe('ADD_MOVIES');
   expect(actions[2].payload.length).toBe(0);
-}, 2000);
+}, 3000);
 
 test('addMoviesForSearch', async () => {
   const store = mockStore();
@@ -45,6 +45,6 @@ test('addMoviesForSearch', async () => {
 
   expect(actions[2].type).toBe('ADD_MOVIES');
   expect(actions[2].payload.length).toBe(0);
-}, 2000);
+}, 4500);
 
 export default mockStore;

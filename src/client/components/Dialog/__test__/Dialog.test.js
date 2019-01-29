@@ -3,10 +3,9 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import Dialog from '../Dialog';
 
-
 const Component = () => (<div>component for dialog</div>);
 
-it('renders dialog open correctly', () => {
+it('<Dialog/>', () => {
   const tree = renderer
     .create(
       <MemoryRouter>
@@ -20,7 +19,7 @@ it('renders dialog open correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders dialog close correctly', () => {
+it('<Dialog/>', () => {
   const tree = renderer
     .create(
       <MemoryRouter>

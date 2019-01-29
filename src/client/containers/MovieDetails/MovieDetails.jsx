@@ -18,7 +18,9 @@ class MovieDetails extends Component {
   };
 
   toggleDescriptionHandler = () => {
-    this.setState({ descriptionOpen: !this.state.descriptionOpen });
+    const { descriptionOpen } = this.state;
+
+    this.setState({ descriptionOpen: !descriptionOpen });
   }
 
   shouldComponentUpdate = (props, state) => (
@@ -28,16 +30,14 @@ class MovieDetails extends Component {
 
   render() {
     const { movie } = this.props;
+    const { descriptionOpen } = this.props;
+    const imageUrl = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
 
     return (
       <div
         id='movie-details'
         className={ styles.movieDetails }
-        style={{
-          backgroundImage: movie.id
-            ? `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`
-            : '',
-        }}
+        style={{ backgroundImage: movie.id ? imageUrl : '' }}
       >
         <Link to='/' className={ styles.logo }>Films</Link>
 
@@ -45,28 +45,21 @@ class MovieDetails extends Component {
 
         <FilmHeader
           name={ movie.title }
-          genres={
-            movie.genres
-              ? movie.genres.map(genre => genre.name).slice(0, 3)
-              : []
-          }
+          genres={ movie.genres ? movie.genres.map(genre => genre.name).slice(0, 3) : [] }
           duration={ movie.runtime }
         />
 
         <Rating value={ movie.vote_average / 2 }/>
 
         <div className={ styles.buttonsMore }>
-          <Description
-            open={ this.state.descriptionOpen }
-            text={ movie.overview }
-          />
+          <Description open={ descriptionOpen } text={ movie.overview }/>
           <Link params={{ trailer: movie.id }}>
             <Button label='Watch Now'/>
           </Link>
           <Button
             label='View Info'
             transparent={ true }
-            active={ this.state.descriptionOpen }
+            active={ descriptionOpen }
             onClick={ this.toggleDescriptionHandler }
           />
         </div>

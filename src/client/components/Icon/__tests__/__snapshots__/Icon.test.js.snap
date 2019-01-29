@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders icon correctly 1`] = `
+exports[`<Icon/> 1`] = `
 <svg
   className=""
   viewBox="0 0 58 58"
@@ -22,7 +22,7 @@ exports[`renders icon correctly 1`] = `
 </svg>
 `;
 
-exports[`renders icon correctly 2`] = `
+exports[`<Icon/> 2`] = `
 <svg
   viewBox="0 0 512 512"
   xmlns="http://www.w3.org/2000/svg"
@@ -33,4 +33,4 @@ exports[`renders icon correctly 2`] = `
 </svg>
 `;
 
-exports[`renders icon uncorrectly 1`] = `null`;
+exports[`<Icon/> 3`] = `null`;

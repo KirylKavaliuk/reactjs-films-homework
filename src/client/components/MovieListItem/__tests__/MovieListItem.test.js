@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import MovieListItem from '../MovieListItem';
 
-it('renders movie list item correctly', () => {
+it('<MovieListItem/>', () => {
   const tree = renderer.create(
     <MemoryRouter>
       <MovieListItem
@@ -28,7 +28,7 @@ it('renders movie list item correctly', () => {
   expect(movieGridItem).toMatchSnapshot();
 });
 
-it('renders movie list item uncorrectly', () => {
+it('<MovieListItem/>', () => {
   const tree = renderer.create(
     <MovieListItem/>,
   ).toJSON();

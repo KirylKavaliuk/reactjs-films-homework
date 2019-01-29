@@ -26,7 +26,7 @@ const defauldMovie2 = {
   },
 };
 
-test('test movie details', async () => {
+test('test movie details actions', async () => {
   const store = mockStore();
 
   await store.dispatch(movieDetails.setMovie(null, defauldMovie));

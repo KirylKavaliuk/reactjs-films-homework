@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { withDialogContext } from 'utils/dialog';
@@ -13,12 +13,7 @@ import styles from './MovieListItem.scss';
 
 const MovieListItem = ({ movie }) => (
   <div className={ styles.movieItem }>
-    <Image
-      db
-      className={ styles.poster }
-      width={ 1280 }
-      src={ movie.backdrop_path }
-    />
+    <Image db className={ styles.poster } width={ 1280 } src={ movie.backdrop_path }/>
 
     <div className={ styles.info }>
       <header className={ styles.header}>
@@ -45,9 +40,7 @@ const MovieListItem = ({ movie }) => (
       </p>
 
       <Link params={{ trailer: movie.id }}>
-        <Button
-          label='Watch Now'
-          className={ styles.watchButton }
+        <Button label='Watch Now' className={ styles.watchButton }
         />
       </Link>
     </div>

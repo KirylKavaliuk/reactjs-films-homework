@@ -2,7 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Loading from '../Loading';
 
-it('renders loading correctly', () => {
+it('<Loading/>', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Loading/>);
 
@@ -11,7 +11,7 @@ it('renders loading correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders loading correctly', () => {
+it('<Loading/>', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Loading className='Component__class-name__hash'/>);
 

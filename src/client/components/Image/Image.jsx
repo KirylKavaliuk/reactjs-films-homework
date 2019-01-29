@@ -20,12 +20,7 @@ const Image = ({
     transformedSrc = `https://image.tmdb.org/t/p/w${width}/${src}`;
   }
 
-  return (
-    <img
-      className={ imageClasses }
-      src={ transformedSrc }
-    />
-  );
+  return (<img className={ imageClasses }src={ transformedSrc }/>);
 };
 
 Image.defaultProps = {

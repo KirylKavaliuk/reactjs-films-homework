@@ -2,7 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Footer from '../Footer';
 
-it('renders footer shallow correctly', () => {
+it('<Footer/>', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Footer/>);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Description from '../Description';
 
-it('renders description open correctly', () => {
+it('<Description/>', () => {
   const tree = renderer
     .create(<Description open text='text'/>)
     .toJSON();
@@ -11,7 +11,7 @@ it('renders description open correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders description close correctly', () => {
+it('<Description/>', () => {
   const tree = renderer
     .create(<Description/>)
     .toJSON();

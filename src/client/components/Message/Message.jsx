@@ -11,8 +11,10 @@ class Message extends Component {
   timeout = null;
 
   componentDidMount() {
+    const { closeMessage } = this.props;
+
     clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => this.props.closeMessage(), 4000);
+    this.timeout = setTimeout(() => closeMessage(), 4000);
   }
 
   componentWillUnmount() {
@@ -20,18 +22,11 @@ class Message extends Component {
   }
 
   render() {
-    const { text, open } = this.props;
+    const { text, open, closeMessage } = this.props;
+    const messageClasses = classNames(styles.message, { [styles.open]: open });
 
     return (
-      <div
-        className={
-          classNames(
-            styles.message,
-            { [styles.open]: open },
-          )
-        }
-        onClick={ this.props.closeMessage }
-      >
+      <div className={ messageClasses } onClick={ closeMessage }>
         { text }
       </div>
     );

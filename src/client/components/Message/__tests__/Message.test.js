@@ -4,14 +4,14 @@ import Message from '../Message';
 
 jest.useFakeTimers();
 
-it('renders message correctly', () => {
+it('<Message/>', () => {
   const tree = renderer.create(<Message/>).toJSON();
 
   expect(tree).toBeNull();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders message with timers correctly', () => {
+it('<Message/>', () => {
   let open = true;
 
   const closeMessage = () => {
@@ -26,9 +26,12 @@ it('renders message with timers correctly', () => {
     />,
   );
 
-  jest.advanceTimersByTime(4000);
+  const message = tree.toJSON();
 
-  expect(tree.toJSON()).not.toBeNull();
-  expect(tree.toJSON()).toMatchSnapshot();
+  jest.runAllTimers();
+
+  expect(message).not.toBeNull();
+  expect(message).toMatchSnapshot();
+
   tree.unmount();
 });

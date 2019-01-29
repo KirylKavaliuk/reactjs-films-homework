@@ -4,10 +4,8 @@ import Video from '../Video';
 
 jest.useFakeTimers();
 
-it('renders video with timers correctly', () => {
-  const tree = renderer.create(
-    <Video id={ 297802 }/>,
-  );
+it('<Video/>', () => {
+  const tree = renderer.create(<Video id={ 297802 }/>);
 
   jest.advanceTimersByTime(2000);
 
@@ -19,10 +17,8 @@ it('renders video with timers correctly', () => {
   tree.unmount();
 });
 
-it('renders video with timers uncorrectly', () => {
-  const tree = renderer.create(
-    <Video id={ 66666666666 }/>,
-  );
+it('<Video/>', () => {
+  const tree = renderer.create(<Video id={ 66666666666 }/>);
 
   jest.advanceTimersByTime(7777);
 

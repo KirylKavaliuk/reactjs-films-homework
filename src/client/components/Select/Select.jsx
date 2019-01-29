@@ -6,8 +6,6 @@ import classNames from 'classnames';
 
 import Icon from 'components/Icon/Icon';
 
-import { getSection } from 'utils/url';
-
 import styles from './Select.scss';
 
 export default class Select extends Component {
@@ -32,35 +30,26 @@ export default class Select extends Component {
   }
 
   render() {
+    const { open, value } = this.state;
+    const { className, genres, match } = this.props;
+
+    const selectClasses = classNames(
+      styles.select,
+      { [className]: className },
+      { [styles.active]: match.url.includes('/genre') },
+    );
+
+    const arrowClasses = classNames(styles.arrow, { [styles.arrowOpen]: open });
+    const listClasses = classNames(styles.list, { [styles.listOpen]: open });
+
     return (
-      <div
-        className={
-          classNames(
-            styles.select,
-            { [this.props.className]: this.props.className },
-            { [styles.active]: this.props.match.url.includes('/genre') },
-          )
-        }
-        onMouseLeave={ this.closeHandler }
-      >
+      <div className={ selectClasses } onMouseLeave={ this.closeHandler }>
         <div className={ styles.main } onClick={ this.openHandler }>
-          <span className={ styles.value }>{ this.state.value }</span>
-          <Icon
-            name='arrow'
-            className={
-              classNames(
-                styles.arrow,
-                { [styles.arrowOpen]: this.state.open },
-              )
-            }/>
+          <span className={ styles.value }>{ value }</span>
+          <Icon name='arrow' className={ arrowClasses }/>
         </div>
-        <div className={
-          classNames(
-            styles.list,
-            { [styles.listOpen]: this.state.open },
-          )
-        }>
-          { this.props.genres.map(genre => (
+        <div className={ listClasses }>
+          { genres.map(genre => (
             <Link
               key={ genre.id }
               className={ styles.item }

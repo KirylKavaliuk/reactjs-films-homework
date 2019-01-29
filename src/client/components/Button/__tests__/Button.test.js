@@ -2,7 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Button from '../Button';
 
-it('renders button shallow correctly', () => {
+it('<Button/>', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Button label='button'/>);
 

@@ -17,13 +17,16 @@ export default class Video extends Component {
   timer = null;
 
   componentDidMount() {
+    const { loaded } = this.state;
+    const { id } = this.props;
+
     this.timer = setTimeout(() => {
-      if (!this.state.loaded) {
+      if (!loaded) {
         this.setState({ error: true });
       }
     }, 7000);
 
-    http.get(`db/movie/${this.props.id}/videos`)
+    http.get(`db/movie/${id}/videos`)
       .then(({ results }) => {
         this.setState({
           src: `http://www.youtube.com/embed/${results[0].key}`,

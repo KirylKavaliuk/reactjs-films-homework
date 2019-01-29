@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import Link from '../Link';
 
-it('renders link correctly', () => {
+it('<Link/>', () => {
   const treeWithPath = renderer
     .create(
       <MemoryRouter>

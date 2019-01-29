@@ -26,9 +26,9 @@ const Button = ({
 );
 
 Button.defaultProps = {
+  onClick: null,
   transparent: false,
   active: false,
-  onClick: null,
 };
 
 Button.propTypes = {

@@ -7,9 +7,7 @@ function withMessageContextHOC(WrappedComponent) {
     render() {
       return (<MessageContext.Consumer>
         {({ ...props }) => (
-          <WrappedComponent
-            { ...props }
-            { ...this.props }
+          <WrappedComponent { ...props } { ...this.props }
           />
         )}
       </MessageContext.Consumer>);

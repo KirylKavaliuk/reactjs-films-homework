@@ -4,8 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import Select from '../Select';
 
-
-it('renders select correctly', () => {
+it('<Select/>', () => {
   const tree = renderer.create(
     <MemoryRouter>
       <Select

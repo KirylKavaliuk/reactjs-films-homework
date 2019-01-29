@@ -16,13 +16,12 @@ export default (initialState = {}) => {
     initialState,
     composeEnhancers(applyMiddleware(thunk)),
   );
-  /*
-    if (module.hot && process.env.NODE_ENV !== 'production') {
-      module.hot.accept('./reducers/index', () => {
-        store.replaceReducer(reducers);
-      });
-    }
-  */
+
+  if (module.hot && process.env.NODE_ENV !== 'production') {
+    module.hot.accept('./reducers/index', () => {
+      store.replaceReducer(reducers);
+    });
+  }
 
   return store;
 };

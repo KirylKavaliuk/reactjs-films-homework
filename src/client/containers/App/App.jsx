@@ -36,39 +36,19 @@ class App extends Component {
   };
 
   openDialogHandler = (component) => {
-    this.setState({
-      dialog: {
-        open: true,
-        component,
-      },
-    });
+    this.setState({ dialog: { open: true, component } });
   }
 
   closeDialogHandler = () => {
-    this.setState({
-      dialog: {
-        open: false,
-        component: null,
-      },
-    });
+    this.setState({ dialog: { open: false, component: null } });
   }
 
   openMessageHandler = (text) => {
-    this.setState({
-      message: {
-        open: true,
-        text,
-      },
-    });
+    this.setState({ message: { open: true, text } });
   }
 
   closeMessageHandler = () => {
-    this.setState({
-      message: {
-        open: false,
-        text: null,
-      },
-    });
+    this.setState({ message: { open: false, text: null } });
   }
 
   componentDidMount = () => {
@@ -76,14 +56,12 @@ class App extends Component {
   }
 
   render() {
+    const { dialog, message } = this.state;
+
     return (
       <div className={ styles.app }>
         <DialogProvider
-          value={{
-            openDialog: this.openDialogHandler,
-            closeDialog: this.closeDialogHandler,
-          }}
-        >
+          value={{ openDialog: this.openDialogHandler, closeDialog: this.closeDialogHandler }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails/>
             <Routing/>
@@ -91,18 +69,16 @@ class App extends Component {
         </DialogProvider>
 
         { ReactDOM.createPortal(
-          <Dialog
-            open={ this.state.dialog.open }
-          >
-            { this.state.dialog.component }
+          <Dialog open={ dialog.open }>
+            { dialog.component }
           </Dialog>,
           dialogNode,
         ) }
 
         { ReactDOM.createPortal(
           <Message
-            open={ this.state.message.open }
-            text={ this.state.message.text }
+            open={ message.open }
+            text={ message.text }
             closeMessage={ this.closeMessageHandler }
           />,
           messageNode,

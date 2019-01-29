@@ -6,7 +6,7 @@ import configureStore from 'store/configureStore';
 
 import MoviesList from '../MoviesList';
 
-it('renders movies list correctly', () => {
+it('<MoviesList/>', () => {
   const tree = renderer.create(
     <MemoryRouter>
       <Provider store={ configureStore() }>

@@ -24,28 +24,37 @@ class Rating extends Component {
     }
   }
 
-  renderStars = () => Array.from({ length: 5 }, (v, k) => (
-    <div
-      key={ k }
-      className={ classNames(
-        styles.star,
-        { [styles.active]: k < Math.round(this.props.value) && this.state.onHover === -1 },
-        { [styles.onHover]: this.state.onHover >= k },
-      ) }
-      onMouseOut={ () => this.onHoverHandler(-1) }
-      onMouseOver={ () => this.onHoverHandler(k) }
-      onClick={ () => this.sendRatingHandler(k + 1) }
-    />))
+  renderStars = () => (
+    Array.from({ length: 5 }, (v, k) => {
+      const { value } = this.props;
+      const { onHover } = this.state;
+
+      return (<div
+        key={ k }
+        className={ classNames(
+          styles.star,
+          { [styles.active]: k < Math.round(value) && onHover === -1 },
+          { [styles.onHover]: onHover >= k },
+        ) }
+        onMouseOut={ () => this.onHoverHandler(-1) }
+        onMouseOver={ () => this.onHoverHandler(k) }
+        onClick={ () => this.sendRatingHandler(k + 1) }
+      />);
+    })
+  )
 
   render() {
+    const { value } = this.props;
+    const { onHover } = this.state;
+
     return (
       <div className={ styles.rating }>
         { this.renderStars() }
         <div className={ styles.ratingNumberWrap }>
           <div className={ styles.ratingNumber }>
-            { this.state.onHover !== -1
-              ? this.state.onHover + 1
-              : (this.props.value || 0).toPrecision(3) }
+            { onHover !== -1
+              ? onHover + 1
+              : (value || 0).toPrecision(3) }
           </div>
         </div>
       </div>

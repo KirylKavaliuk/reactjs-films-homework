@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import Search from '../Search';
 
-it('renders search correctly', () => {
+it('<Search/>', () => {
   window.history.pushState({}, 'test', '/genre/43?query=123123&view=list&param=&param2');
   const tree = renderer.create(
     <MemoryRouter>
@@ -23,7 +23,7 @@ it('renders search correctly', () => {
 });
 
 
-it('renders search correctly', () => {
+it('<Search/>', () => {
   window.history.pushState({}, 'test', '/');
 
   const tree = renderer.create(

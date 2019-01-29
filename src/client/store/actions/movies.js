@@ -1,5 +1,5 @@
 import http from 'utils/http';
-import { getParam, getSection } from 'utils/url';
+import { ADD_MOVIES, SET_LOADED, REMOVE_MOVIES } from 'constants/actionTypes';
 
 const getNumberPage = (function () {
   let page = 0;
@@ -30,7 +30,7 @@ export default {
 
     const movies = await getMoviesDetails(tempMovies);
 
-    dispatch({ type: 'ADD_MOVIES', payload: movies });
+    dispatch({ type: ADD_MOVIES, payload: movies });
   },
   addMoviesForGenre: genreId => async (dispatch) => {
     const { results: tempMovies } = await http.get('db/discover/movie', {
@@ -41,10 +41,10 @@ export default {
     const movies = await getMoviesDetails(tempMovies);
 
     if (!movies.length) {
-      dispatch({ type: 'SET_LOADED' });
+      dispatch({ type: SET_LOADED });
     }
 
-    dispatch({ type: 'ADD_MOVIES', payload: movies });
+    dispatch({ type: ADD_MOVIES, payload: movies });
   },
   addMoviesForSearch: query => async (dispatch) => {
     const { results: tempMovies } = await http.get('db/search/movie', {
@@ -56,13 +56,13 @@ export default {
     const movies = await getMoviesDetails(tempMovies);
 
     if (!movies.length) {
-      dispatch({ type: 'SET_LOADED' });
+      dispatch({ type: SET_LOADED });
     }
 
-    dispatch({ type: 'ADD_MOVIES', payload: movies });
+    dispatch({ type: ADD_MOVIES, payload: movies });
   },
   remove: () => (dispatch) => {
     getNumberPage(true);
-    dispatch({ type: 'REMOVE_MOVIES' });
+    dispatch({ type: REMOVE_MOVIES });
   },
 };

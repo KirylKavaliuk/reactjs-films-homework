@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders footer shallow correctly 1`] = `
+exports[`<Footer/> 1`] = `
 <footer
   className="Footer__footer___1WWdL"
 >

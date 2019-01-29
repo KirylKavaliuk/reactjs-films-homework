@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders image correctly 1`] = `
+exports[`<Image/> 1`] = `null`;
+
+exports[`<Image/> 2`] = `
 <img
   className="Image__image___2zFQr"
   src="https://image.tmdb.org/t/p/w500//image-ib.jpg"
 />
 `;
 
-exports[`renders image correctly 2`] = `
+exports[`<Image/> 3`] = `
 <img
   className="Image__image___2zFQr Component__class-name__hash"
   src="images/image-ib.jpg"
 />
 `;
-
-exports[`renders image uncorrectly 1`] = `null`;

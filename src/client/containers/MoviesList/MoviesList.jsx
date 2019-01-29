@@ -29,75 +29,89 @@ class MoviesList extends Component {
   };
 
   componentDidMount = () => {
-    this.props.removeMovies();
+    const { removeMovies } = this.props;
+
+    removeMovies();
   }
 
   componentWillReceiveProps(props) {
-    const trailer = getParam('trailer');
-    const movie = getParam('movie');
-    const gridView = getParam('view') !== 'list';
-    const query = getParam('query');
+    const { gridView, trailer, query } = this.state;
+    const {
+      movie,
+      match,
+      openDialog,
+      closeDialog,
+      removeMovies,
+    } = this.props;
+    const trailerParam = getParam('trailer');
+    const movieParam = getParam('movie');
+    const gridViewParam = getParam('view') !== 'list';
+    const queryParam = getParam('query');
 
-    if (this.props.movie.id !== +movie) {
-      this.setDetailsMovie(props, +movie);
+    if (movie.id !== +movieParam) {
+      this.setDetailsMovie(props, +movieParam);
     }
 
-    if (this.state.gridView !== gridView) {
-      this.setState({ gridView });
+    if (gridView !== gridViewParam) {
+      this.setState({ gridView: gridViewParam });
     }
 
-    if (this.props.match.params.genreId !== props.match.params.genreId) {
-      this.props.removeMovies();
+    if (match.params.genreId !== props.match.params.genreId) {
+      removeMovies();
     }
 
-    if (this.state.trailer !== trailer) {
-      this.setState({ trailer }, () => {
-        if (this.state.trailer) {
-          this.props.openDialog(<Video id={ +trailer }/>);
+    if (trailer !== trailerParam) {
+      this.setState({ trailer: trailerParam }, () => {
+        if (trailer) {
+          openDialog(<Video id={ +trailer }/>);
         } else {
-          this.props.closeDialog();
+          closeDialog();
         }
       });
     }
 
-    if (this.state.query !== query) {
-      this.setState({ query }, () => {
-        this.props.removeMovies();
-      });
+    if (query !== queryParam) {
+      this.setState({ query: queryParam }, () => { removeMovies(); });
     }
   }
 
   setDetailsMovie = (props, id) => {
+    const { movies, setMovieDetails } = this.props;
     const movie = props.movies.find(_movie => id === _movie.id);
 
-    if (id && id !== +this.props.movie.id) {
+    if (id && id !== +movie.id) {
       window.scroll(0, 0);
     }
 
-    this.props.setMovieDetails(movie, {
-      movie: props.movies[0],
-      id,
-    });
+    setMovieDetails(movie, { movie: movies[0], id });
   }
 
   enterEndOfList = () => {
-    if (!this.props.listLoaded) {
-      this.setState({ loading: true });
+    const {
+      match,
+      listLoaded,
+      loadMoviesForSearch,
+      loadMoviesForGenre,
+      loadMoviesForSections,
+    } = this.props;
 
+    if (!listLoaded) {
       const section = getSection(true);
+      this.setState({ loading: true });
 
       switch (section) {
         case '/search': {
           const query = getParam('query');
-          this.props.loadMoviesForSearch(query);
-        }
-          break;
-        case '/genre': {
-          const { genreId } = this.props.match.params;
 
-          this.props.loadMoviesForGenre(+genreId);
-        }
+          loadMoviesForSearch(query);
           break;
+        }
+        case '/genre': {
+          const { genreId } = match.params;
+
+          loadMoviesForGenre(+genreId);
+          break;
+        }
         default: {
           const map = {
             '/': 'popular',
@@ -105,10 +119,10 @@ class MoviesList extends Component {
             '/top-rated': 'top_rated',
             '/coming-soon': 'upcoming',
           };
-
           const type = map[section];
 
-          this.props.loadMoviesForSections(type);
+          loadMoviesForSections(type);
+          break;
         }
       }
     }
@@ -119,8 +133,10 @@ class MoviesList extends Component {
   }
 
   loadingRender = () => {
-    if (this.props.listLoaded) {
-      if (this.props.movies.length) {
+    const { listLoaded, movies } = this.props;
+
+    if (listLoaded) {
+      if (movies.length) {
         return <div className={ styles.loaded }>Movies are loaded</div>;
       }
 
@@ -131,30 +147,25 @@ class MoviesList extends Component {
   }
 
   render() {
-    const ListItem = this.state.gridView ? MovieGridItem : MovieListItem;
-    const viewClasses = classNames(
-      { [styles.grid]: this.state.gridView },
-      { [styles.list]: !this.state.gridView },
-    );
+    const {
+      match,
+      genres,
+      listLoaded,
+      movies,
+    } = this.props;
+    const { gridView } = this.state;
+    const ListItem = gridView ? MovieGridItem : MovieListItem;
+    const viewClasses = classNames({ [styles.grid]: gridView }, { [styles.list]: !gridView });
 
     return (
       <div className={ styles.moviesListWrapper }>
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
-          <ListControls
-            match={ this.props.match }
-            genres={ this.props.genres }
-            gridView={ this.state.gridView }
-          />
+          <ListControls match={ match } genres={ genres } gridView={ gridView }/>
           <div className={ viewClasses }>
-            { this.props.movies.map((_movie, index) => (
-                <ListItem
-                  key={ index }
-                  movie={ _movie }
-                />
-            )) }
+            { movies.map((_movie, index) => <ListItem key={ index } movie={ _movie }/>) }
           </div>
           { this.loadingRender() }
-          { !this.props.listLoaded && <Waypoint
+          { !listLoaded && <Waypoint
             onEnter={ this.enterEndOfList }
             onLeave={ this.leaveEndOfList }
           /> }

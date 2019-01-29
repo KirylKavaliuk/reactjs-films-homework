@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Rating from '../Rating';
 
-it('renders rating correctly', () => {
+it('<Rating/>', () => {
   const tree = renderer.create(
     <Rating
       value={ 2.5 }
@@ -25,7 +25,7 @@ it('renders rating correctly', () => {
   });
 });
 
-it('renders rating uncorrectly', () => {
+it('<Rating/>', () => {
   const tree = renderer.create(
     <Rating openMessage={ () => {} }/>,
   );

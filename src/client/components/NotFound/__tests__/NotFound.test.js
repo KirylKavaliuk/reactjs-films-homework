@@ -2,7 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import NotFound from '../NotFound';
 
-it('renders not found component correctly', () => {
+it('<NotFound/>', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<NotFound/>);
 

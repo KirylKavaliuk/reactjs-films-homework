@@ -28,63 +28,44 @@ class MovieGridItem extends Component {
   )
 
   render() {
+    const { descriptionOpen } = this.state;
+    const { movie } = this.props;
+
     return (
       <div className={ styles.movieItem }>
-        <Image
-          db
-          className={ styles.poster }
-          width={ 1280 }
-          src={ this.props.movie.poster_path }
-        />
+        <Image db className={ styles.poster } width={ 1280 } src={ movie.poster_path }/>
 
-        { !this.state.descriptionOpen && <div className={ styles.more }>
-          <Link params={{ trailer: this.props.movie.id }}>
+        { !descriptionOpen && <div className={ styles.more }>
+          <Link params={{ trailer: movie.id }}>
             <div className={ styles.playButton }>
-              <Icon
-                className={ styles.playButtonIcon }
-                name='play'
-              />
+              <Icon className={ styles.playButtonIcon } name='play'/>
               <h3 className={ styles.playButtonHeader }>Play Now</h3>
             </div>
           </Link>
 
-          <Button
-            transparent
-            label='View Info'
-            onClick={ this.toggleDescriptionHandler }
-          />
+          <Button transparent label='View Info' onClick={ this.toggleDescriptionHandler }/>
         </div> }
 
-        <div className={
-          classNames(
-            styles.info,
-            { [styles.infoVisible]: this.state.descriptionOpen },
-          )}
-        >
-          <div className={
-              classNames(
-                styles.cancelIcon,
-                { [styles.cancelIconVisible]: this.state.descriptionOpen },
-              )
-            }
+        <div className={ classNames(styles.info, { [styles.infoVisible]: descriptionOpen }) }>
+          <div className={ classNames(
+            styles.cancelIcon,
+            { [styles.cancelIconVisible]: descriptionOpen },
+          ) }
             onClick={ this.toggleDescriptionHandler }
           >
             <Icon name='cancel' />
           </div>
 
           <header className={
-            classNames(
-              styles.header,
-              { [styles.headerOffset]: this.state.descriptionOpen },
-            )
+            classNames(styles.header, { [styles.headerOffset]: descriptionOpen })
           }>
-            <Link params={{ movie: this.props.movie.id }}>
-              <h1 title={ this.props.movie.title } className={ styles.title }>
-                { this.props.movie.title }
+            <Link params={{ movie: movie.id }}>
+              <h1 title={ movie.title } className={ styles.title }>
+                { movie.title }
               </h1>
             </Link>
             <p className={ styles.genres }>
-              { this.props.movie.genres.slice(0, 3).map((genre, index) => (
+              { movie.genres.slice(0, 3).map((genre, index) => (
                 <Link
                   className={ styles.genre }
                   key={ index }
@@ -96,24 +77,21 @@ class MovieGridItem extends Component {
               )) }
             </p>
             <div className={ styles.rating }>
-              { (this.props.movie.vote_average / 2).toPrecision(2) }
+              { (movie.vote_average / 2).toPrecision(2) }
             </div>
           </header>
 
           <p className={
             classNames(
               styles.descriptionText,
-              { [styles.descriptionTextVisible]: !this.state.descriptionOpen },
+              { [styles.descriptionTextVisible]: !descriptionOpen },
             )
           }>
-            { this.props.movie.overview }
+            { movie.overview }
           </p>
 
-          <Link params={{ trailer: this.props.movie.id }}>
-            <Button
-              label='Watch Now'
-              className={ styles.watchButton }
-            />
+          <Link params={{ trailer: movie.id }}>
+            <Button label='Watch Now' className={ styles.watchButton }/>
           </Link>
         </div>
       </div>

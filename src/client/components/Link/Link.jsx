@@ -20,24 +20,33 @@ export default class _Link extends Component {
   }
 
   onHoverHandler = () => {
-    const section = this.props.to || getSection();
+    const { to, params, clearParams } = this.props;
+
+    const section = to || getSection();
     const search = new Params()
-      .add(this.props.params)
-      .remove(this.props.clearParams)
+      .add(params)
+      .remove(clearParams)
       .toString();
 
     this.setState({ to: `${section}${search}` });
   }
 
   render() {
+    const {
+      onClick,
+      className,
+      children,
+    } = this.props;
+    const { to } = this.state;
+
     return (
       <Link
         onMouseEnter={ this.onHoverHandler }
-        onClick={ this.props.onClick }
-        to={ this.state.to }
-        className={ classNames(styles.link, this.props.className) }
+        onClick={ onClick }
+        to={ to }
+        className={ classNames(styles.link, className) }
       >
-        { this.props.children }
+        { children }
       </Link>
     );
   }
@@ -47,10 +56,12 @@ _Link.defaultProps = {
   params: {},
   clearParams: [],
   to: '',
+  className: '',
 };
 
 _Link.propTypes = {
   params: PropTypes.object,
   clearParams: PropTypes.array,
   to: PropTypes.string,
+  className: PropTypes.string,
 };

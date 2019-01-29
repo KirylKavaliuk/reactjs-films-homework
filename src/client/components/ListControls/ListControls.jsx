@@ -12,7 +12,7 @@ import Link from 'components/Link/Link';
 import styles from './ListControls.scss';
 
 export default class ListControls extends Component {
-  static setActiveStyleForLinks(sectionNumber) {
+  static setActiveStyleForLinks = (sectionNumber) => {
     const section = getSection();
     const sections = ['trading', 'top-rated', 'coming-soon'];
     const index = sections.findIndex(_section => section.indexOf(_section) !== -1);
@@ -24,7 +24,13 @@ export default class ListControls extends Component {
     );
   }
 
+  static setTypeViewClasses = gridView => (
+    classNames(styles.typeView, { [styles.activeTypeView]: gridView })
+  )
+
   render() {
+    const { match, genres, gridView } = this.props;
+
     return (
       <menu className={ styles.menu }>
         <div className={ styles.listControls }>
@@ -40,28 +46,18 @@ export default class ListControls extends Component {
             </Link>
           </ul>
           <Select
-            match={ this.props.match }
-            genres={ this.props.genres }
+            match={ match }
+            genres={ genres }
           />
         </div>
         <div className={ styles.typesView }>
           <Link params={{ view: 'grid' }}>
-            <div
-              className={ classNames(
-                styles.typeView,
-                { [styles.activeTypeView]: this.props.gridView },
-              ) }
-            >
+            <div className={ ListControls.setTypeViewClasses(gridView) }>
               <Icon name='grid-view'/>
             </div>
           </Link>
           <Link params={{ view: 'list' }}>
-            <div
-              className={ classNames(
-                styles.typeView,
-                { [styles.activeTypeView]: !this.props.gridView },
-              ) }
-            >
+            <div className={ ListControls.setTypeViewClasses(!gridView) }>
               <Icon name='list-view'/>
             </div>
           </Link>

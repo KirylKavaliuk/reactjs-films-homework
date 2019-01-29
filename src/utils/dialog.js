@@ -7,10 +7,7 @@ function withDialogContextHOC(WrappedComponent) {
     render() {
       return (<DialogContext.Consumer>
         {({ ...props }) => (
-          <WrappedComponent
-            { ... props }
-            { ...this.props }
-          />
+          <WrappedComponent { ... props } { ...this.props }/>
         )}
       </DialogContext.Consumer>);
     }

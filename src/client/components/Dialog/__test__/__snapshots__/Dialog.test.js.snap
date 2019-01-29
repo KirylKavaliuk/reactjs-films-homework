@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders dialog close correctly 1`] = `null`;
-
-exports[`renders dialog open correctly 1`] = `
+exports[`<Dialog/> 1`] = `
 <a
   className="Link__link___-IU0S Dialog__dialog___3Z4Fy Dialog__open___oVAzw"
   href="/"
@@ -14,3 +12,5 @@ exports[`renders dialog open correctly 1`] = `
   </div>
 </a>
 `;
+
+exports[`<Dialog/> 2`] = `null`;

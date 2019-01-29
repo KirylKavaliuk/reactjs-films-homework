@@ -28,18 +28,18 @@ export class Params {
     this.params = parseParams();
   }
 
-  add(params) {
-    Object.keys(params).forEach((key) => {
-      this.params[key] = params[key];
-    });
+  add(addparams) {
+    const { params } = this;
+
+    Object.keys(params).forEach((key) => { params[key] = addparams[key]; });
 
     return this;
   }
 
-  remove(params) {
-    params.forEach((key) => {
-      this.params[key] = undefined;
-    });
+  remove(removeParams) {
+    const { params } = this;
+
+    removeParams.forEach((key) => { params[key] = undefined; });
 
     return this;
   }

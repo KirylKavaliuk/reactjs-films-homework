@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders loading correctly 1`] = `
+exports[`<Loading/> 1`] = `
 <div
   className="Loading__loading___2_FrG"
 >
@@ -37,7 +37,7 @@ exports[`renders loading correctly 1`] = `
 </div>
 `;
 
-exports[`renders loading correctly 2`] = `
+exports[`<Loading/> 2`] = `
 <div
   className="Loading__loading___2_FrG Component__class-name__hash"
 >

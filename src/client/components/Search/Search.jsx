@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { Params, getParam } from 'utils/url';
-
-import classNames from 'classnames';
 
 import Icon from 'components/Icon/Icon';
 
@@ -31,14 +30,15 @@ export default class Search extends Component {
   onSearchHandler = (event) => {
     event.preventDefault();
     const { history } = this.context.router;
+    const { searchQueryValid, searchQuery } = this.state;
 
-    this.setState({ searchQueryValid: this.state.searchQuery.length > 1 }, () => {
+    this.setState({ searchQueryValid: searchQuery.length > 1 }, () => {
       const params = new Params();
 
-      if (this.state.searchQueryValid) {
+      if (searchQueryValid) {
         params
           .remove(['trailer', 'movie'])
-          .add({ query: this.state.searchQuery });
+          .add({ query: searchQuery });
       } else {
         params.remove(['query']);
       }
@@ -51,9 +51,11 @@ export default class Search extends Component {
   }
 
   render() {
+    const { searchQueryValid, searchQuery } = this.state;
+
     const inputClasses = classNames(
       styles.searchField,
-      { [styles.searchNotValid]: !this.state.searchQueryValid },
+      { [styles.searchNotValid]: !searchQueryValid },
     );
 
     return (
@@ -61,14 +63,11 @@ export default class Search extends Component {
         <input
           className={ inputClasses }
           type='search'
-          value={ this.state.searchQuery }
+          value={ searchQuery }
           onChange={ this.onChangeHandler }
           placeholder='Search...'
         />
-        <button
-          className={ styles.searchButton }
-          onClick={ this.onSearchHandler }
-        >
+        <button className={ styles.searchButton } onClick={ this.onSearchHandler }>
           <Icon name='search'/>
         </button>
       </form>
