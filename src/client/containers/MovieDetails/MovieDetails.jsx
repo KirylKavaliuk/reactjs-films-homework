@@ -30,7 +30,7 @@ class MovieDetails extends Component {
 
   render() {
     const { movie } = this.props;
-    const { descriptionOpen } = this.props;
+    const { descriptionOpen } = this.state;
     const imageUrl = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
 
     return (

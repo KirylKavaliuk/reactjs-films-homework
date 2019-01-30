@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders routing shallow correctly 1`] = `
+exports[`<Routing/> 1`] = `
 <Switch>
   <Route
     component={[Function]}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders movie list item correctly 1`] = `
+exports[`<MovieListItem/> 1`] = `
 <div
   className="MovieListItem__movie-item___3ihj9"
 >
@@ -109,4 +109,4 @@ exports[`renders movie list item correctly 1`] = `
 </div>
 `;
 
-exports[`renders movie list item uncorrectly 1`] = `null`;
+exports[`<MovieListItem/> 2`] = `null`;

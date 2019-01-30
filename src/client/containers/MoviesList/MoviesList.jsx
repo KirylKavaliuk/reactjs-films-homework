@@ -25,7 +25,7 @@ class MoviesList extends Component {
     loading: false,
     trailer: null,
     query: null,
-    movie: null,
+    movie: {},
   };
 
   componentDidMount = () => {
@@ -35,35 +35,56 @@ class MoviesList extends Component {
   }
 
   componentWillReceiveProps(props) {
-    const { gridView, trailer, query } = this.state;
     const {
+      gridView,
+      trailer,
+      query,
       movie,
+    } = this.state;
+    const {
+      movies,
       match,
       openDialog,
       closeDialog,
       removeMovies,
-    } = this.props;
+      setMovieDetails,
+    } = props;
     const trailerParam = getParam('trailer');
-    const movieParam = getParam('movie');
+    const movieIdParam = getParam('movie');
     const gridViewParam = getParam('view') !== 'list';
     const queryParam = getParam('query');
 
-    if (movie.id !== +movieParam) {
-      this.setDetailsMovie(props, +movieParam);
+    if (movieIdParam) {
+      if (movie.id !== movieIdParam) {
+        const foundMovie = movies.find(_movie => _movie.id === +movieIdParam);
+
+        if (foundMovie && foundMovie.id !== movie.id) {
+          this.setState({ movie: foundMovie }, () => {
+            window.scrollTo(0, 0);
+            setMovieDetails(foundMovie);
+          });
+        }
+      }
+    } else {
+      const firstMovie = movies[0];
+
+      if (firstMovie) {
+        setMovieDetails(firstMovie);
+      }
     }
 
     if (gridView !== gridViewParam) {
       this.setState({ gridView: gridViewParam });
     }
 
-    if (match.params.genreId !== props.match.params.genreId) {
+    if (this.props.match.params.genreId !== match.params.genreId) {
       removeMovies();
     }
 
     if (trailer !== trailerParam) {
       this.setState({ trailer: trailerParam }, () => {
-        if (trailer) {
-          openDialog(<Video id={ +trailer }/>);
+        if (trailerParam) {
+          openDialog(<Video id={ +trailerParam }/>);
         } else {
           closeDialog();
         }
@@ -73,17 +94,6 @@ class MoviesList extends Component {
     if (query !== queryParam) {
       this.setState({ query: queryParam }, () => { removeMovies(); });
     }
-  }
-
-  setDetailsMovie = (props, id) => {
-    const { movies, setMovieDetails } = this.props;
-    const movie = props.movies.find(_movie => id === _movie.id);
-
-    if (id && id !== +movie.id) {
-      window.scroll(0, 0);
-    }
-
-    setMovieDetails(movie, { movie: movies[0], id });
   }
 
   enterEndOfList = () => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders search correctly 1`] = `
+exports[`<Search/> 1`] = `
 <form
   className="Search__search___1reG0"
   name="search"
@@ -29,7 +29,7 @@ exports[`renders search correctly 1`] = `
 </form>
 `;
 
-exports[`renders search correctly 2`] = `
+exports[`<Search/> 2`] = `
 <form
   className="Search__search___1reG0"
   name="search"

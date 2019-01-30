@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders video with timers correctly 1`] = `
+exports[`<Video/> 1`] = `
 <div
   className="Video__video-wrapper___2WJzy"
 >
@@ -47,7 +47,7 @@ exports[`renders video with timers correctly 1`] = `
 </div>
 `;
 
-exports[`renders video with timers uncorrectly 1`] = `
+exports[`<Video/> 2`] = `
 <div
   className="Video__video-wrapper___2WJzy"
 >

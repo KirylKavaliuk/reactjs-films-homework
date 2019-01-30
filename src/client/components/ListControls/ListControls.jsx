@@ -45,10 +45,7 @@ export default class ListControls extends Component {
               <li className={ ListControls.setActiveStyleForLinks(2) }>Coming soon</li>
             </Link>
           </ul>
-          <Select
-            match={ match }
-            genres={ genres }
-          />
+          <Select match={ match } genres={ genres }/>
         </div>
         <div className={ styles.typesView }>
           <Link params={{ view: 'grid' }}>

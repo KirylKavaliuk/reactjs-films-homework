@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders rating correctly 1`] = `
+exports[`<Rating/> 1`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -46,7 +46,7 @@ exports[`renders rating correctly 1`] = `
 </div>
 `;
 
-exports[`renders rating correctly 2`] = `
+exports[`<Rating/> 2`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -92,7 +92,7 @@ exports[`renders rating correctly 2`] = `
 </div>
 `;
 
-exports[`renders rating correctly 3`] = `
+exports[`<Rating/> 3`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -138,7 +138,7 @@ exports[`renders rating correctly 3`] = `
 </div>
 `;
 
-exports[`renders rating correctly 4`] = `
+exports[`<Rating/> 4`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -184,7 +184,7 @@ exports[`renders rating correctly 4`] = `
 </div>
 `;
 
-exports[`renders rating correctly 5`] = `
+exports[`<Rating/> 5`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -230,7 +230,7 @@ exports[`renders rating correctly 5`] = `
 </div>
 `;
 
-exports[`renders rating correctly 6`] = `
+exports[`<Rating/> 6`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -276,7 +276,7 @@ exports[`renders rating correctly 6`] = `
 </div>
 `;
 
-exports[`renders rating correctly 7`] = `
+exports[`<Rating/> 7`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -322,7 +322,7 @@ exports[`renders rating correctly 7`] = `
 </div>
 `;
 
-exports[`renders rating correctly 8`] = `
+exports[`<Rating/> 8`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -368,7 +368,7 @@ exports[`renders rating correctly 8`] = `
 </div>
 `;
 
-exports[`renders rating correctly 9`] = `
+exports[`<Rating/> 9`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -414,7 +414,7 @@ exports[`renders rating correctly 9`] = `
 </div>
 `;
 
-exports[`renders rating correctly 10`] = `
+exports[`<Rating/> 10`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -460,7 +460,7 @@ exports[`renders rating correctly 10`] = `
 </div>
 `;
 
-exports[`renders rating correctly 11`] = `
+exports[`<Rating/> 11`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -506,7 +506,7 @@ exports[`renders rating correctly 11`] = `
 </div>
 `;
 
-exports[`renders rating correctly 12`] = `
+exports[`<Rating/> 12`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -552,7 +552,7 @@ exports[`renders rating correctly 12`] = `
 </div>
 `;
 
-exports[`renders rating correctly 13`] = `
+exports[`<Rating/> 13`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -598,7 +598,7 @@ exports[`renders rating correctly 13`] = `
 </div>
 `;
 
-exports[`renders rating correctly 14`] = `
+exports[`<Rating/> 14`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -644,7 +644,7 @@ exports[`renders rating correctly 14`] = `
 </div>
 `;
 
-exports[`renders rating correctly 15`] = `
+exports[`<Rating/> 15`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -690,7 +690,7 @@ exports[`renders rating correctly 15`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 1`] = `
+exports[`<Rating/> 16`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -736,7 +736,7 @@ exports[`renders rating uncorrectly 1`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 2`] = `
+exports[`<Rating/> 17`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -782,7 +782,7 @@ exports[`renders rating uncorrectly 2`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 3`] = `
+exports[`<Rating/> 18`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -828,7 +828,7 @@ exports[`renders rating uncorrectly 3`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 4`] = `
+exports[`<Rating/> 19`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -874,7 +874,7 @@ exports[`renders rating uncorrectly 4`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 5`] = `
+exports[`<Rating/> 20`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -920,7 +920,7 @@ exports[`renders rating uncorrectly 5`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 6`] = `
+exports[`<Rating/> 21`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -966,7 +966,7 @@ exports[`renders rating uncorrectly 6`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 7`] = `
+exports[`<Rating/> 22`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1012,7 +1012,7 @@ exports[`renders rating uncorrectly 7`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 8`] = `
+exports[`<Rating/> 23`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1058,7 +1058,7 @@ exports[`renders rating uncorrectly 8`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 9`] = `
+exports[`<Rating/> 24`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1104,7 +1104,7 @@ exports[`renders rating uncorrectly 9`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 10`] = `
+exports[`<Rating/> 25`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1150,7 +1150,7 @@ exports[`renders rating uncorrectly 10`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 11`] = `
+exports[`<Rating/> 26`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1196,7 +1196,7 @@ exports[`renders rating uncorrectly 11`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 12`] = `
+exports[`<Rating/> 27`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1242,7 +1242,7 @@ exports[`renders rating uncorrectly 12`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 13`] = `
+exports[`<Rating/> 28`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1288,7 +1288,7 @@ exports[`renders rating uncorrectly 13`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 14`] = `
+exports[`<Rating/> 29`] = `
 <div
   className="Rating__rating___3f4Qx"
 >
@@ -1334,7 +1334,7 @@ exports[`renders rating uncorrectly 14`] = `
 </div>
 `;
 
-exports[`renders rating uncorrectly 15`] = `
+exports[`<Rating/> 30`] = `
 <div
   className="Rating__rating___3f4Qx"
 >

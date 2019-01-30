@@ -65,7 +65,7 @@ class MovieGridItem extends Component {
               </h1>
             </Link>
             <p className={ styles.genres }>
-              { movie.genres.slice(0, 3).map((genre, index) => (
+              { movie.genres && movie.genres.slice(0, 3).map((genre, index) => (
                 <Link
                   className={ styles.genre }
                   key={ index }

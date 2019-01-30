@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders not found component correctly 1`] = `
+exports[`<NotFound/> 1`] = `
 <div
   className="NotFound__not-found___vgFr0"
 >

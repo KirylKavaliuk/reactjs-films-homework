@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders movie grid item correctly 1`] = `
+exports[`<MovieGridItem/> 1`] = `
 <div
   className="MovieGridItem__movie-item___3Q67r"
 >
@@ -140,7 +140,7 @@ exports[`renders movie grid item correctly 1`] = `
 </div>
 `;
 
-exports[`renders movie grid item correctly 2`] = `
+exports[`<MovieGridItem/> 2`] = `
 <div
   className="MovieGridItem__movie-item___3Q67r"
 >
@@ -280,7 +280,7 @@ exports[`renders movie grid item correctly 2`] = `
 </div>
 `;
 
-exports[`renders movie grid item correctly 3`] = `
+exports[`<MovieGridItem/> 3`] = `
 <div
   className="MovieGridItem__movie-item___3Q67r"
 >
@@ -377,4 +377,4 @@ exports[`renders movie grid item correctly 3`] = `
 </div>
 `;
 
-exports[`renders movie grid item uncorrectly 1`] = `null`;
+exports[`<MovieGridItem/> 4`] = `null`;

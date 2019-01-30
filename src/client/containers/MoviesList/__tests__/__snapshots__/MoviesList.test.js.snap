@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders movies list correctly 1`] = `
+exports[`<MoviesList/> 1`] = `
 <div
   className="MoviesList__movies-list-wrapper___3SCP1"
 >

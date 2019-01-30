@@ -29,17 +29,13 @@ export class Params {
   }
 
   add(addparams) {
-    const { params } = this;
-
-    Object.keys(params).forEach((key) => { params[key] = addparams[key]; });
+    Object.keys(addparams).forEach((key) => { this.params[key] = addparams[key]; });
 
     return this;
   }
 
   remove(removeParams) {
-    const { params } = this;
-
-    removeParams.forEach((key) => { params[key] = undefined; });
+    removeParams.forEach((key) => { this.params[key] = undefined; });
 
     return this;
   }

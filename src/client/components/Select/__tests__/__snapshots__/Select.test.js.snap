@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders select correctly 1`] = `
+exports[`<Select/> 1`] = `
 <div
   className="Select__select___1ZlRu"
   onMouseLeave={[Function]}
@@ -59,7 +59,7 @@ exports[`renders select correctly 1`] = `
 </div>
 `;
 
-exports[`renders select correctly 2`] = `
+exports[`<Select/> 2`] = `
 <div
   className="Select__select___1ZlRu"
   onMouseLeave={[Function]}
@@ -118,7 +118,7 @@ exports[`renders select correctly 2`] = `
 </div>
 `;
 
-exports[`renders select correctly 3`] = `
+exports[`<Select/> 3`] = `
 <div
   className="Select__select___1ZlRu"
   onMouseLeave={[Function]}
