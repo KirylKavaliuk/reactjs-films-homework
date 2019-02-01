@@ -30,12 +30,12 @@ export default class Search extends Component {
   onSearchHandler = (event) => {
     event.preventDefault();
     const { history } = this.context.router;
-    const { searchQueryValid, searchQuery } = this.state;
+    const { searchQuery } = this.state;
 
     this.setState({ searchQueryValid: searchQuery.length > 1 }, () => {
       const params = new Params();
 
-      if (searchQueryValid) {
+      if (this.state.searchQueryValid) {
         params
           .remove(['trailer', 'movie'])
           .add({ query: searchQuery });

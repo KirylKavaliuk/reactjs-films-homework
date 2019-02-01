@@ -19,6 +19,9 @@ it('<Search/>', () => {
   searchField.props.onChange({ target: { value: 'war' } });
   searchButton.props.onClick({ preventDefault: () => {} });
 
+  searchField.props.onChange({ target: { value: '' } });
+  searchButton.props.onClick({ preventDefault: () => {} });
+
   expect(tree).toMatchSnapshot();
 });
 

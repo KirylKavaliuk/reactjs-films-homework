@@ -176,3 +176,207 @@ exports[`<Select/> 3`] = `
   </div>
 </div>
 `;
+
+exports[`<Select/> 4`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      Genre
+    </span>
+    <_class
+      className="Select__arrow___kPPA1"
+      name="arrow"
+    />
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/1"
+    >
+      genre1
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/2"
+    >
+      genre2
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/3"
+    >
+      genre3
+    </_Link>
+  </div>
+</div>
+`;
+
+exports[`<Select/> 5`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      Genre
+    </span>
+    <_class
+      className="Select__arrow___kPPA1"
+      name="arrow"
+    />
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/1"
+    >
+      genre1
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/2"
+    >
+      genre2
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/3"
+    >
+      genre3
+    </_Link>
+  </div>
+</div>
+`;
+
+exports[`<Select/> 6`] = `
+<div
+  className="Select__select___1ZlRu"
+  onMouseLeave={[Function]}
+>
+  <div
+    className="Select__main___3EP3d"
+    onClick={[Function]}
+  >
+    <span
+      className="Select__value___2xWIB"
+    >
+      genre2
+    </span>
+    <_class
+      className="Select__arrow___kPPA1"
+      name="arrow"
+    />
+  </div>
+  <div
+    className="Select__list___2Ii_p"
+  >
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/1"
+    >
+      genre1
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/2"
+    >
+      genre2
+    </_Link>
+    <_Link
+      className="Select__item____FX41"
+      clearParams={
+        Array [
+          "query",
+          "movie",
+        ]
+      }
+      onClick={[Function]}
+      params={Object {}}
+      to="/genre/3"
+    >
+      genre3
+    </_Link>
+  </div>
+</div>
+`;

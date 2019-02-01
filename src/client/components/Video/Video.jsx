@@ -14,32 +14,28 @@ export default class Video extends Component {
     loaded: false,
   }
 
-  timer = null;
-
   componentDidMount() {
-    const { loaded } = this.state;
+    this.loadVideoSrc();
+  }
+
+  loadVideoSrc = async () => {
     const { id } = this.props;
 
-    this.timer = setTimeout(() => {
-      if (!loaded) {
-        this.setState({ error: true });
-      }
-    }, 7000);
+    try {
+      const { results } = await http.get(`db/movie/${id}/videos`);
 
-    http.get(`db/movie/${id}/videos`)
-      .then(({ results }) => {
-        this.setState({
-          src: `http://www.youtube.com/embed/${results[0].key}`,
-        });
-      });
+      if (results && results[0] && results[0].key) {
+        this.setState({ src: `http://www.youtube.com/embed/${results[0].key}` });
+      } else {
+        throw new Error('not loaded');
+      }
+    } catch (err) {
+      this.setState({ error: true, loaded: true });
+    }
   }
 
   onLoadHandler = () => {
     this.setState({ loaded: true });
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timer);
   }
 
   render() {

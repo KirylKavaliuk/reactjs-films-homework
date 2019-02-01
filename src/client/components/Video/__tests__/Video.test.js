@@ -4,7 +4,7 @@ import Video from '../Video';
 
 jest.useFakeTimers();
 
-it('<Video/>', () => {
+it('<Video/>', async () => {
   const tree = renderer.create(<Video id={ 297802 }/>);
 
   jest.advanceTimersByTime(2000);
@@ -14,15 +14,22 @@ it('<Video/>', () => {
   video.children[0].props.onLoad();
 
   expect(video).toMatchSnapshot();
-  tree.unmount();
+
+  const videoInstance = tree.getInstance();
+  await videoInstance.loadVideoSrc();
+
+  expect(videoInstance).toMatchSnapshot();
 });
 
-it('<Video/>', () => {
+it('<Video/>', async () => {
   const tree = renderer.create(<Video id={ 66666666666 }/>);
-
-  jest.advanceTimersByTime(7777);
 
   const video = tree.toJSON();
 
   expect(video).toMatchSnapshot();
+
+  const videoInstance = tree.getInstance();
+  await videoInstance.loadVideoSrc();
+
+  expect(videoInstance).toMatchSnapshot();
 });
