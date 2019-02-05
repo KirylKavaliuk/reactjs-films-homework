@@ -36,18 +36,10 @@ class MoviesList extends Component {
 
   componentWillReceiveProps(props) {
     const {
-      gridView,
-      trailer,
-      query,
-      movie,
+      gridView, trailer, query, movie,
     } = this.state;
     const {
-      movies,
-      match,
-      openDialog,
-      closeDialog,
-      removeMovies,
-      setMovieDetails,
+      movies, match, openDialog, closeDialog, removeMovies, setMovieDetails,
     } = props;
     const trailerParam = getParam('trailer');
     const movieIdParam = getParam('movie');
@@ -156,24 +148,32 @@ class MoviesList extends Component {
     return <Loading/>;
   }
 
-  render() {
-    const {
-      match,
-      genres,
-      listLoaded,
-      movies,
-    } = this.props;
+  moviesListRender = () => {
+    const { movies } = this.props;
     const { gridView } = this.state;
     const ListItem = gridView ? MovieGridItem : MovieListItem;
     const viewClasses = classNames({ [styles.grid]: gridView }, { [styles.list]: !gridView });
 
     return (
+      <div className={ viewClasses }>
+        { movies.map((_movie, index) => <ListItem key={ index } movie={ _movie }/>) }
+      </div>
+    );
+  }
+
+  render() {
+    const {
+      match,
+      genres,
+      listLoaded,
+    } = this.props;
+    const { gridView } = this.state;
+
+    return (
       <div className={ styles.moviesListWrapper }>
         <div className={ styles.moviesList } onChange={ this.genreChangeHandler }>
           <ListControls match={ match } genres={ genres } gridView={ gridView }/>
-          <div className={ viewClasses }>
-            { movies.map((_movie, index) => <ListItem key={ index } movie={ _movie }/>) }
-          </div>
+          { this.moviesListRender() }
           { this.loadingRender() }
           { !listLoaded && <Waypoint
             onEnter={ this.enterEndOfList }
