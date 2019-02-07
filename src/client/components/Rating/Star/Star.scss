@@ -1,0 +1,18 @@
+.star {
+  width: 30px;
+  height: 30px;
+
+  svg {
+    path {
+      fill: #c9c9c9;
+    }
+  }
+
+  &.active {
+    svg {
+      path {
+        fill: #09ade3;
+      }
+    }
+  }
+}
