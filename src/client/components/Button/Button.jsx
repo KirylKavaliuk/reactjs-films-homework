@@ -6,36 +6,31 @@ import classNames from 'classnames';
 import styles from './Button.scss';
 
 const Button = ({
-  className,
-  label,
-  onClick,
-  transparent,
-  active,
-}) => (
-  <button
-    className={ classNames(
-      styles.button,
-      className,
-      { [styles.transparent]: transparent },
-      { [styles.active]: active },
-    ) }
-    onClick={ onClick }
-  >
-    { label }
-  </button>
-);
+  className, label, onClick, transparent, active,
+}) => {
+  const classes = classNames(
+    styles.button,
+    className,
+    { [styles.transparent]: transparent },
+    { [styles.active]: active },
+  );
+
+  return (
+    <button className={ classes } onClick={ onClick }>{ label }</button>
+  );
+};
 
 Button.defaultProps = {
-  onClick: null,
   transparent: false,
   active: false,
+  onClick: () => {},
 };
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
   transparent: PropTypes.bool,
   active: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default Button;

@@ -8,20 +8,18 @@ import Link from 'components/Link/Link';
 
 import styles from './Dialog.scss';
 
-class Dialog extends Component {
-  render() {
-    const { open, children } = this.props;
+const Dialog = ({
+  open, children,
+}) => {
+  const classes = classNames(
+    styles.dialog,
+    { [styles.open]: open },
+  );
 
-    const linkClasses = classNames(
-      styles.dialog,
-      { [styles.open]: open },
-    );
-
-    return (
-      <Link className={ linkClasses } clearParams={ ['trailer'] }>{ children }</Link>
-    );
-  }
-}
+  return (
+    <Link className={ classes } clearParams={ ['trailer'] }>{ children }</Link>
+  );
+};
 
 Dialog.defaultProps = {
   children: null,

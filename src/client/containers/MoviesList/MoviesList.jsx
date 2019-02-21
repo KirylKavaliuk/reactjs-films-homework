@@ -90,11 +90,7 @@ class MoviesList extends Component {
 
   enterEndOfList = () => {
     const {
-      match,
-      listLoaded,
-      loadMoviesForSearch,
-      loadMoviesForGenre,
-      loadMoviesForSections,
+      match, listLoaded, loadMoviesForSearch, loadMoviesForGenre, loadMoviesForSections,
     } = this.props;
 
     if (!listLoaded) {
@@ -152,10 +148,10 @@ class MoviesList extends Component {
     const { movies } = this.props;
     const { gridView } = this.state;
     const ListItem = gridView ? MovieGridItem : MovieListItem;
-    const viewClasses = classNames({ [styles.grid]: gridView }, { [styles.list]: !gridView });
+    const classes = classNames({ [styles.grid]: gridView }, { [styles.list]: !gridView });
 
     return (
-      <div className={ viewClasses }>
+      <div className={ classes }>
         { movies.map((_movie, index) => <ListItem key={ index } movie={ _movie }/>) }
       </div>
     );
@@ -163,9 +159,7 @@ class MoviesList extends Component {
 
   render() {
     const {
-      match,
-      genres,
-      listLoaded,
+      match, genres, listLoaded,
     } = this.props;
     const { gridView } = this.state;
 

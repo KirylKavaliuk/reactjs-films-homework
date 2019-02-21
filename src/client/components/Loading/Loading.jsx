@@ -5,8 +5,11 @@ import classNames from 'classnames';
 
 import styles from './Loading.scss';
 
-const Loading = ({ className }) => (
-  <div className={ classNames(styles.loading, className) }>
+const Loading = ({ className }) => {
+  const classes = classNames(styles.loading, className);
+
+  return (
+  <div className={ classes }>
     <div className={ styles.icons }>
       <div className={ styles.icon }>
         <div className={ styles.circle }/>
@@ -20,7 +23,9 @@ const Loading = ({ className }) => (
     </div>
     <span className={ styles.text }>Loading</span>
   </div>
-);
+  );
+};
+
 
 Loading.defaultProps = {
   className: '',

@@ -30,6 +30,25 @@ class MovieGridItem extends Component {
   render() {
     const { descriptionOpen } = this.state;
     const { movie } = this.props;
+    const infoClasses = classNames(
+      styles.info,
+      { [styles.infoVisible]: descriptionOpen },
+    );
+
+    const cancelClasses = classNames(
+      styles.cancelIcon,
+      { [styles.cancelIconVisible]: descriptionOpen },
+    );
+
+    const headerClasses = classNames(
+      styles.header,
+      { [styles.headerOffset]: descriptionOpen },
+    );
+
+    const descriptionClasses = classNames(
+      styles.descriptionText,
+      { [styles.descriptionTextVisible]: !descriptionOpen },
+    );
 
     return (
       <div className={ styles.movieItem }>
@@ -46,19 +65,15 @@ class MovieGridItem extends Component {
           <Button transparent label='View Info' onClick={ this.toggleDescriptionHandler }/>
         </div> }
 
-        <div className={ classNames(styles.info, { [styles.infoVisible]: descriptionOpen }) }>
-          <div className={ classNames(
-            styles.cancelIcon,
-            { [styles.cancelIconVisible]: descriptionOpen },
-          ) }
+        <div className={ infoClasses }>
+          <div
+            className={ cancelClasses }
             onClick={ this.toggleDescriptionHandler }
           >
             <Icon name='cancel' />
           </div>
 
-          <header className={
-            classNames(styles.header, { [styles.headerOffset]: descriptionOpen })
-          }>
+          <header className={ headerClasses }>
             <Link params={{ movie: movie.id }}>
               <h1 title={ movie.title } className={ styles.title }>
                 { movie.title }
@@ -81,14 +96,7 @@ class MovieGridItem extends Component {
             </div>
           </header>
 
-          <p className={
-            classNames(
-              styles.descriptionText,
-              { [styles.descriptionTextVisible]: !descriptionOpen },
-            )
-          }>
-            { movie.overview }
-          </p>
+          <p className={ descriptionClasses }>{ movie.overview }</p>
 
           <Link params={{ trailer: movie.id }}>
             <Button label='Watch Now' className={ styles.watchButton }/>

@@ -28,18 +28,21 @@ class Rating extends Component {
     Array.from({ length: 5 }, (v, k) => {
       const { value } = this.props;
       const { onHover } = this.state;
+      const starClasses = classNames(
+        styles.star,
+        { [styles.active]: k < Math.round(value) && onHover === -1 },
+        { [styles.onHover]: onHover >= k },
+      );
 
-      return (<div
-        key={ k }
-        className={ classNames(
-          styles.star,
-          { [styles.active]: k < Math.round(value) && onHover === -1 },
-          { [styles.onHover]: onHover >= k },
-        ) }
-        onMouseOut={ () => this.onHoverHandler(-1) }
-        onMouseOver={ () => this.onHoverHandler(k) }
-        onClick={ () => this.sendRatingHandler(k + 1) }
-      />);
+      return (
+        <div
+          key={ k }
+          className={ starClasses }
+          onMouseOut={ () => this.onHoverHandler(-1) }
+          onMouseOver={ () => this.onHoverHandler(k) }
+          onClick={ () => this.sendRatingHandler(k + 1) }
+        />
+      );
     })
   )
 

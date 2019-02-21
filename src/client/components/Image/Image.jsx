@@ -8,10 +8,7 @@ import classNames from 'classnames';
 import styles from './Image.scss';
 
 const Image = ({
-  db,
-  src,
-  width,
-  className,
+  db, src, width, className,
 }) => {
   const imageClasses = classNames(styles.image, className);
   let transformedSrc = src;
@@ -20,7 +17,9 @@ const Image = ({
     transformedSrc = `https://image.tmdb.org/t/p/w${width}/${src}`;
   }
 
-  return (<img className={ imageClasses }src={ transformedSrc }/>);
+  return (
+    <img className={ imageClasses } src={ transformedSrc }/>
+  );
 };
 
 Image.defaultProps = {

@@ -1,4 +1,3 @@
-import http from 'utils/http';
 import { SET_MOVIEDETAILS } from 'constants/actionTypes';
 
 export default {

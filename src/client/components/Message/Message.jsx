@@ -22,13 +22,13 @@ class Message extends Component {
   }
 
   render() {
-    const { text, open, closeMessage } = this.props;
-    const messageClasses = classNames(styles.message, { [styles.open]: open });
+    const {
+      text, open, closeMessage,
+    } = this.props;
+    const classes = classNames(styles.message, { [styles.open]: open });
 
     return (
-      <div className={ messageClasses } onClick={ closeMessage }>
-        { text }
-      </div>
+      <div className={ classes } onClick={ closeMessage }>{ text }</div>
     );
   }
 }

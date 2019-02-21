@@ -60,8 +60,10 @@ class App extends Component {
 
     return (
       <div className={ styles.app }>
-        <DialogProvider
-          value={{ openDialog: this.openDialogHandler, closeDialog: this.closeDialogHandler }}>
+        <DialogProvider value={{
+          openDialog: this.openDialogHandler,
+          closeDialog: this.closeDialogHandler,
+        }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
             <MovieDetails/>
             <Routing/>

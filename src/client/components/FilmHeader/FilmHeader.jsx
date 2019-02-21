@@ -5,7 +5,9 @@ import withConditionalRendering from 'utils/rendering';
 
 import styles from './FilmHeader.scss';
 
-const FilmHeader = ({ name, genres, duration }) => {
+const FilmHeader = ({
+  name, genres, duration,
+}) => {
   const absoluteDuration = Math.abs(duration);
   const hours = Math.floor(absoluteDuration / 60);
   const minutes = (absoluteDuration % 60).toFixed();
@@ -43,6 +45,7 @@ FilmHeader.propTypes = {
 
 FilmHeader.defaultProps = {
   name: '',
+  genres: [],
   duration: 0,
 };
 
