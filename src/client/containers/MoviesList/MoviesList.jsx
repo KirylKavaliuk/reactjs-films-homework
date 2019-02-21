@@ -47,7 +47,7 @@ class MoviesList extends Component {
     const queryParam = getParam('query');
 
     if (movieIdParam) {
-      if (movie.id !== movieIdParam) {
+      if (movie.id !== +movieIdParam) {
         const foundMovie = movies.find(_movie => _movie.id === +movieIdParam);
 
         if (foundMovie && foundMovie.id !== movie.id) {
@@ -148,7 +148,10 @@ class MoviesList extends Component {
     const { movies } = this.props;
     const { gridView } = this.state;
     const ListItem = gridView ? MovieGridItem : MovieListItem;
-    const classes = classNames({ [styles.grid]: gridView }, { [styles.list]: !gridView });
+    const classes = classNames(
+      { [styles.grid]: gridView },
+      { [styles.list]: !gridView },
+    );
 
     return (
       <div className={ classes }>
@@ -170,6 +173,7 @@ class MoviesList extends Component {
           { this.moviesListRender() }
           { this.loadingRender() }
           { !listLoaded && <Waypoint
+            waypoint
             onEnter={ this.enterEndOfList }
             onLeave={ this.leaveEndOfList }
           /> }

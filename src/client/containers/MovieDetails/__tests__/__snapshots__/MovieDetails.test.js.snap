@@ -1,0 +1,587 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetails.test 1`] = `
+<div
+  className="MovieDetails__movie-details___h0XRr"
+  id="movie-details"
+  style={
+    Object {
+      "backgroundImage": "url(https://image.tmdb.org/t/p/w1280undefined)",
+    }
+  }
+>
+  <a
+    className="Link__link___-IU0S MovieDetails__logo___1eswn"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Films
+  </a>
+  <form
+    className="Search__search___1reG0"
+    name="search"
+  >
+    <input
+      className="Search__search-field___31kXA"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="search"
+      value="test search value"
+    />
+    <button
+      className="Search__search-button___1ljeO"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 483.083 483.083"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M332.74 315.35c30.883-33.433 50.15-78.2 50.15-127.5C382.89 84.433 298.74 0 195.04 0S7.19 84.433 7.19 187.85 91.34 375.7 195.04 375.7c42.217 0 81.033-13.883 112.483-37.4l139.683 139.683c3.4 3.4 7.65 5.1 11.9 5.1s8.783-1.7 11.9-5.1c6.517-6.517 6.517-17.283 0-24.083L332.74 315.35zM41.19 187.85C41.19 103.133 110.04 34 195.04 34c84.717 0 153.85 68.85 153.85 153.85S280.04 341.7 195.04 341.7 41.19 272.567 41.19 187.85z"
+        />
+      </svg>
+    </button>
+  </form>
+  <div
+    className="FilmHeader__film-header___1bjD8"
+  >
+    <h2
+      className="FilmHeader__name___12D1E"
+    >
+      
+    </h2>
+    <div
+      className="FilmHeader__info___2BQ5Y"
+    >
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Adventure
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Drama
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Family
+      </span>
+      <span
+        className="FilmHeader__duration___1HHqc"
+      >
+        3 h
+         
+        57 m
+      </span>
+    </div>
+  </div>
+  <div
+    className="Rating__rating___3f4Qx"
+  >
+    <div
+      className="Rating__star___3Zoo4 Rating__active___BzsSn"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__rating-number-wrap___dhLPE"
+    >
+      <div
+        className="Rating__rating-number___13U9X"
+      >
+        1.27
+      </div>
+    </div>
+  </div>
+  <div
+    className="MovieDetails__buttons-more___8NsJC"
+  >
+    <div
+      className="Description__description___1aDcr"
+    >
+      Description text description text description text description text description text description text
+    </div>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MovieDetails.test 2`] = `
+<div
+  className="MovieDetails__movie-details___h0XRr"
+  id="movie-details"
+  style={
+    Object {
+      "backgroundImage": "url(https://image.tmdb.org/t/p/w1280undefined)",
+    }
+  }
+>
+  <a
+    className="Link__link___-IU0S MovieDetails__logo___1eswn"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Films
+  </a>
+  <form
+    className="Search__search___1reG0"
+    name="search"
+  >
+    <input
+      className="Search__search-field___31kXA"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="search"
+      value="test search value"
+    />
+    <button
+      className="Search__search-button___1ljeO"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 483.083 483.083"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M332.74 315.35c30.883-33.433 50.15-78.2 50.15-127.5C382.89 84.433 298.74 0 195.04 0S7.19 84.433 7.19 187.85 91.34 375.7 195.04 375.7c42.217 0 81.033-13.883 112.483-37.4l139.683 139.683c3.4 3.4 7.65 5.1 11.9 5.1s8.783-1.7 11.9-5.1c6.517-6.517 6.517-17.283 0-24.083L332.74 315.35zM41.19 187.85C41.19 103.133 110.04 34 195.04 34c84.717 0 153.85 68.85 153.85 153.85S280.04 341.7 195.04 341.7 41.19 272.567 41.19 187.85z"
+        />
+      </svg>
+    </button>
+  </form>
+  <div
+    className="FilmHeader__film-header___1bjD8"
+  >
+    <h2
+      className="FilmHeader__name___12D1E"
+    >
+      
+    </h2>
+    <div
+      className="FilmHeader__info___2BQ5Y"
+    >
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Adventure
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Drama
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Family
+      </span>
+      <span
+        className="FilmHeader__duration___1HHqc"
+      >
+        3 h
+         
+        57 m
+      </span>
+    </div>
+  </div>
+  <div
+    className="Rating__rating___3f4Qx"
+  >
+    <div
+      className="Rating__star___3Zoo4 Rating__active___BzsSn"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__rating-number-wrap___dhLPE"
+    >
+      <div
+        className="Rating__rating-number___13U9X"
+      >
+        1.27
+      </div>
+    </div>
+  </div>
+  <div
+    className="MovieDetails__buttons-more___8NsJC"
+  >
+    <div
+      className="Description__description___1aDcr Description__open___3dk14"
+    >
+      Description text description text description text description text description text description text
+    </div>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU Button__active___2cdo3"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MovieDetails.test 3`] = `
+<div
+  className="MovieDetails__movie-details___h0XRr"
+  id="movie-details"
+  style={
+    Object {
+      "backgroundImage": "url(https://image.tmdb.org/t/p/w1280undefined)",
+    }
+  }
+>
+  <a
+    className="Link__link___-IU0S MovieDetails__logo___1eswn"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Films
+  </a>
+  <form
+    className="Search__search___1reG0"
+    name="search"
+  >
+    <input
+      className="Search__search-field___31kXA"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="search"
+      value="test search value"
+    />
+    <button
+      className="Search__search-button___1ljeO"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 483.083 483.083"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M332.74 315.35c30.883-33.433 50.15-78.2 50.15-127.5C382.89 84.433 298.74 0 195.04 0S7.19 84.433 7.19 187.85 91.34 375.7 195.04 375.7c42.217 0 81.033-13.883 112.483-37.4l139.683 139.683c3.4 3.4 7.65 5.1 11.9 5.1s8.783-1.7 11.9-5.1c6.517-6.517 6.517-17.283 0-24.083L332.74 315.35zM41.19 187.85C41.19 103.133 110.04 34 195.04 34c84.717 0 153.85 68.85 153.85 153.85S280.04 341.7 195.04 341.7 41.19 272.567 41.19 187.85z"
+        />
+      </svg>
+    </button>
+  </form>
+  <div
+    className="FilmHeader__film-header___1bjD8"
+  >
+    <h2
+      className="FilmHeader__name___12D1E"
+    >
+      
+    </h2>
+    <div
+      className="FilmHeader__info___2BQ5Y"
+    >
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Adventure
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Drama
+      </span>
+      <span
+        className="FilmHeader__genre___2QZId"
+      >
+        Family
+      </span>
+      <span
+        className="FilmHeader__duration___1HHqc"
+      >
+        3 h
+         
+        57 m
+      </span>
+    </div>
+  </div>
+  <div
+    className="Rating__rating___3f4Qx"
+  >
+    <div
+      className="Rating__star___3Zoo4 Rating__active___BzsSn"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__rating-number-wrap___dhLPE"
+    >
+      <div
+        className="Rating__rating-number___13U9X"
+      >
+        1.27
+      </div>
+    </div>
+  </div>
+  <div
+    className="MovieDetails__buttons-more___8NsJC"
+  >
+    <div
+      className="Description__description___1aDcr"
+    >
+      Description text description text description text description text description text description text
+    </div>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MovieDetails.test 4`] = `
+<div
+  className="MovieDetails__movie-details___h0XRr"
+  id="movie-details"
+  style={
+    Object {
+      "backgroundImage": "",
+    }
+  }
+>
+  <a
+    className="Link__link___-IU0S MovieDetails__logo___1eswn"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Films
+  </a>
+  <form
+    className="Search__search___1reG0"
+    name="search"
+  >
+    <input
+      className="Search__search-field___31kXA"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="search"
+      value=""
+    />
+    <button
+      className="Search__search-button___1ljeO"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 483.083 483.083"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M332.74 315.35c30.883-33.433 50.15-78.2 50.15-127.5C382.89 84.433 298.74 0 195.04 0S7.19 84.433 7.19 187.85 91.34 375.7 195.04 375.7c42.217 0 81.033-13.883 112.483-37.4l139.683 139.683c3.4 3.4 7.65 5.1 11.9 5.1s8.783-1.7 11.9-5.1c6.517-6.517 6.517-17.283 0-24.083L332.74 315.35zM41.19 187.85C41.19 103.133 110.04 34 195.04 34c84.717 0 153.85 68.85 153.85 153.85S280.04 341.7 195.04 341.7 41.19 272.567 41.19 187.85z"
+        />
+      </svg>
+    </button>
+  </form>
+  <div
+    className="FilmHeader__film-header___1bjD8"
+  >
+    <h2
+      className="FilmHeader__name___12D1E"
+    >
+      
+    </h2>
+    <div
+      className="FilmHeader__info___2BQ5Y"
+    >
+      0
+    </div>
+  </div>
+  <div
+    className="Rating__rating___3f4Qx"
+  >
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__star___3Zoo4"
+      onClick={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    />
+    <div
+      className="Rating__rating-number-wrap___dhLPE"
+    >
+      <div
+        className="Rating__rating-number___13U9X"
+      >
+        0.00
+      </div>
+    </div>
+  </div>
+  <div
+    className="MovieDetails__buttons-more___8NsJC"
+  >
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;

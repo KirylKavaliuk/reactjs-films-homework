@@ -2,40 +2,65 @@ import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from 'store/configureStore';
 import MovieDetails from '../MovieDetails';
 
 const movie = {
+  id: 12344455,
   name: 'Film',
-  genres: ['Adventure', 'Drama', 'Family', 'Fantasy'],
-  duration: 237,
-  rating: 2.54,
-  description: 'Description text description text description text description text description text description text',
+  genres: [
+    { id: 1, name: 'Adventure' },
+    { id: 2, name: 'Drama' },
+    { id: 3, name: 'Family' },
+    { id: 4, name: 'Fantasy' },
+  ],
+  runtime: 237,
+  vote_average: 2.54,
+  overview: 'Description text description text description text description text description text description text',
 };
 
-it('test onChange search handler', () => {
-  const component = TestRenderer.create(<MovieDetails movie={ movie }/>).root;
-  const search = component.findByType('input').props;
+const movieWithoutGenres = {
+  name: 'Film',
+  genres: null,
+  runtime: 237,
+  vote_average: 2.54,
+  overview: 'Description text description text description text description text description text description text',
+};
 
+it('MovieDetails.test', () => {
+  const tree = TestRenderer.create(
+    <MemoryRouter>
+    <Provider store={ configureStore({
+      movieDetails: movie,
+    }) }>
+      <MovieDetails movie={ movie }/>
+    </Provider>
+    </MemoryRouter>,
+  );
+
+  const { root } = tree;
+
+  let search = root.findByType('input').props;
   search.onChange({ target: { value: 'test search value' } });
+  expect(tree.toJSON()).toMatchSnapshot();
+  search = root.findByType('input').props;
+  expect(search.value).toBe('test search value');
 
-  expect(component.instance.state.search).toBe('test search value');
-});
+  const descButton = root.findByProps({ label: 'View Info' }).props;
+  descButton.onClick();
+  expect(tree.toJSON()).toMatchSnapshot();
+  descButton.onClick();
+  expect(tree.toJSON()).toMatchSnapshot();
 
+  const tree2 = TestRenderer.create(
+    <MemoryRouter>
+    <Provider store={ configureStore() }>
+      <MovieDetails movie={ movieWithoutGenres }/>
+    </Provider>
+    </MemoryRouter>,
+  );
 
-it('renders movie details component correctly', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(<MovieDetails movie={ movie }/>);
-
-  const tree = renderer.getRenderOutput();
-
-  expect(tree).toMatchSnapshot();
-});
-
-it('renders movie details component shallow correctly with null movie', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(<MovieDetails/>);
-
-  const tree = renderer.getRenderOutput();
-
-  expect(tree).toMatchSnapshot();
+  expect(tree2.toJSON()).toMatchSnapshot();
 });
