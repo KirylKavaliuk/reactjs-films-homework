@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading/> 1`] = `
+<div
+  className="Loading__loading___2_FrG"
+>
+  <div
+    className="Loading__icons___1uA0Q"
+  >
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+  </div>
+  <span
+    className="Loading__text___13r1Y"
+  >
+    Loading
+  </span>
+</div>
+`;
+
+exports[`<Loading/> 2`] = `
+<div
+  className="Loading__loading___2_FrG Component__class-name__hash"
+>
+  <div
+    className="Loading__icons___1uA0Q"
+  >
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+    <div
+      className="Loading__icon___2WVPJ"
+    >
+      <div
+        className="Loading__circle___14YyA"
+      />
+    </div>
+  </div>
+  <span
+    className="Loading__text___13r1Y"
+  >
+    Loading
+  </span>
+</div>
+`;

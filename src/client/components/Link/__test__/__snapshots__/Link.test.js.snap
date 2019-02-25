@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link/> 1`] = `
+<a
+  className="Link__link___-IU0S"
+  href="/section"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+/>
+`;
+
+exports[`<Link/> 2`] = `
+<a
+  className="Link__link___-IU0S"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+/>
+`;

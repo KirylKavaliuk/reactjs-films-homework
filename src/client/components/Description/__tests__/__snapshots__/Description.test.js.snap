@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Description/> 1`] = `
+<div
+  className="Description__description___1aDcr Description__open___3dk14"
+>
+  text
+</div>
+`;
+
+exports[`<Description/> 2`] = `null`;

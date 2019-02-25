@@ -1,12 +1,18 @@
-@import './reset.scss';
 @import './fonts.scss';
+@import './palette.scss';
 
 * {
   font-family: 'Roboto';
   font-weight: 400;
-  color: #fff;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 200vh;
+  background: $LIGHTER_GREY;
 }

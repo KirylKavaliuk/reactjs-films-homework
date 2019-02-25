@@ -1,36 +1,59 @@
 .film-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  align-items: flex-start;
+  grid-area: film-header;
+  align-self: end;
 
+  &:hover {
+    cursor: default;
+  }
+}
+
+.name {
+  box-sizing: border-box;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.info {
+  display: flex;
+  max-width: 450px;
+  line-height: 1.4;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.genre {
+  box-sizing: border-box;
+  padding-right: 25px;
+  font-size: 18px;
+}
+
+.duration {
+  font-size: 18px;
+
+  &::before {
+    padding-right: 20px;
+    content: '|';
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .name {
-    font-size: 50px;
-    font-weight: 700;
-    padding: 10px 0;
-    box-sizing: border-box;
-    text-transform: uppercase;
+    font-size: 35px;
   }
 
-  .genres {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    max-width: 450px;
-    line-height: 1.4;
-
-    .genre {
-      padding-right: 25px;
-      box-sizing: border-box;
-      font-size: 18px;
-    }
+  .genre {
+    font-size: 13px;
   }
 
   .duration {
-    &::before {
-      content: '|';
-      padding-right: 20px;
-    }
+    font-size: 13px !important;
   }
 }

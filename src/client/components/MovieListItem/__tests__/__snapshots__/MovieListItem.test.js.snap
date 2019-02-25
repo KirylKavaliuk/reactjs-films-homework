@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieListItem/> 1`] = `
+<div
+  className="MovieListItem__movie-item___3ihj9"
+>
+  <div
+    className="MovieListItem__info___fbjZF"
+  >
+    <header>
+      <h1
+        className="MovieListItem__title___2J99z"
+      >
+        title
+      </h1>
+      <p
+        className="MovieListItem__genres___XBK81"
+      >
+        <a
+          className="Link__link___-IU0S MovieListItem__genre____sUKh"
+          href="/genre/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre1
+        </a>
+        <a
+          className="Link__link___-IU0S MovieListItem__genre____sUKh"
+          href="/genre/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre2
+        </a>
+        <a
+          className="Link__link___-IU0S MovieListItem__genre____sUKh"
+          href="/genre/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre3
+        </a>
+      </p>
+      <div>
+        <div
+          className="Rating__rating___3f4Qx"
+        >
+          <div
+            className="Rating__star___3Zoo4 Rating__active___BzsSn"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Rating__star___3Zoo4 Rating__active___BzsSn"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Rating__star___3Zoo4"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Rating__star___3Zoo4"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Rating__star___3Zoo4"
+            onClick={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Rating__rating-number-wrap___dhLPE"
+          >
+            <div
+              className="Rating__rating-number___13U9X"
+            >
+              1.75
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <p
+      className="MovieListItem__description-text___YTjIk"
+    >
+      overview
+    </p>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<MovieListItem/> 2`] = `null`;

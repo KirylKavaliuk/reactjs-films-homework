@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Routing/> 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/trading"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/top-rated"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/coming-soon"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/search"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/genre/:genreId"
+  />
+  <Route
+    component={[Function]}
+  />
+</Switch>
+`;

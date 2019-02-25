@@ -1,0 +1,101 @@
+@import 'styles/palette';
+
+.select {
+  position: relative;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 5px 10px;
+  transition: all 0.45s ease;
+  color: $LIGHT_BLUE;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background: $WHITE;
+  }
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.45s ease;
+  fill: $LIGHT_BLUE;
+}
+
+.main {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  &:hover {
+    color: $LIGHTER_BLUE;
+    fill: $LIGHTER_BLUE;
+  }
+}
+
+.active:not(:hover) {
+  color: white;
+  background: $LIGHTER_BLUE;
+
+  .arrow {
+    fill: $WHITE;
+  }
+}
+
+.value {
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 155px;
+  padding: 5px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+  transition: background 0.45s ease, color 0.45s ease;
+  text-decoration: none;
+  color: $LIGHTER_BLUE;
+  border-radius: 3px;
+  line-height: 1.4;
+
+  &:hover {
+    color: $LIGHTER_BLUE;
+    background: #f1f1f1;
+  }
+}
+
+.arrow-open {
+  transform: rotate(180deg);
+}
+
+.list {
+  position: absolute;
+  z-index: -1;
+  top: 30px;
+  left: 0;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  height: 0;
+  transition: all 0.45s ease;
+  border-radius: 3px;
+  background: $WHITE;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.list-open {
+  z-index: 200;
+  top: 30px;
+  box-sizing: border-box;
+  height: 170px;
+  padding: 10px 0 0;
+  color: $LIGHTER_BLUE;
+}

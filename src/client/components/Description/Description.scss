@@ -1,10 +1,30 @@
+@import 'styles/palette';
+
 .description {
-  top: 0;
-  width: 300px;
-  max-height: 184px;
-  background: rgba($color: #000, $alpha: 0.7);
-  padding: 15px;
+  position: absolute;
+  top: -200px;
+  right: 0;
+  overflow: auto;
   box-sizing: border-box;
+  width: 300px;
+  max-height: 180px;
+  padding: 13px;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.75);
   line-height: 2;
-  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.open {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 450px) {
+  .description {
+    top: -190px;
+  }
 }

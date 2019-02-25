@@ -1,17 +1,39 @@
+@import 'styles/palette';
+
+@mixin setHover() {
+  cursor: pointer;
+  border: 1px solid $LIGHTER_BLUE;
+  background: $LIGHTER_BLUE;
+}
+
 .button {
-  font-size: 16px;
-  background: #09ade3;
-  border: 1px solid #09ade3;
-  padding: 10px;
   min-width: 130px;
+  padding: 7px;
+  transition: background 0.45s ease, border 0.45s ease;
+  color: inherit;
+  border: 1px solid $LIGHT_BLUE;
   border-radius: 3px;
+  background: $LIGHT_BLUE;
+  font-size: 16px;
 
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    @include setHover();
+  }
 }
 
 .transparent {
+  border: 1px solid $WHITE;
   background: none;
-  border: 1px solid #fff;
+
+  &:hover {
+    @include setHover();
+  }
+}
+
+.active {
+  @include setHover();
 }

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Message/> 1`] = `null`;
+
+exports[`<Message/> 2`] = `
+<div
+  className="Message__message___GEGYp undefined"
+  onClick={[Function]}
+>
+  message
+</div>
+`;

@@ -1,0 +1,23 @@
+@import 'styles/palette';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $WHITE;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  box-sizing: border-box;
+  padding: 40px 10px 20px;
+  color: $LIGHT_BLUE;
+  font-size: 28px;
+}
+
+.copy {
+  box-sizing: border-box;
+  padding: 20px 10px;
+  color: $GREY;
+}

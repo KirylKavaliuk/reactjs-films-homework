@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieGridItem/> 1`] = `
+<div
+  className="MovieGridItem__movie-item___3Q67r"
+>
+  <img
+    className="Image__image___2zFQr MovieGridItem__poster___wnVUx"
+    src="https://image.tmdb.org/t/p/w1280//5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg"
+  />
+  <div
+    className="MovieGridItem__more____ieLx"
+  >
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div>
+        <svg
+          className="MovieGridItem__play-button-icon___qKloO"
+          viewBox="0 0 58 58"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="29"
+            cy="29"
+            r="29"
+          />
+          <path
+            d="M44 29L22 44V14z"
+            fill="#fff"
+          />
+          <path
+            d="M22 45a.999.999 0 0 1-1-1V14a.999.999 0 0 1 1.564-.826l22 15a1.001 1.001 0 0 1-.001 1.652l-22 15A1.002 1.002 0 0 1 22 45zm1-29.107v26.215L42.225 29 23 15.893z"
+            fill="#fff"
+          />
+        </svg>
+        <h3
+          className="MovieGridItem__play-button-header___44D4Q"
+        >
+          Play Now
+        </h3>
+      </div>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+  <div
+    className="MovieGridItem__info___2nyBg"
+  >
+    <div
+      className="MovieGridItem__cancel-icon___3NGEZ"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 512.001 512.001"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M294.111 256.001L504.109 46.003c10.523-10.524 10.523-27.586 0-38.109-10.524-10.524-27.587-10.524-38.11 0L256 217.892 46.002 7.894C35.478-2.63 18.416-2.63 7.893 7.894s-10.524 27.586 0 38.109l209.998 209.998L7.893 465.999c-10.524 10.524-10.524 27.586 0 38.109 10.524 10.524 27.586 10.523 38.109 0L256 294.11l209.997 209.998c10.524 10.524 27.587 10.523 38.11 0 10.523-10.524 10.523-27.586 0-38.109L294.111 256.001z"
+        />
+      </svg>
+    </div>
+    <header
+      className="MovieGridItem__header___Q5Ce4"
+    >
+      <a
+        className="Link__link___-IU0S"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <h1
+          className="MovieGridItem__title___8rf-J"
+          title="title"
+        >
+          title
+        </h1>
+      </a>
+      <p
+        className="MovieGridItem__genres___12mKt"
+      >
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre1
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre2
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre3
+        </a>
+      </p>
+      <div
+        className="MovieGridItem__rating___1fN4K"
+      >
+        1.8
+      </div>
+    </header>
+    <p
+      className="MovieGridItem__description-text___3Bcef undefined"
+    >
+      overview
+    </p>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1 MovieGridItem__watch-button___zHoyA"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<MovieGridItem/> 2`] = `
+<div
+  className="MovieGridItem__movie-item___3Q67r"
+>
+  <img
+    className="Image__image___2zFQr MovieGridItem__poster___wnVUx"
+    src="https://image.tmdb.org/t/p/w1280//5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg"
+  />
+  <div
+    className="MovieGridItem__more____ieLx"
+  >
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div>
+        <svg
+          className="MovieGridItem__play-button-icon___qKloO"
+          viewBox="0 0 58 58"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="29"
+            cy="29"
+            r="29"
+          />
+          <path
+            d="M44 29L22 44V14z"
+            fill="#fff"
+          />
+          <path
+            d="M22 45a.999.999 0 0 1-1-1V14a.999.999 0 0 1 1.564-.826l22 15a1.001 1.001 0 0 1-.001 1.652l-22 15A1.002 1.002 0 0 1 22 45zm1-29.107v26.215L42.225 29 23 15.893z"
+            fill="#fff"
+          />
+        </svg>
+        <h3
+          className="MovieGridItem__play-button-header___44D4Q"
+        >
+          Play Now
+        </h3>
+      </div>
+    </a>
+    <button
+      className="Button__button___1nbn1 Button__transparent___3tNuU"
+      onClick={[Function]}
+    >
+      View Info
+    </button>
+  </div>
+  <div
+    className="MovieGridItem__info___2nyBg"
+  >
+    <div
+      className="MovieGridItem__cancel-icon___3NGEZ"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 512.001 512.001"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M294.111 256.001L504.109 46.003c10.523-10.524 10.523-27.586 0-38.109-10.524-10.524-27.587-10.524-38.11 0L256 217.892 46.002 7.894C35.478-2.63 18.416-2.63 7.893 7.894s-10.524 27.586 0 38.109l209.998 209.998L7.893 465.999c-10.524 10.524-10.524 27.586 0 38.109 10.524 10.524 27.586 10.523 38.109 0L256 294.11l209.997 209.998c10.524 10.524 27.587 10.523 38.11 0 10.523-10.524 10.523-27.586 0-38.109L294.111 256.001z"
+        />
+      </svg>
+    </div>
+    <header
+      className="MovieGridItem__header___Q5Ce4"
+    >
+      <a
+        className="Link__link___-IU0S"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <h1
+          className="MovieGridItem__title___8rf-J"
+          title="title"
+        >
+          title
+        </h1>
+      </a>
+      <p
+        className="MovieGridItem__genres___12mKt"
+      >
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre1
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre2
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre3
+        </a>
+      </p>
+      <div
+        className="MovieGridItem__rating___1fN4K"
+      >
+        1.8
+      </div>
+    </header>
+    <p
+      className="MovieGridItem__description-text___3Bcef undefined"
+    >
+      overview
+    </p>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1 MovieGridItem__watch-button___zHoyA"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<MovieGridItem/> 3`] = `
+<div
+  className="MovieGridItem__movie-item___3Q67r"
+>
+  <img
+    className="Image__image___2zFQr MovieGridItem__poster___wnVUx"
+    src="https://image.tmdb.org/t/p/w1280//5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg"
+  />
+  <div
+    className="MovieGridItem__info___2nyBg MovieGridItem__info-visible___NrFi3"
+  >
+    <div
+      className="MovieGridItem__cancel-icon___3NGEZ MovieGridItem__cancel-icon-visible___2HExa"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        viewBox="0 0 512.001 512.001"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M294.111 256.001L504.109 46.003c10.523-10.524 10.523-27.586 0-38.109-10.524-10.524-27.587-10.524-38.11 0L256 217.892 46.002 7.894C35.478-2.63 18.416-2.63 7.893 7.894s-10.524 27.586 0 38.109l209.998 209.998L7.893 465.999c-10.524 10.524-10.524 27.586 0 38.109 10.524 10.524 27.586 10.523 38.109 0L256 294.11l209.997 209.998c10.524 10.524 27.587 10.523 38.11 0 10.523-10.524 10.523-27.586 0-38.109L294.111 256.001z"
+        />
+      </svg>
+    </div>
+    <header
+      className="MovieGridItem__header___Q5Ce4 MovieGridItem__header-offset___1kN73"
+    >
+      <a
+        className="Link__link___-IU0S"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <h1
+          className="MovieGridItem__title___8rf-J"
+          title="title"
+        >
+          title
+        </h1>
+      </a>
+      <p
+        className="MovieGridItem__genres___12mKt"
+      >
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre1
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre2
+        </a>
+        <a
+          className="Link__link___-IU0S MovieGridItem__genre___EAwMy"
+          href="/genre/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          genre3
+        </a>
+      </p>
+      <div
+        className="MovieGridItem__rating___1fN4K"
+      >
+        1.8
+      </div>
+    </header>
+    <p
+      className="MovieGridItem__description-text___3Bcef"
+    >
+      overview
+    </p>
+    <a
+      className="Link__link___-IU0S"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <button
+        className="Button__button___1nbn1 MovieGridItem__watch-button___zHoyA"
+        onClick={null}
+      >
+        Watch Now
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<MovieGridItem/> 4`] = `null`;

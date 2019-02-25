@@ -16,7 +16,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
     alias,
   },
   module: {
@@ -24,6 +24,9 @@ module.exports = {
       test: /\.js(x)?$/,
       exclude: /node_modules/,
       use: ['babel-loader'],
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
     }, {
       test: /\.scss$/,
       exclude: /node_modules/,

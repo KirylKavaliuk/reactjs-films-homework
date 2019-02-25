@@ -1,85 +1,82 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import Button from 'Components/Button/Button';
-import Rating from 'Components/Rating/Rating';
-import FilmHeader from 'Components/FilmHeader/FilmHeader';
-import Search from 'Components/Search/Search';
+import { withDialogContext } from 'utils/dialog';
+
+import Button from 'components/Button/Button';
+import Rating from 'components/Rating/Rating';
+import FilmHeader from 'components/FilmHeader/FilmHeader';
+import Search from 'components/Search/Search';
+import Description from 'components/Description/Description';
+import Link from 'components/Link/Link';
 
 import styles from './MovieDetails.scss';
 
-export default class MovieDetails extends Component {
-  constructor(props) {
-    super(props);
+class MovieDetails extends Component {
+  state = {
+    descriptionOpen: false,
+  };
 
-    this.state = {
-      search: '',
-    };
+  toggleDescriptionHandler = () => {
+    const { descriptionOpen } = this.state;
 
-    this.onChangeSearchHandler = this.onChangeSearchHandler.bind(this);
+    this.setState({ descriptionOpen: !descriptionOpen });
   }
 
-  onChangeSearchHandler(event) {
-    this.setState({ search: event.target.value });
-  }
+  shouldComponentUpdate = (props, state) => (
+    this.props.movie.id !== props.movie.id
+    || this.state.descriptionOpen !== state.descriptionOpen
+  )
 
   render() {
-    if (this.props.movie) {
-      return (
-        <section className={ styles.movieDetails }>
-          <div className={ styles.gradientBottom }></div>
-          <div className={ styles.gradientTop }></div>
-          <div className={ styles.content}>
-            <div className={ styles.top }>
-              <div className={ styles.logo }>
-                Films
-              </div>
-              <Search
-                value={ this.state.search }
-                onChange={ this.onChangeSearchHandler }
-              />
-            </div>
-            <div className={ styles.bottom }>
-              <div className={ styles.briefInfo }>
-                <FilmHeader
-                  name={ this.props.movie && this.props.movie.name }
-                  genres={ this.props.movie.genres }
-                  duration={ this.props.movie.duration }
-                />
+    const { movie } = this.props;
+    const { descriptionOpen } = this.state;
+    const imageUrl = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
 
-                <Rating
-                  value={ this.props.movie.rating }
-                />
-              </div>
-              <div className={ styles.moreButtons }>
-                <Button
-                  label='Watch Now'
-                />
+    return (
+      <div
+        id='movie-details'
+        className={ styles.movieDetails }
+        style={{ backgroundImage: movie.id ? imageUrl : '' }}
+      >
+        <Link to='/' className={ styles.logo }>Films</Link>
 
-                <Button
-                  label='View Info'
-                  transparent
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    }
-    return null;
+        <Search/>
+
+        <FilmHeader
+          name={ movie.title }
+          genres={ movie.genres ? movie.genres.map(genre => genre.name).slice(0, 3) : [] }
+          duration={ movie.runtime }
+        />
+
+        <Rating value={ movie.vote_average / 2 }/>
+
+        <div className={ styles.buttonsMore }>
+          <Description open={ descriptionOpen } text={ movie.overview }/>
+          <Link params={{ trailer: movie.id }}>
+            <Button label='Watch Now'/>
+          </Link>
+          <Button
+            label='View Info'
+            transparent={ true }
+            active={ descriptionOpen }
+            onClick={ this.toggleDescriptionHandler }
+          />
+        </div>
+      </div>
+    );
   }
 }
 
-MovieDetails.defaultProps = {
-  movie: null,
-};
+const mapDispatchToProps = dispatch => ({});
 
-MovieDetails.propTypes = {
-  movie: PropTypes.shape({
-    name: PropTypes.string,
-    genres: PropTypes.array,
-    duration: PropTypes.number,
-    rating: PropTypes.number,
-    description: PropTypes.string,
-  }),
-};
+const mapStateToProps = state => ({
+  movie: state.movieDetails,
+});
+
+export default withDialogContext(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(MovieDetails),
+);

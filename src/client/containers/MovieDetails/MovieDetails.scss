@@ -1,61 +1,100 @@
+@import 'styles/palette';
+
 .movie-details {
-  background: url('Images/details-background.jpg') no-repeat center center;
-  background-size: cover;
+  display: grid;
+  width: 100%;
   min-height: 70vh;
-  width: 100%;
+  color: $WHITE;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow:
+    inset 0 -150px 150px rgba(0, 0, 0, 0.8),
+    inset 0 50px 100px rgba(0, 0, 0, 0.8);
+  grid-template-columns: 80px minmax(150px, 70%) minmax(150px, 30%) 80px;
+  grid-template-rows: 80px auto 80px;
+  grid-template-areas:
+    ". logo search ."
+    ". film-header . ."
+    ". rating buttons .";
   position: relative;
-}
 
-.gradient-bottom {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.89) 1%, rgba(155, 155, 155, 0) 62%, rgba(252, 252, 252, 0) 100%);
-}
-
-.gradient-top {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  .top {
-    display: flex;
-    justify-content: space-between;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 80px;
-    box-sizing: border-box;
+    height: 100%;
+    content: "";
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    background: url('/images/picture.png') center center no-repeat $DARK_GREY;
+    font-size: 20px;
+  }
+}
+
+.logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 40px;
+  grid-area: logo;
+  align-self: center;
+}
+
+.buttons-more {
+  position: relative;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  grid-area: buttons;
+  align-self: center;
+  justify-self: end;
+}
+
+@media only screen and (max-width: 1000px) {
+  .movie-details {
+    min-height: 70vh;
+    grid-template-columns: 20px minmax(150px, 60%) minmax(150px, 40%) 20px;
+    grid-template-rows: 80px auto 80px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .movie-details {
+    min-height: 80vh;
+    grid-template-columns: 10px auto 10px;
+    grid-template-rows: 0 80px auto 60px 60px;
+    grid-template-areas:
+      ". . ."
+      ". search ."
+      ". film-header ."
+      ". rating ."
+      ". buttons .";
   }
 
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  .buttons-more {
     width: 100%;
-    padding: 20px 80px;
-    box-sizing: border-box;
-
-    .more-buttons {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 300px;
-      padding-bottom: 20px;
-      box-sizing: border-box;
-    }
+    justify-content: space-around;
   }
 
   .logo {
-    font-size: 36px;
-    text-transform: uppercase;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .movie-details {
+    min-height: 90vh;
+    grid-template-rows: 0 80px auto 60px 110px;
+  }
+
+  .buttons-more {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    justify-content: space-around;
   }
 }

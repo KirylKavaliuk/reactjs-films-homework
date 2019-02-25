@@ -1,0 +1,1381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rating/> 1`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 2`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 3`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 4`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 5`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 6`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 7`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 8`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 9`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 10`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 11`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 12`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 13`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 14`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 15`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4 Rating__active___BzsSn"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      2.50
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 16`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 17`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 18`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 19`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 20`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 21`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 22`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 23`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 24`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 25`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 26`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 27`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 28`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 29`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Rating/> 30`] = `
+<div
+  className="Rating__rating___3f4Qx"
+>
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__star___3Zoo4"
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  />
+  <div
+    className="Rating__rating-number-wrap___dhLPE"
+  >
+    <div
+      className="Rating__rating-number___13U9X"
+    >
+      0.00
+    </div>
+  </div>
+</div>
+`;

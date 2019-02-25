@@ -1,19 +1,46 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import renderer from 'react-test-renderer';
 import Rating from '../Rating';
 
-it('renders rating shallow correctly', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(<Rating value={ 3.3 }/>);
+it('<Rating/>', () => {
+  const tree = renderer.create(
+    <Rating
+      value={ 2.5 }
+      openMessage={ () => {} }
+    />,
+  );
 
-  const tree = renderer.getRenderOutput();
-  expect(tree).toMatchSnapshot();
+  const rating = tree.toJSON();
+  const stars = rating.children.filter(child => !child.children);
+
+  stars.forEach((star) => {
+    star.props.onMouseOver();
+    expect(rating).toMatchSnapshot();
+
+    star.props.onMouseOut();
+    expect(rating).toMatchSnapshot();
+
+    star.props.onClick();
+    expect(rating).toMatchSnapshot();
+  });
 });
 
-it('renders rating with value bigger than 5 shallow correctly', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(<Rating value={ 1356.36 }/>);
+it('<Rating/>', () => {
+  const tree = renderer.create(
+    <Rating openMessage={ () => {} }/>,
+  );
 
-  const tree = renderer.getRenderOutput();
-  expect(tree).toMatchSnapshot();
+  const rating = tree.toJSON();
+  const stars = rating.children.filter(child => !child.children);
+
+  stars.forEach((star) => {
+    star.props.onMouseOver();
+    expect(rating).toMatchSnapshot();
+
+    star.props.onMouseOut();
+    expect(rating).toMatchSnapshot();
+
+    star.props.onClick();
+    expect(rating).toMatchSnapshot();
+  });
 });

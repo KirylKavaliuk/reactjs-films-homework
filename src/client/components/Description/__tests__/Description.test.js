@@ -1,11 +1,21 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import renderer from 'react-test-renderer';
 import Description from '../Description';
 
-it('renders description shallow correctly', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(<Description text='text for description'/>);
+it('<Description/>', () => {
+  const tree = renderer
+    .create(<Description open text='text'/>)
+    .toJSON();
 
-  const tree = renderer.getRenderOutput();
+  expect(tree).not.toBeNull();
+  expect(tree).toMatchSnapshot();
+});
+
+it('<Description/>', () => {
+  const tree = renderer
+    .create(<Description/>)
+    .toJSON();
+
+  expect(tree).toBeNull();
   expect(tree).toMatchSnapshot();
 });
