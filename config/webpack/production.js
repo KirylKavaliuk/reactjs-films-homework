@@ -2,34 +2,22 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const alias = require('../alias');
+const merge = require('webpack-merge');
+const base = require('./base');
 
-module.exports = {
-  name: 'client',
+module.exports = merge(base, {
   mode: 'production',
   entry: {
     client: path.resolve(__dirname, '../../src/client/index.js'),
   },
   output: {
     path: path.resolve(__dirname, '../../build/js/'),
-    publicPath: '/',
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
-    alias,
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],
   },
   module: {
     rules: [{
-      test: /\.js(x)?$/,
-      exclude: /node_modules/,
-      use: ['babel-loader'],
-    }, {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-    }, {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: ExtractTextPlugin.extract({
@@ -50,26 +38,6 @@ module.exports = {
           },
         }],
       }),
-    }, {
-      test: /\.(woff|woff2|ttf|eot|svg)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-          outputPath: '../../build/assets',
-          publicPath: '/',
-        },
-      }],
-    }, {
-      test: /\.(jpg|png)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: 'images/[name].[ext]',
-          outputPath: '../../build/assets',
-          publicPath: '/',
-        },
-      }],
     }],
   },
   plugins: [
@@ -80,4 +48,4 @@ module.exports = {
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
   ],
-};
+});

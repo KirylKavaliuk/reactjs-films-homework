@@ -1,14 +1,14 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import movies from '../movies';
+import { addMoviesForSections, addMoviesForGenre, addMoviesForSearch } from '../movies';
 
 const mockStore = configureMockStore([thunk]);
 
 test('addMoviesForSections', async () => {
   const store = mockStore();
 
-  await store.dispatch(movies.addMoviesForSections('/popular'));
+  await store.dispatch(addMoviesForSections('/popular'));
   const actions = store.getActions();
   expect(actions[0].type).toBe('ADD_MOVIES');
   expect(actions[0].payload.length).toBe(0);
@@ -17,8 +17,8 @@ test('addMoviesForSections', async () => {
 test('addMoviesForGenre', async () => {
   const store = mockStore();
 
-  await store.dispatch(movies.addMoviesForGenre(28));
-  await store.dispatch(movies.addMoviesForGenre());
+  await store.dispatch(addMoviesForGenre(28));
+  await store.dispatch(addMoviesForGenre());
 
   const actions = store.getActions();
 
@@ -34,8 +34,8 @@ test('addMoviesForGenre', async () => {
 test('addMoviesForSearch', async () => {
   const store = mockStore();
 
-  await store.dispatch(movies.addMoviesForSearch('war'));
-  await store.dispatch(movies.addMoviesForSearch());
+  await store.dispatch(addMoviesForSearch('war'));
+  await store.dispatch(addMoviesForSearch());
   const actions = store.getActions();
 
   expect(actions[0].type).toBe('ADD_MOVIES');

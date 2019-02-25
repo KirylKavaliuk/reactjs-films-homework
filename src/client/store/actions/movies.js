@@ -22,47 +22,48 @@ const getMoviesDetails = async (movies) => {
   return [];
 };
 
-export default {
-  addMoviesForSections: type => async (dispatch) => {
-    const { results: tempMovies } = await http.get(`db/movie/${type}`, {
-      page: getNumberPage(),
-    });
+export const addMoviesForSections = type => async (dispatch) => {
+  const { results: tempMovies } = await http.get(`db/movie/${type}`, {
+    page: getNumberPage(),
+  });
 
-    const movies = await getMoviesDetails(tempMovies);
+  const movies = await getMoviesDetails(tempMovies);
 
-    dispatch({ type: ADD_MOVIES, payload: movies });
-  },
-  addMoviesForGenre: genreId => async (dispatch) => {
-    const { results: tempMovies } = await http.get('db/discover/movie', {
-      page: getNumberPage(),
-      with_genres: genreId,
-    });
+  dispatch({ type: ADD_MOVIES, payload: movies });
+};
 
-    const movies = await getMoviesDetails(tempMovies);
+export const addMoviesForGenre = genreId => async (dispatch) => {
+  const { results: tempMovies } = await http.get('db/discover/movie', {
+    page: getNumberPage(),
+    with_genres: genreId,
+  });
 
-    if (!movies.length) {
-      dispatch({ type: SET_LOADED });
-    }
+  const movies = await getMoviesDetails(tempMovies);
 
-    dispatch({ type: ADD_MOVIES, payload: movies });
-  },
-  addMoviesForSearch: query => async (dispatch) => {
-    const { results: tempMovies } = await http.get('db/search/movie', {
-      page: getNumberPage(),
-      query: encodeURI(query),
-      include_adult: false,
-    });
+  if (!movies.length) {
+    dispatch({ type: SET_LOADED });
+  }
 
-    const movies = await getMoviesDetails(tempMovies);
+  dispatch({ type: ADD_MOVIES, payload: movies });
+};
 
-    if (!movies.length) {
-      dispatch({ type: SET_LOADED });
-    }
+export const addMoviesForSearch = query => async (dispatch) => {
+  const { results: tempMovies } = await http.get('db/search/movie', {
+    page: getNumberPage(),
+    query: encodeURI(query),
+    include_adult: false,
+  });
 
-    dispatch({ type: ADD_MOVIES, payload: movies });
-  },
-  remove: () => (dispatch) => {
-    getNumberPage(true);
-    dispatch({ type: REMOVE_MOVIES });
-  },
+  const movies = await getMoviesDetails(tempMovies);
+
+  if (!movies.length) {
+    dispatch({ type: SET_LOADED });
+  }
+
+  dispatch({ type: ADD_MOVIES, payload: movies });
+};
+
+export const remove = () => (dispatch) => {
+  getNumberPage(true);
+  dispatch({ type: REMOVE_MOVIES });
 };

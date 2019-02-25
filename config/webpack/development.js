@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const alias = require('../alias');
+const merge = require('webpack-merge');
+const base = require('./base');
 
-module.exports = {
-  name: 'client',
+module.exports = merge(base, {
   mode: 'development',
   entry: {
     client: [
@@ -15,19 +15,8 @@ module.exports = {
     path: path.resolve(__dirname, '../../build'),
     publicPath: '/',
   },
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
-    alias,
-  },
   module: {
     rules: [{
-      test: /\.js(x)?$/,
-      exclude: /node_modules/,
-      use: ['babel-loader'],
-    }, {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-    }, {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: [{
@@ -38,38 +27,9 @@ module.exports = {
           camelCase: true,
           modules: true,
           localIdentName: '[name]__[local]_[hash:base64:5]',
-
         },
       }, {
         loader: 'sass-loader',
-      }],
-    }, {
-      test: /fonts.*\.(woff(2)?|ttf|eot|svg)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'fonts',
-        },
-      }],
-    }, {
-      test: /icons.*\.svg$/,
-      use: [{
-        loader: 'babel-loader',
-      }, {
-        loader: 'react-svg-loader',
-        options: {
-          jsx: true,
-        },
-      }],
-    }, {
-      test: /\.(jpg|png)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'images',
-        },
       }],
     }],
   },
@@ -79,4 +39,4 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
   ],
   devtool: 'inline-source-map',
-};
+});

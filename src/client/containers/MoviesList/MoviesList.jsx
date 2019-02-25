@@ -6,7 +6,6 @@ import { withDialogContext } from 'utils/dialog';
 import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
 
-import actionsMovies from 'actions/movies';
 import actionsMovieDetails from 'actions/movieDetails';
 
 import ListControls from 'components/ListControls/ListControls';
@@ -16,6 +15,9 @@ import Loading from 'components/Loading/Loading';
 import Video from 'components/Video/Video';
 
 import { getParam, getSection } from 'utils/url';
+import {
+  addMoviesForSections, addMoviesForGenre, addMoviesForSearch, remove,
+} from 'actions/movies';
 
 import styles from './MoviesList.scss';
 
@@ -184,10 +186,10 @@ class MoviesList extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  loadMoviesForSections: type => dispatch(actionsMovies.addMoviesForSections(type)),
-  loadMoviesForGenre: genreId => dispatch(actionsMovies.addMoviesForGenre(genreId)),
-  loadMoviesForSearch: query => dispatch(actionsMovies.addMoviesForSearch(query)),
-  removeMovies: () => dispatch(actionsMovies.remove()),
+  loadMoviesForSections: type => dispatch(addMoviesForSections(type)),
+  loadMoviesForGenre: genreId => dispatch(addMoviesForGenre(genreId)),
+  loadMoviesForSearch: query => dispatch(addMoviesForSearch(query)),
+  removeMovies: () => dispatch(remove()),
   setMovieDetails: (movie, defaultValue) => (
     dispatch(actionsMovieDetails.setMovie(movie, defaultValue))
   ),
