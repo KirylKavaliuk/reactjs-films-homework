@@ -29,6 +29,13 @@ app.use((req, res, next) => {
 
   return next();
 });
+
+app.use((req, res) => {
+  if (!req.secure) {
+    res.redirect(`https://${req.headers.host}${req.url}`);
+  }
+});
+
 app.use(routes);
 
 app.listen(port, (err) => {
