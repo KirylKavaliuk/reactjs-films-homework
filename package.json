@@ -6,10 +6,11 @@
     "start2": "cross-env NODE_ENV=development node ./src/server/index.js",
     "lint": "eslint --ext .js,.jsx ./config ./src",
     "test": "jest --coverage -u",
+    "build": "webpack --config ./config/webpack/production.js",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "prod": "cross-env NODE_ENV=production node ./src/server/index.js",
     "start": "node ./src/server/index.js",
-    "heroku-postbuild": "webpack --config ./config/webpack/production.js"
+    "heroku-postbuild": "npm run build"
   },
   "jest": {
     "transform": {

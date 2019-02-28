@@ -13,7 +13,6 @@ module.exports = merge(base, {
   },
   output: {
     path: path.resolve(__dirname, '../../build'),
-    publicPath: '/',
   },
   module: {
     rules: [{
