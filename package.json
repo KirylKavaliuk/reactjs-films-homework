@@ -4,12 +4,12 @@
   "description": "",
   "scripts": {
     "start2": "cross-env NODE_ENV=development node ./src/server/index.js",
-    "build": "webpack --config ./config/webpack/production.js",
     "lint": "eslint --ext .js,.jsx ./config ./src",
     "test": "jest --coverage -u",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "prod": "cross-env NODE_ENV=production node ./src/server/index.js",
-    "start": "npm run build & node ./src/server/index.js"
+    "start": "node ./src/server/index.js",
+    "heroku-postbuild": "webpack --config ./config/webpack/production.js"
   },
   "jest": {
     "transform": {
