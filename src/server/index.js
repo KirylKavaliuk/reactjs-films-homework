@@ -3,9 +3,9 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-const config = require('../../config/webpack/development');
-
 const httpsRedirect = require('express-https-redirect');
+
+const config = require('../../config/webpack/development');
 
 const routes = require('./routes');
 
