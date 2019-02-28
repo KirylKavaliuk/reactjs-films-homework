@@ -8,7 +8,7 @@ module.exports = () => `
       <title>FILMS</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       ${NODE_ENV === 'production' ? '<link rel="stylesheet" href= "/css/styles.css">' : ''}
-      <link rel="manifest" href="../manifest.json">
+      <link rel="manifest" href="js/manifest.json">
       <meta name="theme-color" content="#ffffff">
     </head>
     <body>

@@ -2,7 +2,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const merge = require('webpack-merge');
 const base = require('./base');
 
@@ -48,8 +48,19 @@ module.exports = merge(base, {
       dry: false,
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
-    new ManifestPlugin({
-      fileName: 'manifest.json',
+    new WebpackPwaManifest({
+      filename: 'manifest.json',
+      name: 'reactjs-films-homework',
+      short_name: 'reactjs-films-homework',
+      description: 'reactjs-films-homework',
+      background_color: '#ffffff',
+      crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: path.resolve('src/assets/images/main-icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+        },
+      ],
     }),
   ],
 });
