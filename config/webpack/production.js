@@ -51,9 +51,10 @@ module.exports = merge(base, {
     new WebpackPwaManifest({
       filename: 'manifest.json',
       name: 'reactjs-films-homework',
-      short_name: 'reactjs-films-homework',
+      short_name: 'films',
       description: 'reactjs-films-homework',
       background_color: '#ffffff',
+      theme_color: '#ffffff',
       crossorigin: 'use-credentials',
       icons: [
         {
