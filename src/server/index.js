@@ -8,7 +8,7 @@ const config = require('../../config/webpack/development');
 const routes = require('./routes');
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 const compiler = webpack(config);
 
 if (process.env.NODE_ENV === 'development') {
