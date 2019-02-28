@@ -47,5 +47,8 @@ module.exports = merge(base, {
       dry: false,
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
+    new ManifestPlugin({
+      fileName: 'manifest.json',
+    }),
   ],
 });

@@ -1,0 +1,8 @@
+{
+  "short_name": "reactjs-films-homework",
+  "name": "reactjs-films-homework",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
