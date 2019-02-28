@@ -5,6 +5,8 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const config = require('../../config/webpack/development');
 
+const httpsRedirect = require('express-https-redirect');
+
 const routes = require('./routes');
 
 const app = express();
@@ -22,19 +24,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(express.static('build/assets'));
 }
 
-app.use((req, res, next) => {
-  if (!/https/.test(req.protocol)) {
-    res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-
-  return next();
-});
-
-app.use((req, res) => {
-  if (!req.secure) {
-    res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-});
+app.use('/', httpsRedirect());
 
 app.use(routes);
 
