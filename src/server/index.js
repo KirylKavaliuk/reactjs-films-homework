@@ -11,6 +11,15 @@ const app = express();
 const port = process.env.PORT || 8080;
 const compiler = webpack(config);
 
+const redirectToHttps = function (req, res, next) {
+  if (!/https/.test(req.protocol)) {
+    res.redirect(`https://${req.headers.host}${req.url}`);
+  } else {
+    return next();
+  }
+  return 0;
+};
+
 if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
@@ -22,6 +31,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(express.static('build/assets'));
 }
 
+app.use(redirectToHttps);
 app.use(routes);
 
 app.listen(port, (err) => {

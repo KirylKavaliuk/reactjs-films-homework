@@ -16,6 +16,7 @@ module.exports = () => `
       <section id="dialog"></section>
       <section id="notification"></section>
       <script src=${NODE_ENV === 'production' ? '/js/client.js' : '/js/client.js'}></script>
+      <noscript>JavaScript is not available. Please turn on JavaScript in settings.</noscript>
     </body>
   </html>
 `;
