@@ -6,7 +6,7 @@ import { withDialogContext } from 'utils/dialog';
 import Waypoint from 'react-waypoint';
 import classNames from 'classnames';
 
-import actionsMovieDetails from 'actions/movieDetails';
+import setMovie from 'actions/movieDetails';
 
 import ListControls from 'components/ListControls/ListControls';
 import MovieGridItem from 'components/MovieGridItem/MovieGridItem';
@@ -191,7 +191,7 @@ const mapDispatchToProps = dispatch => ({
   loadMoviesForSearch: query => dispatch(addMoviesForSearch(query)),
   removeMovies: () => dispatch(remove()),
   setMovieDetails: (movie, defaultValue) => (
-    dispatch(actionsMovieDetails.setMovie(movie, defaultValue))
+    dispatch(setMovie(movie, defaultValue))
   ),
 });
 

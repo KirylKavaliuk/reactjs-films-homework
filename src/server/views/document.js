@@ -13,7 +13,7 @@ module.exports = () => `
       <section id="root"></section>
       <section id="dialog"></section>
       <section id="notification"></section>
-      <script src="${NODE_ENV === 'production' ? '/js/client.js' : '/client.js'}"></script>
+      <script src=${NODE_ENV === 'production' ? '/js/client.js' : '/client.js'}></script>
     </body>
   </html>
 `;

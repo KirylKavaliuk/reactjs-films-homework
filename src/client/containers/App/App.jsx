@@ -14,7 +14,7 @@ import Dialog from 'components/Dialog/Dialog';
 import Message from 'components/Message/Message';
 import Routing from 'components/Routing/Routing';
 
-import actionsGenres from 'actions/genres';
+import addGenres from 'actions/genres';
 
 import 'normalize.css';
 import styles from './App.scss';
@@ -92,7 +92,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addGenres: () => dispatch(actionsGenres.addGenres()),
+  addGenres: () => dispatch(addGenres()),
 });
 
 const mapStateToProps = state => ({ });
