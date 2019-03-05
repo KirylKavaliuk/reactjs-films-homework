@@ -13,11 +13,11 @@ const FilmHeader = ({
   const minutes = (absoluteDuration % 60).toFixed();
 
   const renderGenres = () => (
-    genres.map((genre, index) => (
+    genres.map(genre => (
       <span
-        key={ index }
+        key={ genre.id }
         className={ styles.genre }
-      >{ genre }</span>))
+      >{ genre.name }</span>))
   );
 
   const setDuration = () => (

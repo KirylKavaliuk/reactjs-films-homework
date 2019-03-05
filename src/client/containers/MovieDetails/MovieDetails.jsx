@@ -45,7 +45,7 @@ class MovieDetails extends Component {
 
         <FilmHeader
           name={ movie.title }
-          genres={ movie.genres ? movie.genres.map(genre => genre.name).slice(0, 3) : [] }
+          genres={ movie.genres ? movie.genres.slice(0, 3) : [] }
           duration={ movie.runtime }
         />
 

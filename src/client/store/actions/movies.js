@@ -15,30 +15,19 @@ const getNumberPage = (function () {
   };
 }());
 
-const getMoviesDetails = async (movies) => {
-  if (movies) {
-    return Promise.all(movies.map(movie => http.get(`db/movie/${movie.id}`)));
-  }
-  return [];
-};
-
 export const addMoviesForSections = type => async (dispatch) => {
-  const { results: tempMovies } = await http.get(`db/movie/${type}`, {
+  const { results: movies } = await http.get(`db/movie/${type}`, {
     page: getNumberPage(),
   });
-
-  const movies = await getMoviesDetails(tempMovies);
 
   dispatch({ type: ADD_MOVIES, payload: movies });
 };
 
 export const addMoviesForGenre = genreId => async (dispatch) => {
-  const { results: tempMovies } = await http.get('db/discover/movie', {
+  const { results: movies } = await http.get('db/discover/movie', {
     page: getNumberPage(),
     with_genres: genreId,
   });
-
-  const movies = await getMoviesDetails(tempMovies);
 
   if (!movies.length) {
     dispatch({ type: SET_LOADED });
@@ -48,13 +37,11 @@ export const addMoviesForGenre = genreId => async (dispatch) => {
 };
 
 export const addMoviesForSearch = query => async (dispatch) => {
-  const { results: tempMovies } = await http.get('db/search/movie', {
+  const { results: movies } = await http.get('db/search/movie', {
     page: getNumberPage(),
     query: encodeURI(query),
     include_adult: false,
   });
-
-  const movies = await getMoviesDetails(tempMovies);
 
   if (!movies.length) {
     dispatch({ type: SET_LOADED });

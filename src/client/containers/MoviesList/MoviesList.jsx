@@ -41,7 +41,7 @@ class MoviesList extends Component {
       gridView, trailer, query, movie,
     } = this.state;
     const {
-      movies, match, openDialog, closeDialog, removeMovies, setMovieDetails,
+      movies, match, openDialog, closeDialog, removeMovies, setMovieDetails, movieDetails,
     } = props;
     const trailerParam = getParam('trailer');
     const movieIdParam = getParam('movie');
@@ -59,7 +59,7 @@ class MoviesList extends Component {
           });
         }
       }
-    } else {
+    } else if (!movieDetails.id) {
       const firstMovie = movies[0];
 
       if (firstMovie) {
@@ -147,7 +147,7 @@ class MoviesList extends Component {
   }
 
   moviesListRender = () => {
-    const { movies } = this.props;
+    const { movies, genres } = this.props;
     const { gridView } = this.state;
     const ListItem = gridView ? MovieGridItem : MovieListItem;
     const classes = classNames(
@@ -157,7 +157,9 @@ class MoviesList extends Component {
 
     return (
       <div className={ classes }>
-        { movies.map((_movie, index) => <ListItem key={ index } movie={ _movie }/>) }
+        { movies.map((_movie, index) => (
+        <ListItem key={ index } movie={ _movie } genres={ genres }/>
+        )) }
       </div>
     );
   }
@@ -200,7 +202,7 @@ const mapStateToProps = state => ({
   listLoaded: state.movies.loaded,
   movie: state.movieDetails,
   genres: state.genres,
-  store: state,
+  movieDetails: state.movieDetails,
 });
 
 export default withDialogContext(

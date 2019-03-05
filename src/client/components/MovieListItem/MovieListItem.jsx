@@ -11,8 +11,15 @@ import Link from 'components/Link/Link';
 
 import styles from './MovieListItem.scss';
 
-const MovieListItem = ({ movie }) => (
-  <div className={ styles.movieItem }>
+const MovieListItem = ({ movie, genres }) => {
+  // eslint-disable-next-line
+  const { genre_ids } = movie;
+  // eslint-disable-next-line
+  const genreNames = genre_ids
+    .slice(0, 3)
+    .map(genreId => genres.find(elem => elem.id === genreId));
+
+  return (<div className={ styles.movieItem }>
     <Image
       db
       className={ styles.poster }
@@ -25,7 +32,7 @@ const MovieListItem = ({ movie }) => (
       <header className={ styles.header}>
         <h1 className={ styles.title }>{ movie.title }</h1>
         <p className={ styles.genres }>
-          { movie.genres && movie.genres.slice(0, 3).map((genre, index) => (
+          { genreNames.map((genre, index) => (
               <Link
                 className={ styles.genre }
                 key={ index }
@@ -35,7 +42,7 @@ const MovieListItem = ({ movie }) => (
                 { genre.name }
               </Link>
           )) }
-          </p>
+        </p>
         <div className={ styles.rating }>
           <Rating value={ movie.vote_average / 2 }/>
         </div>
@@ -50,8 +57,8 @@ const MovieListItem = ({ movie }) => (
         />
       </Link>
     </div>
-  </div>
-);
+  </div>);
+};
 
 MovieListItem.defaultProps = {
   movie: null,

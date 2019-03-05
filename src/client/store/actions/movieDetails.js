@@ -1,5 +1,8 @@
 import { SET_MOVIEDETAILS } from 'constants/actionTypes';
+import http from 'utils/http';
 
 export default movie => async (dispatch) => {
-  dispatch({ type: SET_MOVIEDETAILS, payload: movie });
+  const movieDetails = await http.get(`db/movie/${movie.id}`);
+
+  dispatch({ type: SET_MOVIEDETAILS, payload: movieDetails });
 };

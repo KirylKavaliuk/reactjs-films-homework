@@ -29,7 +29,9 @@ class MovieGridItem extends Component {
 
   render() {
     const { descriptionOpen } = this.state;
-    const { movie } = this.props;
+    const { movie, genres } = this.props;
+    // eslint-disable-next-line
+    const { genre_ids } = movie;
     const infoClasses = classNames(
       styles.info,
       { [styles.infoVisible]: descriptionOpen },
@@ -49,6 +51,11 @@ class MovieGridItem extends Component {
       styles.descriptionText,
       { [styles.descriptionTextVisible]: !descriptionOpen },
     );
+
+    // eslint-disable-next-line
+    const _genres = genre_ids
+      .slice(0, 3)
+      .map(genreId => genres.find(elem => elem.id === genreId));
 
     return (
       <div className={ styles.movieItem }>
@@ -86,7 +93,7 @@ class MovieGridItem extends Component {
               </h1>
             </Link>
             <p className={ styles.genres }>
-              { movie.genres && movie.genres.slice(0, 3).map((genre, index) => (
+              { _genres.map((genre, index) => (
                 <Link
                   className={ styles.genre }
                   key={ index }
