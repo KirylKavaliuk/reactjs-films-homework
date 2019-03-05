@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import styles from './Image.scss';
 
 const Image = ({
-  db, src, width, className,
+  db, src, alt, width, className,
 }) => {
   const imageClasses = classNames(styles.image, className);
   let transformedSrc = src;
@@ -18,7 +18,7 @@ const Image = ({
   }
 
   return (
-    <img className={ imageClasses } src={ transformedSrc }/>
+    <img alt={ alt } className={ imageClasses } src={ transformedSrc }/>
   );
 };
 
@@ -30,6 +30,7 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
+  alt: PropTypes.string.isRequired,
   db: PropTypes.bool,
   src: PropTypes.string,
   width: PropTypes.number,

@@ -52,7 +52,13 @@ class MovieGridItem extends Component {
 
     return (
       <div className={ styles.movieItem }>
-        <Image db className={ styles.poster } width={ 1280 } src={ movie.poster_path }/>
+        <Image
+          db
+          className={ styles.poster }
+          width={ 1280 }
+          src={ movie.poster_path }
+          alt={ movie.title }
+        />
 
         { !descriptionOpen && <div className={ styles.more }>
           <Link params={{ trailer: movie.id }}>

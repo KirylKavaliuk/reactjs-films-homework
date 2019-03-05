@@ -13,7 +13,13 @@ import styles from './MovieListItem.scss';
 
 const MovieListItem = ({ movie }) => (
   <div className={ styles.movieItem }>
-    <Image db className={ styles.poster } width={ 1280 } src={ movie.backdrop_path }/>
+    <Image
+      db
+      className={ styles.poster }
+      width={ 1280 }
+      src={ movie.backdrop_path }
+      alt={ movie.title }
+    />
 
     <div className={ styles.info }>
       <header className={ styles.header}>
