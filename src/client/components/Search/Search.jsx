@@ -66,13 +66,14 @@ export default class Search extends Component {
           value={ searchQuery }
           onChange={ this.onChangeHandler }
           placeholder='Search...'
+          aria-label='search-input'
         />
         <button
           className={ styles.searchButton }
           onClick={ this.onSearchHandler }
           type='button'
           name='search'
-          value='search'
+          aria-label='search'
         >
           <Icon name='search'/>
         </button>

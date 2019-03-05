@@ -35,15 +35,15 @@ export default class ListControls extends Component {
       <menu className={ styles.menu }>
         <div className={ styles.listControls }>
           <ul className={ styles.sections }>
-            <Link to='/trading' clearParams={['query', 'movie']}>
-              <li className={ ListControls.setActiveStyleForLinks(0) }>Trading</li>
-            </Link>
-            <Link to='/top-rated' clearParams={['query', 'movie']}>
-              <li className={ ListControls.setActiveStyleForLinks(1) }>Top Rated</li>
-            </Link>
-            <Link to='/coming-soon' clearParams={['query', 'movie']}>
-              <li className={ ListControls.setActiveStyleForLinks(2) }>Coming soon</li>
-            </Link>
+            <li className={ ListControls.setActiveStyleForLinks(0) }>
+              <Link to='/trading' clearParams={['query', 'movie']}>Trading</Link>
+            </li>
+            <li className={ ListControls.setActiveStyleForLinks(1) }>
+              <Link to='/top-rated' clearParams={['query', 'movie']}>Top Rated</Link>
+            </li>
+            <li className={ ListControls.setActiveStyleForLinks(2) }>
+              <Link to='/coming-soon' clearParams={['query', 'movie']}>Coming soon</Link>
+            </li>
           </ul>
           <Select match={ match } genres={ genres }/>
         </div>
