@@ -4,7 +4,7 @@
   position: absolute;
   top: -200px;
   right: 0;
-  overflow: auto;
+  overflow: hidden;
   box-sizing: border-box;
   width: 300px;
   max-height: 180px;
@@ -17,6 +17,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.description:hover {
+  overflow: auto;
 }
 
 .open {
