@@ -42,6 +42,7 @@ export default class _Link extends Component {
 
     return (
       <Link
+        { ...this.props }
         onMouseEnter={ this.onHoverHandler }
         onClick={ onClick }
         to={ to }

@@ -59,7 +59,7 @@ export default class Search extends Component {
     );
 
     return (
-      <form name='search' className={ styles.search }>
+      <div name='search' className={ styles.search }>
         <input
           className={ classes }
           type='search'
@@ -67,10 +67,16 @@ export default class Search extends Component {
           onChange={ this.onChangeHandler }
           placeholder='Search...'
         />
-        <button className={ styles.searchButton } onClick={ this.onSearchHandler }>
+        <button
+          className={ styles.searchButton }
+          onClick={ this.onSearchHandler }
+          type='button'
+          name='search'
+          value='search'
+        >
           <Icon name='search'/>
         </button>
-      </form>
+      </div>
     );
   }
 }
