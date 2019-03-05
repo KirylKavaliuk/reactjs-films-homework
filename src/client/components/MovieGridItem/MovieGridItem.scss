@@ -161,7 +161,7 @@
 
 /* stylelint-disable-next-line */
 .description-text {
-  overflow: auto;
+  overflow: hidden;
   box-sizing: border-box;
   max-height: 110px;
   margin: 20px 0 25px;
@@ -172,6 +172,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.description-text:hover {
+  overflow: auto;
 }
 
 .watch-button {

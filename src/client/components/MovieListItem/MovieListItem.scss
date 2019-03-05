@@ -76,7 +76,7 @@
 }
 
 .description-text {
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   max-width: 400px;
   max-height: 150px;
@@ -87,6 +87,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.description-text:hover {
+  overflow: auto;
 }
 
 .genre:hover {
