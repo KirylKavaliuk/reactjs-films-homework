@@ -15,13 +15,10 @@ const port = process.env.PORT || 8080;
 const compiler = webpack(config);
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-  }));
+  app.use(webpackDevMiddleware(compiler));
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static('src/assets'));
 } else {
-  app.use(express.static('build'));
   app.use(express.static('build/assets'));
   app.use(compression());
 }

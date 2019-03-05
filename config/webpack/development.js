@@ -30,6 +30,15 @@ module.exports = merge(base, {
       }, {
         loader: 'sass-loader',
       }],
+    }, {
+      test: /\.(woff(2)?|ttf|eot)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          path: path.resolve(__dirname, '../../build/fonts'),
+        },
+      }],
     }],
   },
   plugins: [

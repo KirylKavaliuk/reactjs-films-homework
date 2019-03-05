@@ -39,6 +39,14 @@ module.exports = merge(base, {
           },
         }],
       }),
+    }, {
+      test: /\.(woff(2)?|ttf|eot)?$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '../assets/fonts/[name].[ext]',
+        },
+      }],
     }],
   },
   plugins: [
@@ -48,20 +56,5 @@ module.exports = merge(base, {
       dry: false,
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
-    new WebpackPwaManifest({
-      filename: 'manifest.json',
-      name: 'reactjs-films-homework',
-      short_name: 'films',
-      description: 'reactjs-films-homework',
-      background_color: '#ffffff',
-      theme_color: '#ffffff',
-      crossorigin: 'use-credentials',
-      icons: [
-        {
-          src: path.resolve('src/assets/images/main-icon.png'),
-          sizes: [96, 128, 192, 256, 384, 512],
-        },
-      ],
-    }),
   ],
 });

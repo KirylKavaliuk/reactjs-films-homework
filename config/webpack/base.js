@@ -1,3 +1,4 @@
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const alias = require('../alias');
 
 module.exports = {
@@ -15,16 +16,7 @@ module.exports = {
       test: /\.css$/,
       use: ['style-loader', 'css-loader'],
     }, {
-      test: /fonts.*\.(woff(2)?|ttf|eot|svg)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: '../assets/fonts',
-        },
-      }],
-    }, {
-      test: /icons.*\.svg$/,
+      test: /\.svg$/,
       use: [{
         loader: 'babel-loader',
       }, {
