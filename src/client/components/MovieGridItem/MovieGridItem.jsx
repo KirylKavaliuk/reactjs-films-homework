@@ -62,7 +62,7 @@ class MovieGridItem extends Component {
         <Image
           db
           className={ styles.poster }
-          width={ 1280 }
+          width={ 300 }
           src={ movie.poster_path }
           alt={ movie.title }
         />

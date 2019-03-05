@@ -1,5 +1,6 @@
 const express = require('express');
 const webpack = require('webpack');
+const compression = require('compression');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   app.use(express.static('build'));
   app.use(express.static('build/assets'));
+  app.use(compression());
 }
 
 app.use('/', httpsRedirect());
