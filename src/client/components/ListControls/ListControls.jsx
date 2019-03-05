@@ -48,12 +48,12 @@ export default class ListControls extends Component {
           <Select match={ match } genres={ genres }/>
         </div>
         <div className={ styles.typesView }>
-          <Link params={{ view: 'grid' }} aria-label="grid-view">
+          <Link params={{ view: 'grid' }} ariaLabel="grid-view">
             <div className={ ListControls.setTypeViewClasses(gridView) }>
               <Icon name='grid-view'/>
             </div>
           </Link>
-          <Link params={{ view: 'list' }} aria-label="list-view">
+          <Link params={{ view: 'list' }} ariaLabel="list-view">
             <div className={ ListControls.setTypeViewClasses(!gridView) }>
               <Icon name='list-view'/>
             </div>

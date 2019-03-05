@@ -35,18 +35,18 @@ export default class _Link extends Component {
 
   render() {
     const {
-      onClick, className, children,
+      onClick, className, children, ariaLabel,
     } = this.props;
     const { to } = this.state;
     const classes = classNames(styles.link, className);
 
     return (
       <Link
-        { ...this.props }
         onMouseEnter={ this.onHoverHandler }
         onClick={ onClick }
         to={ to }
         className={ classes }
+        aria-label={ ariaLabel }
       >
         { children }
       </Link>

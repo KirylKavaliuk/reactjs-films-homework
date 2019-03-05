@@ -10,6 +10,7 @@ module.exports = () => `
       ${NODE_ENV === 'production' ? '<link rel="stylesheet" href= "/css/styles.css">' : ''}
       <link rel="manifest" href="/js/manifest.json">
       <meta name="theme-color" content="#ffffff">
+      <meta name="description" content="react-films-homework">
     </head>
     <body>
       <main>
