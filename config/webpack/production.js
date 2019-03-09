@@ -2,7 +2,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
+const CopyPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const base = require('./base');
 
@@ -56,5 +56,10 @@ module.exports = merge(base, {
       dry: false,
     }),
     new ExtractTextPlugin('../../build/css/styles.css'),
+    new CopyPlugin([{
+      from: path.resolve(__dirname, '../../src/assets/manifest'),
+      to: path.resolve(__dirname, '../../build/manifest'),
+    },
+    ]),
   ],
 });
