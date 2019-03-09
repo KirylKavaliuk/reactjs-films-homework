@@ -25,7 +25,7 @@ export default class Video extends Component {
       const { results } = await http.get(`db/movie/${id}/videos`);
 
       if (results && results[0] && results[0].key) {
-        this.setState({ src: `http://www.youtube.com/embed/${results[0].key}` });
+        this.setState({ src: `https://www.youtube.com/embed/${results[0].key}` });
       } else {
         throw new Error('not loaded');
       }
