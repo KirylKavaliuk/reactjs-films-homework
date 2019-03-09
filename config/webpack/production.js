@@ -58,8 +58,10 @@ module.exports = merge(base, {
     new ExtractTextPlugin('../../build/css/styles.css'),
     new CopyPlugin([{
       from: path.resolve(__dirname, '../../src/assets/manifest'),
-      to: path.resolve(__dirname, '../../build/manifest'),
-    },
-    ]),
+      to: path.resolve(__dirname, '../../build/assets/manifest'),
+    }, {
+      from: path.resolve(__dirname, '../../src/assets/favicon'),
+      to: path.resolve(__dirname, '../../build/assets/favicon'),
+    }]),
   ],
 });
