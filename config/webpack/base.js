@@ -1,4 +1,4 @@
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const path = require('path');
 const alias = require('../alias');
 
 module.exports = {
@@ -30,8 +30,8 @@ module.exports = {
       use: [{
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: '../assets/images',
+          name: '[path][name].[ext]',
+          path: path.resolve(__dirname, '../../build/images'),
         },
       }],
     }],

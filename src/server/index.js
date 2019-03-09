@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static('src/assets'));
 } else {
+  app.use(express.static('build'));
   app.use(express.static('build/assets'));
   app.use(compression());
 }

@@ -8,8 +8,8 @@
     "test": "jest --coverage -u",
     "build": "webpack --config ./config/webpack/production.js",
     "stylelint": "stylelint \"src/**/*.scss\"",
-    "prod": "cross-env NODE_ENV=production node ./src/server/index.js",
-    "start": "set NODE_ENV=development& node ./src/server/index.js",
+		"start:dev": "set NODE_ENV=development& node ./src/server/index.js",
+    "start": "set NODE_ENV=production& node ./src/server/index.js",
     "heroku-postbuild": "npm run build"
   },
   "jest": {

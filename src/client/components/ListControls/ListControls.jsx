@@ -33,20 +33,22 @@ export default class ListControls extends Component {
 
     return (
       <menu className={ styles.menu }>
-        <div className={ styles.listControls }>
-          <ul className={ styles.sections }>
-            <li className={ ListControls.setActiveStyleForLinks(0) }>
-              <Link to='/trading' clearParams={['query', 'movie']}>Trading</Link>
-            </li>
-            <li className={ ListControls.setActiveStyleForLinks(1) }>
-              <Link to='/top-rated' clearParams={['query', 'movie']}>Top Rated</Link>
-            </li>
-            <li className={ ListControls.setActiveStyleForLinks(2) }>
-              <Link to='/coming-soon' clearParams={['query', 'movie']}>Coming soon</Link>
-            </li>
-          </ul>
+        <ul className={ styles.sections }>
+          <li className={ ListControls.setActiveStyleForLinks(0) }>
+            <Link to='/trading' clearParams={['query', 'movie']}>Trading</Link>
+          </li>
+          <li className={ ListControls.setActiveStyleForLinks(1) }>
+            <Link to='/top-rated' clearParams={['query', 'movie']}>Top Rated</Link>
+          </li>
+          <li className={ ListControls.setActiveStyleForLinks(2) }>
+            <Link to='/coming-soon' clearParams={['query', 'movie']}>Coming soon</Link>
+          </li>
+        </ul>
+
+        <div className={ styles.select }>
           <Select match={ match } genres={ genres }/>
         </div>
+
         <div className={ styles.typesView }>
           <Link params={{ view: 'grid' }} ariaLabel="grid-view">
             <div className={ ListControls.setTypeViewClasses(gridView) }>

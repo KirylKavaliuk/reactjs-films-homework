@@ -71,8 +71,10 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 600px) {
   .search {
+    grid-column-start: 2;
+    grid-column-end: 4;
     max-width: none;
   }
 }

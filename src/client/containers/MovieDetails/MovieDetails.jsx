@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { withDialogContext } from 'utils/dialog';
+import http from 'utils/http';
+
+import setMovie from 'actions/movieDetails';
 
 import Button from 'components/Button/Button';
 import Rating from 'components/Rating/Rating';
@@ -28,6 +31,15 @@ class MovieDetails extends Component {
     || this.state.descriptionOpen !== state.descriptionOpen
   )
 
+  componentDidMount = () => {
+    http.get('db/movie/popular', {
+      page: 1,
+    })
+      .then(({ results: movies }) => {
+        this.props.setMovieDetails(movies[0]);
+      });
+  }
+
   render() {
     const { movie } = this.props;
     const { descriptionOpen } = this.state;
@@ -43,32 +55,40 @@ class MovieDetails extends Component {
 
         <Search/>
 
-        <FilmHeader
-          name={ movie.title }
-          genres={ movie.genres ? movie.genres.slice(0, 3) : [] }
-          duration={ movie.runtime }
-        />
-
-        <Rating value={ movie.vote_average / 2 }/>
-
-        <div className={ styles.buttonsMore }>
-          <Description open={ descriptionOpen } text={ movie.overview }/>
-          <Link params={{ trailer: movie.id }}>
-            <Button label='Watch Now'/>
-          </Link>
-          <Button
-            label='View Info'
-            transparent={ true }
-            active={ descriptionOpen }
-            onClick={ this.toggleDescriptionHandler }
+        { movie.id && <>
+          <FilmHeader
+            name={ movie.title }
+            genres={ movie.genres ? movie.genres.slice(0, 3) : [] }
+            duration={ movie.runtime }
           />
-        </div>
+
+          <Rating value={ movie.vote_average / 2 }/>
+
+          <div className={ styles.buttonsMore }>
+            <Description open={ descriptionOpen } text={ movie.overview }/>
+            <Link params={{ trailer: movie.id }}>
+              <Button label='Watch Now'/>
+            </Link>
+            <Button
+              label='View Info'
+              transparent={ true }
+              active={ descriptionOpen }
+              onClick={ this.toggleDescriptionHandler }
+            />
+          </div>
+        </>
+      }
+
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  setMovieDetails: (movie, defaultValue) => (
+    dispatch(setMovie(movie, defaultValue))
+  ),
+});
 
 const mapStateToProps = state => ({
   movie: state.movieDetails,
