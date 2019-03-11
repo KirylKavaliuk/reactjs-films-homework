@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler));
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static('src/assets'));
+  app.use(express.static('src/client'));
 } else {
   app.use(express.static('build'));
   app.use(express.static('build/assets'));

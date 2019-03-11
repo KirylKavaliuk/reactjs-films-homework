@@ -24,4 +24,14 @@ if (module.hot && process.env.NODE_ENV !== 'production') {
   module.hot.accept(() => { render(); });
 }
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then((reg) => {
+    // eslint-disable-next-line
+    console.log(`Registration succeeded. Scope is ${reg.scope}`);
+  }).catch((error) => {
+    // eslint-disable-next-line
+    console.log(`Registration failed with ${error}`);
+  });
+}
+
 render();
