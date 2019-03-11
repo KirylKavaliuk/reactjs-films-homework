@@ -14,6 +14,11 @@ const app = express();
 const port = process.env.PORT || 8080;
 const compiler = webpack(config);
 
+app.use(compression({
+  threshold: 0,
+  filter: () => (true),
+}));
+
 if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler));
   app.use(webpackHotMiddleware(compiler));
@@ -24,7 +29,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use('/', httpsRedirect());
-app.use(compression());
 app.use(routes);
 
 app.listen(port, (err) => {
