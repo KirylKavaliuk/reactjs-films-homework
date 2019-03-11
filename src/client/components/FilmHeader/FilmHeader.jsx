@@ -12,26 +12,21 @@ const FilmHeader = ({
   const hours = Math.floor(absoluteDuration / 60);
   const minutes = (absoluteDuration % 60).toFixed();
 
-  const renderGenres = () => (
-    genres.map(genre => (
-      <span
-        key={ genre.id }
-        className={ styles.genre }
-      >{ genre.name }</span>))
+  const getGenreNames = () => (
+    genres.reduce((_genres, genre) => (
+      _genres.concat(` ${genre.name}`)
+    ), '')
   );
 
-  const setDuration = () => (
-    duration && <span className={ styles.duration }>
-      { +hours === 0 ? null : `${hours} h`} { +minutes === 0 ? null : `${minutes} m` }
-    </span>
+  const getDuration = () => (
+    `${+hours === 0 ? null : `${hours}h`} ${+minutes === 0 ? null : `${minutes}m`}`
   );
 
   return (
     <div className={ styles.filmHeader }>
       <h2 className={ styles.name }>{ name }</h2>
       <div className={ styles.info }>
-        { renderGenres() }
-        { setDuration() }
+        { getGenreNames() } | { getDuration() }
       </div>
     </div>
   );

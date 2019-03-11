@@ -9,6 +9,7 @@
   grid-column-start: 2;
   grid-column-end: 4;
   position: relative;
+  min-height: 100px;
 
   &:hover {
     cursor: default;
@@ -17,6 +18,7 @@
 
 .name {
   position: absolute;
+  top: 0;
   box-sizing: border-box;
   padding: 10px 0;
   text-transform: uppercase;
@@ -29,27 +31,14 @@
 }
 
 .info {
-  margin-top: 70px;
-  display: flex;
-  max-width: 450px;
-  line-height: 1.4;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.genre {
-  box-sizing: border-box;
-  padding-right: 25px;
+  position: absolute;
+  bottom: 0;
   font-size: 18px;
-}
-
-.duration {
-  font-size: 18px;
-
-  &::before {
-    padding-right: 20px;
-    content: '|';
-  }
+  word-spacing: 20px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 850px) {
@@ -57,11 +46,7 @@
     font-size: 35px;
   }
 
-  .genre {
-    font-size: 13px;
-  }
-
-  .duration {
-    font-size: 13px !important;
+  .info {
+    font-size: 16px;
   }
 }
