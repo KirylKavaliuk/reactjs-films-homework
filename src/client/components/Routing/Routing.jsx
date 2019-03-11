@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import MoviesList from 'containers/MoviesList/MoviesList';
@@ -33,7 +34,8 @@ const Routing = () => (
     { pathes.map((path, index) => (
       <Route key ={ index } exact={ path.exact } path={ path.value } component={ MoviesList }/>
     )) }
-    <Route component={ NotFound }/>
+    <Route exact path='/not-found' component={ NotFound }/>
+    <Route render={ () => (<Redirect to='/not-found'/>) }/>
   </Switch>
 );
 

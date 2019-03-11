@@ -26,7 +26,7 @@ class MoviesList extends Component {
     gridView: true,
     loading: false,
     trailer: null,
-    query: null,
+    query: undefined,
     movie: {},
   };
 
@@ -90,46 +90,48 @@ class MoviesList extends Component {
     }
   }
 
-  enterEndOfList = () => {
-    const {
-      match, listLoaded, loadMoviesForSearch, loadMoviesForGenre, loadMoviesForSections,
-    } = this.props;
+  onPositionChange = (state) => {
+    const { currentPosition: current } = state;
 
-    if (!listLoaded) {
-      const section = getSection(true);
-      this.setState({ loading: true });
+    if (current === 'inside') {
+      const {
+        match, listLoaded, loadMoviesForSearch, loadMoviesForGenre, loadMoviesForSections,
+      } = this.props;
 
-      switch (section) {
-        case '/search': {
-          const query = getParam('query');
+      if (!listLoaded) {
+        const section = getSection(true);
+        this.setState({ loading: true });
 
-          loadMoviesForSearch(query);
-          break;
-        }
-        case '/genre': {
-          const { genreId } = match.params;
+        switch (section) {
+          case '/search': {
+            const query = getParam('query');
 
-          loadMoviesForGenre(+genreId);
-          break;
-        }
-        default: {
-          const map = {
-            '/': 'popular',
-            '/trading': 'popular',
-            '/top-rated': 'top_rated',
-            '/coming-soon': 'upcoming',
-          };
-          const type = map[section];
+            loadMoviesForSearch(query);
+            break;
+          }
+          case '/genre': {
+            const { genreId } = match.params;
 
-          loadMoviesForSections(type);
-          break;
+            loadMoviesForGenre(+genreId);
+            break;
+          }
+          default: {
+            const map = {
+              '/': 'popular',
+              '/trading': 'popular',
+              '/top-rated': 'top_rated',
+              '/coming-soon': 'upcoming',
+            };
+            const type = map[section];
+
+            loadMoviesForSections(type);
+            break;
+          }
         }
       }
+    } else {
+      this.setState({ loading: false });
     }
-  }
-
-  leaveEndOfList = () => {
-    this.setState({ loading: false });
   }
 
   loadingRender = () => {
@@ -180,6 +182,7 @@ class MoviesList extends Component {
             waypoint
             onEnter={ this.enterEndOfList }
             onLeave={ this.leaveEndOfList }
+            onPositionChange={ this.onPositionChange }
           /> }
         </div>
       </div>

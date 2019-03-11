@@ -27,7 +27,8 @@ class MovieDetails extends Component {
   }
 
   shouldComponentUpdate = (props, state) => (
-    this.props.movie.id !== props.movie.id
+    this.props.pathname !== props.pathname
+    || this.props.movie.id !== props.movie.id
     || this.state.descriptionOpen !== state.descriptionOpen
   )
 
@@ -44,6 +45,11 @@ class MovieDetails extends Component {
     const { movie } = this.props;
     const { descriptionOpen } = this.state;
     const imageUrl = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
+    const { pathname } = this.props;
+
+    if (pathname === '/not-found') {
+      return null;
+    }
 
     return (
       <div
@@ -76,9 +82,7 @@ class MovieDetails extends Component {
               onClick={ this.toggleDescriptionHandler }
             />
           </div>
-        </>
-      }
-
+        </> }
       </div>
     );
   }

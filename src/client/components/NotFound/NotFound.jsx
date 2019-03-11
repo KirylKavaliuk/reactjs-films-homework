@@ -9,7 +9,7 @@ const NotFound = () => (
     <div className={ styles.text }>
       <h1 className={ styles.header }>Error.</h1>
       <p className={ styles.description }>items is not found</p>
-      <Link to='/' className={ styles.link }>To tranding movies</Link>
+      <Link to='/trading' className={ styles.link }>To tranding movies</Link>
     </div>
   </div>
 );

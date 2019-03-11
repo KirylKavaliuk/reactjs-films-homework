@@ -12,7 +12,7 @@ const FilmHeader = ({
   const hours = Math.floor(absoluteDuration / 60);
   const minutes = (absoluteDuration % 60).toFixed();
 
-  const getGenreNames = () => (
+  const getGenres = () => (
     genres.reduce((_genres, genre) => (
       _genres.concat(` ${genre.name}`)
     ), '')
@@ -26,7 +26,7 @@ const FilmHeader = ({
     <div className={ styles.filmHeader }>
       <h2 className={ styles.name }>{ name }</h2>
       <div className={ styles.info }>
-        { getGenreNames() } | { getDuration() }
+        { getGenres() } | { getDuration() }
       </div>
     </div>
   );

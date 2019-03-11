@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
@@ -57,6 +58,7 @@ class App extends Component {
 
   render() {
     const { dialog, message } = this.state;
+    const { location: { pathname } } = window;
 
     return (
       <div className={ styles.app }>
@@ -65,7 +67,9 @@ class App extends Component {
           closeDialog: this.closeDialogHandler,
         }}>
           <MessageProvider value={{ openMessage: this.openMessageHandler }}>
-            <MovieDetails/>
+            <MovieDetails
+              pathname={ pathname }
+            />
             <Routing/>
           </MessageProvider>
         </DialogProvider>
@@ -90,6 +94,10 @@ class App extends Component {
     );
   }
 }
+
+MovieDetails.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
 
 const mapDispatchToProps = dispatch => ({
   addGenres: () => dispatch(addGenres()),
