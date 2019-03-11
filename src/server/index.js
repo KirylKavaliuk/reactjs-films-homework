@@ -21,9 +21,9 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   app.use(express.static('build'));
   app.use(express.static('build/assets'));
-  app.use(compression());
 }
 
+app.use(compression());
 app.use('/', httpsRedirect());
 
 app.use(routes);
