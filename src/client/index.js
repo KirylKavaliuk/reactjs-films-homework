@@ -25,13 +25,19 @@ if (module.hot && process.env.NODE_ENV !== 'production') {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then((reg) => {
-    // eslint-disable-next-line
-    console.log(`Registration succeeded. Scope is ${reg.scope}`);
-  }).catch((error) => {
-    // eslint-disable-next-line
-    console.log(`Registration failed with ${error}`);
-  });
+  const path = process.env.NODE_ENV !== 'production' ? 'sw.js' : '/js/sw.js';
+
+  const { serviceWorker } = navigator;
+
+  serviceWorker
+    .register(path)
+    .then((reg) => {
+      // eslint-disable-next-line
+      console.log(`SW. Registration succeeded`);
+    }).catch((error) => {
+      // eslint-disable-next-line
+      console.log(`SW. Registration failed with ${error}`);
+    });
 }
 
 render();
