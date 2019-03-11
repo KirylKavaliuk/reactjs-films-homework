@@ -25,12 +25,10 @@ if (module.hot && process.env.NODE_ENV !== 'production') {
 }
 
 if ('serviceWorker' in navigator) {
-  const path = process.env.NODE_ENV !== 'production' ? 'sw.js' : '/js/sw.js';
-
   const { serviceWorker } = navigator;
 
   serviceWorker
-    .register(path)
+    .register('sw.js')
     .then((reg) => {
       // eslint-disable-next-line
       console.log(`SW. Registration succeeded`);

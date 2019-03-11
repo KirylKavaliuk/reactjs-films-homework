@@ -67,7 +67,7 @@ module.exports = merge(base, {
       to: path.resolve(__dirname, '../../build/assets/images'),
     }, {
       from: path.resolve(__dirname, '../../src/client/sw.js'),
-      to: path.resolve(__dirname, '../../build/js'),
+      to: path.resolve(__dirname, '../../build'),
     }]),
   ],
 });

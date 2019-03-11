@@ -1,20 +1,22 @@
 this.addEventListener('install', (event) => {
   const pathes = [
-    '',
     '/',
     '/css/styles.css',
     '/js/client.js',
-    '/images/picture.png',
-    '/fonts/Roboto-Regular/Roboto-Regular.woff',
-    '/fonts/Roboto-Medium/Roboto-Medium.ttf',
-    '/fonts/Roboto-Bold/Roboto-Bold.ttf',
+    '/assets/images/picture.png',
+    '/assets/fonts/Roboto-Regular.woff',
+    '/assets/fonts/Roboto-Medium.ttf',
+    '/assets/fonts/Roboto-Bold.ttf',
+    '/assets/manifest/manifest.json',
+    '/assets/favicon/favicon.ico',
+    '/sw.js',
   ];
 
   event.waitUntil(
     caches
       .open('v1')
       .then(cache => (
-        cache.addAll(pathes.map(path => `https://beback95-react-films-homework.herokuapp.com${path}`))
+        cache.addAll(pathes)
       )),
   );
 });
@@ -22,21 +24,17 @@ this.addEventListener('install', (event) => {
 this.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then((response) => {
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request);
-      }),
+      .then(response => (
+        response || fetch(event.request)
+      )),
   );
 });
 
-/*
-self.addEventListener('activate', function(event) {
-console.log('Activated', event);
-});
+this.addEventListener('activate', event => (
+  this.clients.claim()
+));
 
+/*
 self.addEventListener('push', function(event) {
   console.log('Push message received', event);
 });
