@@ -33,9 +33,3 @@ this.addEventListener('fetch', (event) => {
 this.addEventListener('activate', event => (
   this.clients.claim()
 ));
-
-/*
-self.addEventListener('push', function(event) {
-  console.log('Push message received', event);
-});
-*/
