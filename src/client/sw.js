@@ -1,19 +1,19 @@
-
 this.addEventListener('install', (event) => {
+  const pathes = [
+    '/',
+    '/css/styles.css',
+    '/js/client.js',
+    '/images/picture.png',
+    '/fonts/Roboto-Regular/Roboto-Regular.woff',
+    '/fonts/Roboto-Medium/Roboto-Medium.ttf',
+    '/fonts/Roboto-Bold/Roboto-Bold.ttf',
+  ];
+
   event.waitUntil(
     caches
       .open('v1')
       .then(cache => (
-        cache.addAll([
-          '/',
-          '/css/styles.css',
-          '/js/client.js',
-          '/images/picture.png',
-          'src/assets/fonts/Roboto-Regular/Roboto-Regular.woff',
-          'src/assets/fonts/Roboto-Medium/Roboto-Medium.ttf',
-          'src/assets/fonts/Roboto-Bold/Roboto-Bold.ttf',
-          'https://image.tmdb.org/t/p/w1280/d1hQaeKeAW3FBc3v6tIP5utleU0.jpg',
-        ])
+        cache.addAll(pathes.map(path => `https://beback95-react-films-homework.herokuapp.com${path}`))
       )),
   );
 });
