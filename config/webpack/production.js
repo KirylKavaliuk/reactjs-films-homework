@@ -62,6 +62,9 @@ module.exports = merge(base, {
     }, {
       from: path.resolve(__dirname, '../../src/assets/favicon'),
       to: path.resolve(__dirname, '../../build/assets/favicon'),
+    }, {
+      from: path.resolve(__dirname, '../../src/assets/images'),
+      to: path.resolve(__dirname, '../../build/assets/images'),
     }]),
   ],
 });
