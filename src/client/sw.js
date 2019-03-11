@@ -1,5 +1,6 @@
 this.addEventListener('install', (event) => {
   const pathes = [
+    '',
     '/',
     '/css/styles.css',
     '/js/client.js',
