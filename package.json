@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node ./src/server/index.js",
+    "dev": "cross-env NODE_ENV=development node ./src/server/index.js",
     "build": "webpack --config ./config/webpack/production.js",
     "lint": "eslint --ext .js,.jsx ./config ./src",
     "test": "jest --coverage -u",
     "stylelint": "stylelint \"src/**/*.scss\"",
-    "prod": "cross-env NODE_ENV=production node ./src/server/index.js"
+    "start": "cross-env NODE_ENV=production node ./src/server/index.js"
   },
   "engines" : { 
     "node" : ">=8.0.0 <11.0.0" 
