@@ -51,7 +51,17 @@ module.exports = {
         }],
       }),
     }, {
-      test: /\.(woff|woff2|ttf|eot|svg)?$/,
+      test: /icons.*\.svg$/,
+      use: [{
+        loader: 'babel-loader',
+      }, {
+        loader: 'react-svg-loader',
+        options: {
+          jsx: true,
+        },
+      }],
+    }, {
+      test: /\.(woff|woff2|ttf|eot)?$/,
       use: [{
         loader: 'file-loader',
         options: {
