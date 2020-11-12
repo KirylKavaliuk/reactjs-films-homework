@@ -10,6 +10,9 @@
     "stylelint": "stylelint \"src/**/*.scss\"",
     "prod": "cross-env NODE_ENV=production node ./src/server/index.js"
   },
+  "engines" : { 
+    "node" : ">=8.0.0 <11.0.0" 
+  },
   "jest": {
     "transform": {
       "^.+\\.js(x)?$": "./config/jest/transformer.js"
